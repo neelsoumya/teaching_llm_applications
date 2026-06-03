@@ -1,6 +1,5 @@
 # MSc Course: Large Language Models — Internals and Applications
 
-**University of York — Department of Computer Science**
 
 > A 12-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
