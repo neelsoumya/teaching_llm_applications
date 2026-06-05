@@ -140,18 +140,142 @@ python practicals/weekNN_practical.py
 
 ---
 
-## Learning Outcomes
+## Learning Objectives
 
-By the end of this course students will be able to:
+The objectives are organised by theme, expressed using measurable action verbs at masters level, and grounded in Bloom's revised taxonomy. They map directly to the weekly topics and assessments.
 
-1. Explain the architecture and training objectives of modern LLMs from first principles.
-2. Implement core components (tokenisers, attention, transformer blocks) in PyTorch.
-3. Fine-tune and adapt pre-trained models using PEFT/LoRA.
-4. Design and evaluate prompting strategies including chain-of-thought and few-shot learning.
-5. Build a retrieval-augmented generation (RAG) pipeline.
-6. Construct simple LLM-powered agents with tool use.
-7. Evaluate LLM outputs for accuracy, bias, and safety.
-8. Deploy LLM applications in healthcare, science, and other domains.
+### 1. Foundations and History *(Weeks 1–2)*
+
+By the end of Week 2, students will be able to:
+
+- **Explain** the historical progression from n-gram language models and RNNs to the Transformer architecture, identifying the key limitations each generation addressed.
+- **Define** core terminology — token, context window, parameter, pre-training, fine-tuning, prompt, perplexity — accurately and consistently.
+- **Describe** the self-supervised next-token prediction objective and explain why training on it at scale gives rise to broad language competence and emergent abilities.
+- **Identify** the key differences between encoder-only, encoder-decoder, and decoder-only architectures and match each to appropriate downstream tasks.
+- **Implement** a byte-pair encoding (BPE) tokeniser from scratch and explain the trade-offs between vocabulary size, sequence length, and cross-lingual coverage.
+- **Analyse** tokenisation artefacts — number representation, non-English text, code indentation, whitespace sensitivity — and predict their downstream effects on model behaviour.
+
+### 2. Representations and Embeddings *(Week 3)*
+
+By the end of Week 3, students will be able to:
+
+- **Explain** the distributional hypothesis and how it motivates learning word and sentence representations from co-occurrence statistics in large text corpora.
+- **Distinguish** between static embeddings (Word2Vec) and contextual embeddings produced by transformer models, and justify why contextual representations are preferred for most modern tasks.
+- **Apply** sentence embedding models to compute semantic similarity and build a nearest-neighbour retrieval system over a document corpus.
+- **Visualise** high-dimensional embedding spaces using PCA, t-SNE, and UMAP, and interpret the resulting cluster structure in terms of semantic relationships.
+- **Implement** sinusoidal positional encodings from scratch and explain the motivation for rotary positional encodings (RoPE) used in modern LLMs such as LLaMA and Mistral.
+
+### 3. The Attention Mechanism *(Week 4)*
+
+By the end of Week 4, students will be able to:
+
+- **Derive** the scaled dot-product attention formula from the query-key-value abstraction, explaining the role of each component in information routing.
+- **Justify** the scaling factor 1/√d_k and explain both theoretically and empirically what happens when it is omitted.
+- **Implement** causal masked self-attention and multi-head attention in PyTorch from first principles, without using `nn.MultiheadAttention`.
+- **Explain** the O(n²) computational complexity of self-attention and describe how FlashAttention reduces memory requirements without changing the mathematical result.
+- **Interpret** real attention weight patterns extracted from a pretrained BERT model, while acknowledging the established limitations of attention as a mechanistic explanation tool.
+
+### 4. Transformer Architecture *(Week 5)*
+
+By the end of Week 5, students will be able to:
+
+- **Assemble** a complete decoder-only transformer from scratch in PyTorch — including token embeddings, positional encodings, multi-head attention, feed-forward layers, residual connections, and layer normalisation — and train it to generate coherent text.
+- **Explain** the roles of residual connections and pre-layer normalisation in enabling stable training of networks with tens or hundreds of layers.
+- **Describe** the KV cache mechanism and calculate its memory footprint for a given model configuration and context length.
+- **Compare** encoder-only, encoder-decoder, and decoder-only model families across architecture, training objective, and suitability for different tasks.
+- **Count** and break down the parameters of a transformer model by component (embedding, attention projections, feed-forward, layer norms) and verify against published totals.
+
+### 5. Pre-training and Scaling Laws *(Week 6)*
+
+By the end of Week 6, students will be able to:
+
+- **Describe** the full pre-training data pipeline — sourcing, deduplication, quality filtering, toxicity filtering, and domain mixing — and explain why each step affects downstream model quality.
+- **Articulate** both the Kaplan (2020) and Chinchilla (2022) scaling laws and explain the key difference in their prescriptions for compute-optimal training.
+- **Apply** the Chinchilla relationship (N_opt ∝ C^0.5, D_opt ∝ C^0.5) to estimate optimal model size and token count for a given FLOPs budget.
+- **Explain** why practitioners often deliberately over-train small models beyond the Chinchilla optimum, and analyse the deployment cost implications.
+- **Empirically verify** power-law scaling by training models of multiple sizes and plotting loss against parameter count and total compute.
+- **Identify** at least three causes of training instability (loss spikes, gradient explosions, bad data batches) and the standard mitigations for each.
+
+### 6. Fine-tuning and Alignment *(Week 7)*
+
+By the end of Week 7, students will be able to:
+
+- **Explain** supervised fine-tuning (SFT) and instruction tuning, describe the risk of catastrophic forgetting, and state at least two mitigations.
+- **Implement** LoRA (Low-Rank Adaptation) from scratch, calculate the trainable parameter reduction ratio for given dimensions and rank, and apply it to a frozen base model.
+- **Compare** full fine-tuning, LoRA, QLoRA, prefix tuning, and prompt tuning across the dimensions of parameter efficiency, GPU memory requirement, and typical task performance.
+- **Describe** the three stages of RLHF — SFT, reward model training, PPO optimisation — explain the role of the KL penalty against the reference policy, and define reward hacking with a concrete example.
+- **Implement** the Bradley-Terry preference loss for reward model training and derive the DPO objective as a reward-model-free alternative to PPO.
+- **Critically compare** RLHF and DPO as alignment strategies, identifying the implementation complexity, data requirements, and known failure modes of each.
+
+### 7. Prompting and Context Engineering *(Week 8)*
+
+By the end of Week 8, students will be able to:
+
+- **Apply** zero-shot, few-shot, and chain-of-thought prompting strategies to a given reasoning or generation task and quantify the effect on output quality across a representative evaluation set.
+- **Implement** self-consistency decoding — sample multiple reasoning chains, take the majority-vote answer — and explain why it improves accuracy on multi-step reasoning benchmarks.
+- **Design** system prompts, output format instructions, and few-shot demonstrations that reliably elicit structured (JSON / XML) output from a language model.
+- **Identify and apply** established prompt patterns — role/persona, output format, step-back, decomposition — to appropriate problem types.
+- **Explain** the "lost in the middle" phenomenon and derive practical placement guidelines for critical information in long-context prompts.
+- **Describe** prompt injection attacks, explain the mechanism by which user-supplied content can override system instructions, and implement at least two mitigations.
+
+### 8. Retrieval-Augmented Generation *(Week 9)*
+
+By the end of Week 9, students will be able to:
+
+- **Design and implement** a complete RAG pipeline — document loading, chunking, embedding, vector indexing, similarity retrieval, prompt construction, and generation — for a real document corpus.
+- **Select** an appropriate chunking strategy (fixed-size, sentence-level, recursive character, semantic, structure-aware) for a given document type and justify the choice in terms of retrieval precision and recall.
+- **Compare** dense retrieval, sparse retrieval (BM25), and hybrid retrieval approaches, explaining the trade-offs in terms of semantic generalisation, exact-match performance, and computational cost.
+- **Implement** re-ranking using a cross-encoder and explain the bi-encoder / cross-encoder precision-latency trade-off.
+- **Evaluate** a RAG system using RAGAS or equivalent across: retrieval recall, context precision, faithfulness, and answer relevance.
+- **Describe** advanced RAG patterns — HyDE, multi-query retrieval, parent-child chunking, Self-RAG, Corrective RAG — and identify the specific failure mode each addresses.
+
+### 9. Agents and Tool Use *(Week 10)*
+
+By the end of Week 10, students will be able to:
+
+- **Implement** a ReAct-style agent loop from scratch using a real LLM API, including tool dispatch, result injection, and multi-turn context management.
+- **Define** tool schemas compatible with the OpenAI or Anthropic function-calling specification and integrate at least two tools (e.g. web search, code execution) into a working agent.
+- **Distinguish** between in-context memory, external vector memory, episodic memory, and procedural memory in agent architectures, and select the appropriate type for a given task requirement.
+- **Design** a multi-agent system with at least two specialised subagents and an orchestrator, specifying the communication protocol, task decomposition strategy, and error recovery mechanism.
+- **Evaluate** an agent on a structured task suite, reporting success rate, mean steps to completion, and failure mode analysis.
+- **Identify** safety risks specific to agentic systems — irreversible real-world actions, prompt injection via tool results, scope creep — and apply appropriate mitigations including sandboxing, human-in-the-loop checkpoints, and audit logging.
+
+### 10. Evaluation, Safety, and Ethics *(Week 11)*
+
+By the end of Week 11, students will be able to:
+
+- **Apply** reference-based metrics (ROUGE, BERTScore, BLEU) and reference-free metrics (perplexity, MAUVE) to evaluate generated text, and articulate the specific failure modes of each.
+- **Design** an LLM-as-judge evaluation rubric for an open-ended generation task and identify its known failure modes including position bias, verbosity bias, and self-preference.
+- **Measure** hallucination rate on a factual QA benchmark, categorise hallucinations by type (intrinsic, extrinsic, factual), and propose at least two concrete mitigations.
+- **Probe** a language model for gender or demographic bias using templated test sets (WinoBias-style) and interpret the results in terms of representation and allocation harms.
+- **Explain** Goodhart's Law in the context of LLM evaluation and provide a concrete example from the RLHF or benchmark optimisation literature.
+- **Apply** a responsible deployment checklist — encompassing red-teaming, content filtering, scope definition, human escalation paths, production monitoring, and user communication of limitations — to a proposed LLM application.
+- **Critically assess** the ethical implications of deploying LLMs in high-stakes domains such as healthcare, legal advice, and education, with reference to real-world case studies.
+
+### 11. Applications and Deployment *(Week 12)*
+
+By the end of Week 12, students will be able to:
+
+- **Identify** the specific challenges of applying LLMs in healthcare — hallucination risk, regulatory compliance (GDPR, MHRA), clinical data sensitivity, PPIE requirements — and propose a deployment architecture that addresses them.
+- **Select** an appropriate model and deployment strategy (local vs API, full fine-tuning vs RAG vs prompting) for a given application domain, latency budget, privacy constraint, and cost envelope, and justify the decision.
+- **Build** a working end-to-end LLM application combining at least two of: RAG, fine-tuning, agents, and structured prompting, packaged as a runnable Streamlit or FastAPI service.
+- **Evaluate** the application systematically on a representative test set of at least 20 queries and produce a written analysis of success cases, failure modes, and proposed improvements.
+- **Communicate** technical design decisions, evaluation methodology, and results clearly to both technical and non-technical audiences in a written report and live demonstration.
+
+---
+
+### Mapping to Bloom's Revised Taxonomy
+
+The objectives above span all six cognitive levels:
+
+| Level | Verbs used | Examples from this course |
+|-------|-----------|--------------------------|
+| **Remember** | Define, identify, list, name | Define token, perplexity, LoRA rank, KV cache |
+| **Understand** | Explain, describe, distinguish, summarise | Explain causal masking, Chinchilla scaling, reward hacking |
+| **Apply** | Implement, apply, calculate, build | Implement attention in PyTorch, train a LoRA adapter, build a RAG pipeline |
+| **Analyse** | Analyse, compare, interpret, diagnose | Interpret attention weights, diagnose hallucination types, compare retrieval strategies |
+| **Evaluate** | Evaluate, assess, justify, critique | Assess RLHF vs DPO trade-offs, critique a deployment proposal, score outputs with LLM-as-judge |
+| **Create** | Design, construct, assemble, produce | Design a multi-agent system, build and evaluate a novel LLM application |
 
 ---
 
@@ -159,9 +283,9 @@ By the end of this course students will be able to:
 
 | Component | Weight | Details |
 |-----------|--------|---------|
-| Weekly practicals (submitted as scripts/notebooks) | 30% | 12 short submissions |
+| Weekly practicals (submitted as scripts/notebooks) | 30% | 12 short submissions, one per week |
 | Mid-term written assignment (Week 6) | 20% | 1500-word essay on scaling laws or fine-tuning |
-| Final group project | 50% | Working LLM application + 10-page report + demo |
+| Final group project | 50% | Working LLM application + 10-page report + live demo |
 
 ---
 
