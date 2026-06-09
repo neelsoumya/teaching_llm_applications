@@ -2,13 +2,13 @@
 
 **University of York — Department of Computer Science**
 
-> A 12-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A 13-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
 ---
 
 ## Course Overview
 
-This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models).
+This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models.
 
 Each week has:
 - A **lecture note** (detailed Markdown in `materials/`)
@@ -34,7 +34,8 @@ teaching_llm_applications/
 │   ├── week09_rag_and_retrieval.md
 │   ├── week10_agents_and_tool_use.md
 │   ├── week11_evaluation_safety_ethics.md
-│   └── week12_applications_and_project.md
+│   ├── week12_applications_and_project.md
+│   └── week13_rlhf_deep_dive.md
 └── practicals/
     ├── week01_practical.py
     ├── week02_practical.py
@@ -47,7 +48,8 @@ teaching_llm_applications/
     ├── week09_practical.py
     ├── week10_practical.py
     ├── week11_practical.py
-    └── week12_practical.py
+    ├── week12_practical.py
+    └── week13_practical.py
 ```
 
 ---
@@ -62,12 +64,13 @@ teaching_llm_applications/
 | 4 | The Attention Mechanism | [materials/week04_attention.md](materials/week04_attention.md) | [practicals/week04_practical.py](practicals/week04_practical.py) |
 | 5 | Transformer Architecture | [materials/week05_transformer_architecture.md](materials/week05_transformer_architecture.md) | [practicals/week05_practical.py](practicals/week05_practical.py) |
 | 6 | Pre-training and Scaling Laws | [materials/week06_pretraining_and_scaling.md](materials/week06_pretraining_and_scaling.md) | [practicals/week06_practical.py](practicals/week06_practical.py) |
-| 7 | Fine-tuning and RLHF | [materials/week07_finetuning_and_rlhf.md](materials/week07_finetuning_and_rlhf.md) | [practicals/week07_practical.py](practicals/week07_practical.py) |
+| 7 | Fine-tuning and RLHF (overview) | [materials/week07_finetuning_and_rlhf.md](materials/week07_finetuning_and_rlhf.md) | [practicals/week07_practical.py](practicals/week07_practical.py) |
 | 8 | Prompting and Context Engineering | [materials/week08_prompting_and_context_engineering.md](materials/week08_prompting_and_context_engineering.md) | [practicals/week08_practical.py](practicals/week08_practical.py) |
 | 9 | Retrieval-Augmented Generation (RAG) | [materials/week09_rag_and_retrieval.md](materials/week09_rag_and_retrieval.md) | [practicals/week09_practical.py](practicals/week09_practical.py) |
 | 10 | Agents and Tool Use | [materials/week10_agents_and_tool_use.md](materials/week10_agents_and_tool_use.md) | [practicals/week10_practical.py](practicals/week10_practical.py) |
 | 11 | Evaluation, Safety, and Ethics | [materials/week11_evaluation_safety_ethics.md](materials/week11_evaluation_safety_ethics.md) | [practicals/week11_practical.py](practicals/week11_practical.py) |
 | 12 | Applications and Final Project | [materials/week12_applications_and_project.md](materials/week12_applications_and_project.md) | [practicals/week12_practical.py](practicals/week12_practical.py) |
+| 13 | **RLHF: Deep Dive** | [materials/week13_rlhf_deep_dive.md](materials/week13_rlhf_deep_dive.md) | [practicals/week13_practical.py](practicals/week13_practical.py) |
 
 ---
 
@@ -93,8 +96,8 @@ teaching_llm_applications/
 - **Week 6** — [Pre-training and Scaling Laws](materials/week06_pretraining_and_scaling.md)
   Pre-training data pipelines, next-token prediction objective, training infrastructure. Kaplan and Chinchilla scaling laws. Emergent abilities. Training instabilities.
 
-- **Week 7** — [Fine-tuning and RLHF](materials/week07_finetuning_and_rlhf.md)
-  Supervised fine-tuning (SFT), instruction tuning, LoRA, QLoRA, RLHF (reward model, PPO), Constitutional AI, Direct Preference Optimisation (DPO).
+- **Week 7** — [Fine-tuning and RLHF (overview)](materials/week07_finetuning_and_rlhf.md)
+  Supervised fine-tuning (SFT), instruction tuning, LoRA, QLoRA, RLHF (reward model, PPO), Constitutional AI, Direct Preference Optimisation (DPO). See Week 13 for the full mathematical treatment of RLHF.
 
 ### Part 2 — Applications
 
@@ -112,6 +115,11 @@ teaching_llm_applications/
 
 - **Week 12** — [Applications and Final Project](materials/week12_applications_and_project.md)
   LLMs in healthcare, science, education, and software engineering. Multimodal models. Production architecture. Final project guidelines, assessment rubric, and project ideas.
+
+### Part 3 — Advanced Topics
+
+- **Week 13** — [RLHF: Deep Dive](materials/week13_rlhf_deep_dive.md)
+  Full mathematical derivation of RLHF from first principles. Bradley-Terry preference model. Reward model architecture and training. PPO actor-critic loop applied to language models: clipped surrogate objective, advantage estimation, KL controller, value clipping. Reward hacking: definition, examples, measurement, and mitigations. DPO derivation from the KL-constrained RLHF objective. Variants and alternatives: RLOO, GRPO, iterative DPO, rejection sampling fine-tuning. Constitutional AI and RLAIF. Process reward models (PRMs) for multi-step reasoning. Annotator agreement and reward model quality. Evaluation: win rate, MT-Bench, AlpacaEval.
 
 ---
 
@@ -137,6 +145,7 @@ python practicals/weekNN_practical.py
 | [Week 10](practicals/week10_practical.py) | ReAct agent from scratch, tool calling loop, two-agent orchestrator-specialist system, success rate evaluation |
 | [Week 11](practicals/week11_practical.py) | ROUGE / BERTScore / LLM-as-judge evaluation, hallucination rate measurement, gender bias probing, jailbreak attempts |
 | [Week 12](practicals/week12_practical.py) | End-to-end LLM application (RAG + agent + Streamlit UI), systematic evaluation on 20 queries |
+| [**Week 13**](practicals/week13_practical.py) | **Full RLHF pipeline from scratch**: synthetic preference dataset, Bradley-Terry reward model, PPO actor-critic update loop, DPO training, reward hacking detection; RM score / KL divergence / win rate plots |
 
 ---
 
@@ -203,8 +212,8 @@ By the end of Week 7, students will be able to:
 - **Explain** supervised fine-tuning (SFT) and instruction tuning, describe the risk of catastrophic forgetting, and state at least two mitigations.
 - **Implement** LoRA (Low-Rank Adaptation) from scratch, calculate the trainable parameter reduction ratio for given dimensions and rank, and apply it to a frozen base model.
 - **Compare** full fine-tuning, LoRA, QLoRA, prefix tuning, and prompt tuning across the dimensions of parameter efficiency, GPU memory requirement, and typical task performance.
-- **Describe** the three stages of RLHF — SFT, reward model training, PPO optimisation — explain the role of the KL penalty against the reference policy, and define reward hacking with a concrete example.
-- **Implement** the Bradley-Terry preference loss for reward model training and derive the DPO objective as a reward-model-free alternative to PPO.
+- **Describe** the three stages of RLHF — SFT, reward model training, PPO optimisation — at an overview level (mathematical depth covered in Week 13).
+- **Implement** the Bradley-Terry preference loss for reward model training and the DPO objective as a reward-model-free alternative to PPO.
 - **Critically compare** RLHF and DPO as alignment strategies, identifying the implementation complexity, data requirements, and known failure modes of each.
 
 ### 7. Prompting and Context Engineering *(Week 8)*
@@ -262,6 +271,22 @@ By the end of Week 12, students will be able to:
 - **Evaluate** the application systematically on a representative test set of at least 20 queries and produce a written analysis of success cases, failure modes, and proposed improvements.
 - **Communicate** technical design decisions, evaluation methodology, and results clearly to both technical and non-technical audiences in a written report and live demonstration.
 
+### 12. RLHF: Deep Dive *(Week 13)*
+
+By the end of Week 13, students will be able to:
+
+- **Derive** the Bradley-Terry paired comparison model from first principles and explain why pairwise preferences are preferred over absolute quality scores for collecting human feedback.
+- **Explain** the full three-stage RLHF pipeline — SFT, reward model training, PPO optimisation — at a mathematical level, including the role and form of the KL divergence penalty in the RL objective.
+- **Implement** the Bradley-Terry reward model loss, train a reward model on a synthetic preference dataset, and measure its held-out preference prediction accuracy.
+- **Describe** the PPO actor-critic update in the context of language model fine-tuning, including the clipped surrogate objective, advantage estimation with GAE, value function training, and practical stabilisation techniques (reward normalisation, KL controller, entropy bonus).
+- **Implement** a simplified PPO training loop for a toy language model policy and track RM score, KL divergence from the reference policy, and true reward throughout training.
+- **Derive** the DPO objective from the KL-constrained RLHF optimisation problem, explaining every algebraic step, and implement it as a standard supervised training loss.
+- **Define** reward hacking precisely, give at least three concrete behavioural examples from deployed systems, and propose monitoring and mitigation strategies including RM ensembles, iterative data collection, and human evaluation checkpoints.
+- **Compare** PPO, DPO, RLOO, GRPO, iterative DPO, and rejection sampling fine-tuning across data requirements, computational cost, training stability, and suitability for different task types.
+- **Explain** Constitutional AI and RLAIF as approaches that reduce dependence on human preference annotation, and identify their limitations.
+- **Describe** process reward models (PRMs), explain why step-level reward signals improve performance on multi-step reasoning tasks, and outline the annotation challenges they introduce.
+- **Detect** reward hacking empirically by monitoring the divergence between RM score and true human preference across training iterations and interpreting the resulting plots.
+
 ---
 
 ### Mapping to Bloom's Revised Taxonomy
@@ -270,12 +295,12 @@ The objectives above span all six cognitive levels:
 
 | Level | Verbs used | Examples from this course |
 |-------|-----------|--------------------------|
-| **Remember** | Define, identify, list, name | Define token, perplexity, LoRA rank, KV cache |
-| **Understand** | Explain, describe, distinguish, summarise | Explain causal masking, Chinchilla scaling, reward hacking |
-| **Apply** | Implement, apply, calculate, build | Implement attention in PyTorch, train a LoRA adapter, build a RAG pipeline |
-| **Analyse** | Analyse, compare, interpret, diagnose | Interpret attention weights, diagnose hallucination types, compare retrieval strategies |
-| **Evaluate** | Evaluate, assess, justify, critique | Assess RLHF vs DPO trade-offs, critique a deployment proposal, score outputs with LLM-as-judge |
-| **Create** | Design, construct, assemble, produce | Design a multi-agent system, build and evaluate a novel LLM application |
+| **Remember** | Define, identify, list, name | Define token, perplexity, LoRA rank, KV cache, Bradley-Terry model |
+| **Understand** | Explain, describe, distinguish, summarise | Explain causal masking, Chinchilla scaling, reward hacking, KL penalty |
+| **Apply** | Implement, apply, calculate, build | Implement attention, LoRA, RAG pipeline, PPO loop, DPO loss |
+| **Analyse** | Analyse, compare, interpret, diagnose | Interpret attention weights, diagnose reward hacking, compare PPO vs DPO |
+| **Evaluate** | Evaluate, assess, justify, critique | Assess alignment strategies, critique deployment proposals, score with LLM-as-judge |
+| **Create** | Design, construct, assemble, produce | Design multi-agent system, build evaluated LLM application, implement full RLHF pipeline |
 
 ---
 
@@ -283,7 +308,7 @@ The objectives above span all six cognitive levels:
 
 | Component | Weight | Details |
 |-----------|--------|---------|
-| Weekly practicals (submitted as scripts/notebooks) | 30% | 12 short submissions, one per week |
+| Weekly practicals (submitted as scripts/notebooks) | 30% | 13 short submissions, one per week |
 | Mid-term written assignment (Week 6) | 20% | 1500-word essay on scaling laws or fine-tuning |
 | Final group project | 50% | Working LLM application + 10-page report + live demo |
 
@@ -335,6 +360,8 @@ python practicals/week01_practical.py
 - [Stanford CME-295 cheatsheet](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models/blob/main/en/cheatsheet-transformers-large-language-models.pdf)
 - [RAGAS evaluation framework](https://github.com/explodinggradients/ragas)
 - [AI Safety teaching resources](https://github.com/neelsoumya/AI_safety_teaching_resources)
+- [TRL library (Transformer Reinforcement Learning)](https://huggingface.co/docs/trl/index)
+- [OpenRLHF — scalable RLHF framework](https://github.com/OpenRLHF/OpenRLHF)
 
 ### Key Papers
 
@@ -347,11 +374,17 @@ python practicals/week01_practical.py
 | Wei et al. (2022) — Emergent Abilities | https://arxiv.org/abs/2206.07682 |
 | Wei et al. (2022) — Chain-of-Thought | https://arxiv.org/abs/2201.11903 |
 | Hu et al. (2022) — LoRA | https://arxiv.org/abs/2106.09685 |
+| Christiano et al. (2017) — Deep RL from Human Preferences | https://arxiv.org/abs/1706.03741 |
 | Ouyang et al. (2022) — InstructGPT / RLHF | https://arxiv.org/abs/2203.02155 |
+| Schulman et al. (2017) — Proximal Policy Optimisation | https://arxiv.org/abs/1707.06347 |
+| Bai et al. (2022) — Constitutional AI | https://arxiv.org/abs/2212.08073 |
 | Rafailov et al. (2023) — DPO | https://arxiv.org/abs/2305.18290 |
+| Lightman et al. (2023) — Let's Verify Step by Step (PRMs) | https://arxiv.org/abs/2305.20050 |
+| Skalse et al. (2022) — Defining and Characterizing Reward Hacking | https://arxiv.org/abs/2209.13085 |
 | Lewis et al. (2020) — RAG | https://arxiv.org/abs/2005.11401 |
 | Yao et al. (2022) — ReAct | https://arxiv.org/abs/2210.03629 |
 | Dettmers et al. (2023) — QLoRA | https://arxiv.org/abs/2305.14314 |
+| DeepSeek-R1 (2025) — Incentivising Reasoning via RL (GRPO) | https://arxiv.org/abs/2501.12948 |
 
 ---
 
