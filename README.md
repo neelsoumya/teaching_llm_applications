@@ -123,6 +123,17 @@ teaching_llm_applications/
 
 ---
 
+## Guest Lectures
+
+Practitioner and research perspectives complement the core weekly material. See [materials/guest_lectures.md](materials/guest_lectures.md) for full details on each speaker, talk overviews, suggested background reading, and guidance on how to prepare questions.
+
+| Speaker | Topic | Relevant weeks |
+|---------|-------|---------------|
+| Cole Robertson | Speech, language, and LLMs in industry — real-time spoken dialogue, ASR + LLM pipelines, startup deployment | 1, 8, 12 |
+| Glasgow Startup *(TBC)* | LLMs for real-world applications — prototyping, fine-tuning vs RAG vs prompting, evaluation in the wild | 7, 8, 9, 11, 12 |
+
+---
+
 ## Practicals
 
 All practicals are self-contained Python scripts with inline comments. Run with:
