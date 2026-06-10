@@ -399,6 +399,36 @@ python practicals/week01_practical.py
 
 ---
 
+
+## Acknowledgements and courses for inspiration
+
+
+1. **Stanford CS324: Understanding and Developing Large Language Models** — this is probably the best single Stanford reference for your purpose because it explicitly combines **modeling, theory, ethics, and systems**, and it is designed to give hands-on experience with massive language models. ([Stanford CRFM][1])
+
+2. **Stanford CS224N: Natural Language Processing with Deep Learning** — a very strong backbone course. The current offering explicitly covers **deep learning for NLP and LLMs**, and its assessment structure is especially useful for inspiration: one assignment each on **word vectors**, **neural-network foundations**, **self-attention and Transformers**, and **LLM benchmarking/evaluation**. ([Stanford University][2])
+
+3. **Stanford CS25: Transformers United V6** — this is less of a core methods course and more of a **transformer seminar**, but it is valuable if you want to see how Stanford frames cutting-edge transformer topics and guest talks from major researchers. It is especially useful for a reading-seminar or guest-lecture component. ([Stanford University][3])
+
+4. **UC Berkeley CS 194/294-267: Understanding Large Language Models: Foundations and Safety** — very useful if you want to balance internals with **interpretability, scaling laws, robustness, alignment, privacy, watermarking, agency, reasoning, and evaluation**. It is a strong model for a course that treats LLMs as both a technical and safety-relevant system. ([rdi.berkeley.edu][4])
+
+5. **UC Berkeley INFO 290: Applied Generative AI and Large Language Models** — this is a good reference for the **applied** side of the syllabus: transformer architectures, prompt engineering, API integration, RAG, open-source models, fine-tuning, graph enhancements, and agentic technologies. ([UC Berkeley School of Information][5])
+
+6. **MIT OCW 6.7960 Deep Learning, Lecture 8: Architectures: Transformers** — a clean, compact lecture resource for explaining the core internals: **tokens, attention, and positional codes**, with a nice framing that connects transformers to other architectures. ([MIT OpenCourseWare][6])
+
+7. **MIT OCW 15.773, Lecture 10: Adapting LLMs with Parameter-Efficient Fine-Tuning** — useful for the post-pretraining part of the course, especially **instruction tuning** and adapting base models. ([MIT OpenCourseWare][7])
+
+A sensible design pattern would be to use **CS224N** for the course spine, **CS324** for the “LLM systems + theory” lens, **MIT’s transformer lecture** for the internals exposition, and **Berkeley’s courses** for safety, interpretability, and application modules. ([Stanford University][2])
+
+[1]: https://crfm.stanford.edu/courses.html "Stanford CRFM"
+[2]: https://web.stanford.edu/class/cs224n/ "Stanford CS 224N | Natural Language Processing with Deep Learning"
+[3]: https://web.stanford.edu/class/cs25/ "CS25: Transformers United V6 | CS25"
+[4]: https://rdi.berkeley.edu/understanding_llms/s24 "CS 194/294-267 Understanding Large Language Models: Foundations and Safety | Spring 2024"
+[5]: https://www.ischool.berkeley.edu/courses/info/290/genai "Info 290. Applied Generative AI and Large Language Models | UC Berkeley School of Information"
+[6]: https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/resources/mit6_7960f24_lec08_mp4/ "Lec 08. Architectures: Transformers | Deep Learning | Electrical Engineering and Computer Science | MIT OpenCourseWare"
+[7]: https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/resources/15773-sp24-lecture-10-version-4_mp4/ "10: Generative AI – Adapting LLMs with Parameter-Efficient Fine-Tuning | Hands-On Deep Learning | Sloan School of Management | MIT OpenCourseWare"
+
+
+
 ## Contact
 
 **Soumya Banerjee**
