@@ -2,13 +2,13 @@
 
 **University of York — Department of Computer Science**
 
-> A 13-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A 15-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
 ---
 
 ## Course Overview
 
-This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models.
+This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications.
 
 Each week has:
 - A **lecture note** (detailed Markdown in `materials/`)
@@ -35,7 +35,9 @@ teaching_llm_applications/
 │   ├── week10_agents_and_tool_use.md
 │   ├── week11_evaluation_safety_ethics.md
 │   ├── week12_applications_and_project.md
-│   └── week13_rlhf_deep_dive.md
+│   ├── week13_rlhf_deep_dive.md
+│   ├── week14_mechanistic_interpretability.md
+│   └── week15_evals.md
 └── practicals/
     ├── week01_practical.py
     ├── week02_practical.py
@@ -49,7 +51,9 @@ teaching_llm_applications/
     ├── week10_practical.py
     ├── week11_practical.py
     ├── week12_practical.py
-    └── week13_practical.py
+    ├── week13_practical.py
+    ├── week14_practical.py
+    └── week15_practical.py
 ```
 
 ---
@@ -71,6 +75,8 @@ teaching_llm_applications/
 | 11 | Evaluation, Safety, and Ethics | [materials/week11_evaluation_safety_ethics.md](materials/week11_evaluation_safety_ethics.md) | [practicals/week11_practical.py](practicals/week11_practical.py) |
 | 12 | Applications and Final Project | [materials/week12_applications_and_project.md](materials/week12_applications_and_project.md) | [practicals/week12_practical.py](practicals/week12_practical.py) |
 | 13 | **RLHF: Deep Dive** | [materials/week13_rlhf_deep_dive.md](materials/week13_rlhf_deep_dive.md) | [practicals/week13_practical.py](practicals/week13_practical.py) |
+| 14 | Mechanistic Interpretability | [materials/week14_mechanistic_interpretability.md](materials/week14_mechanistic_interpretability.md) | [practicals/week14_practical.py](practicals/week14_practical.py) |
+| 15 | **Evals: Evaluating LLMs** | [materials/week15_evals.md](materials/week15_evals.md) | [practicals/week15_practical.py](practicals/week15_practical.py) |
 
 ---
 
@@ -121,6 +127,12 @@ teaching_llm_applications/
 - **Week 13** — [RLHF: Deep Dive](materials/week13_rlhf_deep_dive.md)
   Full mathematical derivation of RLHF from first principles. Bradley-Terry preference model. Reward model architecture and training. PPO actor-critic loop applied to language models: clipped surrogate objective, advantage estimation, KL controller, value clipping. Reward hacking: definition, examples, measurement, and mitigations. DPO derivation from the KL-constrained RLHF objective. Variants and alternatives: RLOO, GRPO, iterative DPO, rejection sampling fine-tuning. Constitutional AI and RLAIF. Process reward models (PRMs) for multi-step reasoning. Annotator agreement and reward model quality. Evaluation: win rate, MT-Bench, AlpacaEval.
 
+- **Week 14** — [Mechanistic Interpretability](materials/week14_mechanistic_interpretability.md)
+  The superposition hypothesis. Sparse autoencoders (SAEs) for feature disentanglement. Circuits: induction heads, the IOI circuit, the greater-than circuit. Activation patching and causal scrubbing. The residual stream as a communication bus. The logit lens. MLP layers as key-value memories. Knowledge editing (ROME, MEMIT). Linear probing and its causal limitations. Grokking and the modular arithmetic circuit. Automated interpretability (ACDC, Bills et al.). Universality. Open problems and the TransformerLens toolkit.
+
+- **Week 15** — [Evals: Evaluating LLMs](materials/week15_evals.md)
+  The evaluation stack from automatic metrics to safety evals. BLEU, ROUGE, BERTScore, MAUVE, pass@k. Benchmark design, contamination, and saturation (MMLU, GSM8K, HumanEval, SWE-bench, GPQA). Human evaluation: pairwise preference, Chatbot Arena, ELO ratings, annotator agreement. LLM-as-judge: setup, position bias, verbosity bias, self-preference, MT-Bench, AlpacaEval. Behavioural evals and red-teaming: jailbreak taxonomy, automated red-teaming, HarmBench. Safety and alignment evals: sycophancy, deceptive alignment, TruthfulQA, WMDP, dangerous capability evaluations. Eval design: the eval checklist, statistical significance (McNemar), eval frameworks (LM Eval Harness, HELM, Inspect AI). Evaluation for deployed LLM applications: component vs end-to-end, offline vs online, implicit feedback.
+
 ---
 
 ## Guest Lectures
@@ -157,6 +169,8 @@ python practicals/weekNN_practical.py
 | [Week 11](practicals/week11_practical.py) | ROUGE / BERTScore / LLM-as-judge evaluation, hallucination rate measurement, gender bias probing, jailbreak attempts |
 | [Week 12](practicals/week12_practical.py) | End-to-end LLM application (RAG + agent + Streamlit UI), systematic evaluation on 20 queries |
 | [**Week 13**](practicals/week13_practical.py) | **Full RLHF pipeline from scratch**: synthetic preference dataset, Bradley-Terry reward model, PPO actor-critic update loop, DPO training, reward hacking detection; RM score / KL divergence / win rate plots |
+| [**Week 14**](practicals/week14_practical.py) | **Mechanistic interpretability**: logit lens across GPT-2 layers; activation patching heatmap (IOI heads); linear probe for verb detection per layer; sparse autoencoder trained on MLP activations with feature inspection; grokking on modular arithmetic |
+| [**Week 15**](practicals/week15_practical.py) | **Evals**: BLEU/ROUGE/BERTScore/MAUVE comparison; LLM-as-judge pipeline with position-bias mitigation (swap A/B); position bias measurement; sycophancy probing; mini red-team across three jailbreak categories; factual QA eval with McNemar significance testing |
 
 ---
 
@@ -402,6 +416,15 @@ python practicals/week01_practical.py
 
 ## Acknowledgements and courses for inspiration
 
+- Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
+
+- `NanoGPT`
+
+- Vizuara videos coding transformers from scratch
+
+- DAMTP and CAISH courses math department cambridge 2025
+
+- Bluedot impact courses
 
 1. **Stanford CS324: Understanding and Developing Large Language Models** — this is probably the best single Stanford reference for your purpose because it explicitly combines **modeling, theory, ethics, and systems**, and it is designed to give hands-on experience with massive language models. ([Stanford CRFM][1])
 
