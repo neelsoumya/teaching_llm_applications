@@ -2,13 +2,13 @@
 
 **University of York — Department of Computer Science**
 
-> A 15-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A 16-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
 ---
 
 ## Course Overview
 
-This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications.
+This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO.
 
 Each week has:
 - A **lecture note** (detailed Markdown in `materials/`)
@@ -37,7 +37,8 @@ teaching_llm_applications/
 │   ├── week12_applications_and_project.md
 │   ├── week13_rlhf_deep_dive.md
 │   ├── week14_mechanistic_interpretability.md
-│   └── week15_evals.md
+│   ├── week15_evals.md
+│   └── week16_dpo.md
 └── practicals/
     ├── week01_practical.py
     ├── week02_practical.py
@@ -53,7 +54,8 @@ teaching_llm_applications/
     ├── week12_practical.py
     ├── week13_practical.py
     ├── week14_practical.py
-    └── week15_practical.py
+    ├── week15_practical.py
+    └── week16_practical.py
 ```
 
 ---
@@ -77,6 +79,7 @@ teaching_llm_applications/
 | 13 | **RLHF: Deep Dive** | [materials/week13_rlhf_deep_dive.md](materials/week13_rlhf_deep_dive.md) | [practicals/week13_practical.py](practicals/week13_practical.py) |
 | 14 | Mechanistic Interpretability | [materials/week14_mechanistic_interpretability.md](materials/week14_mechanistic_interpretability.md) | [practicals/week14_practical.py](practicals/week14_practical.py) |
 | 15 | **Evals: Evaluating LLMs** | [materials/week15_evals.md](materials/week15_evals.md) | [practicals/week15_practical.py](practicals/week15_practical.py) |
+| 16 | **Direct Preference Optimisation (DPO)** | [materials/week16_dpo.md](materials/week16_dpo.md) | [practicals/week16_practical.py](practicals/week16_practical.py) |
 
 ---
 
@@ -133,6 +136,9 @@ teaching_llm_applications/
 - **Week 15** — [Evals: Evaluating LLMs](materials/week15_evals.md)
   The evaluation stack from automatic metrics to safety evals. BLEU, ROUGE, BERTScore, MAUVE, pass@k. Benchmark design, contamination, and saturation (MMLU, GSM8K, HumanEval, SWE-bench, GPQA). Human evaluation: pairwise preference, Chatbot Arena, ELO ratings, annotator agreement. LLM-as-judge: setup, position bias, verbosity bias, self-preference, MT-Bench, AlpacaEval. Behavioural evals and red-teaming: jailbreak taxonomy, automated red-teaming, HarmBench. Safety and alignment evals: sycophancy, deceptive alignment, TruthfulQA, WMDP, dangerous capability evaluations. Eval design: the eval checklist, statistical significance (McNemar), eval frameworks (LM Eval Harness, HELM, Inspect AI). Evaluation for deployed LLM applications: component vs end-to-end, offline vs online, implicit feedback.
 
+- **Week 16** — [Direct Preference Optimisation (DPO)](materials/week16_dpo.md)
+  Full mathematical derivation of DPO from the KL-constrained RLHF objective: the analytical optimal policy, rearranging for the implicit reward, cancellation of the partition function, the Bradley-Terry substitution, and the final DPO loss. Gradient interpretation and implicit curriculum. PyTorch implementation from scratch. Key hyperparameters (β, reference policy, data quality). Training diagnostics: chosen/rejected rewards, reward margin, preference accuracy, likelihood displacement. Failure modes: likelihood displacement mechanism, over-optimisation, distribution shift, preference noise. DPO variants: IPO (bounded margin), KTO (unpaired data), SimPO (no reference model, length normalisation), ORPO (one-stage SFT + alignment). Iterative and online DPO. DPO vs PPO decision guide. Practical tips with TRL’s DPOTrainer.
+
 ---
 
 ## Guest Lectures
@@ -171,6 +177,7 @@ python practicals/weekNN_practical.py
 | [**Week 13**](practicals/week13_practical.py) | **Full RLHF pipeline from scratch**: synthetic preference dataset, Bradley-Terry reward model, PPO actor-critic update loop, DPO training, reward hacking detection; RM score / KL divergence / win rate plots |
 | [**Week 14**](practicals/week14_practical.py) | **Mechanistic interpretability**: logit lens across GPT-2 layers; activation patching heatmap (IOI heads); linear probe for verb detection per layer; sparse autoencoder trained on MLP activations with feature inspection; grokking on modular arithmetic |
 | [**Week 15**](practicals/week15_practical.py) | **Evals**: BLEU/ROUGE/BERTScore/MAUVE comparison; LLM-as-judge pipeline with position-bias mitigation (swap A/B); position bias measurement; sycophancy probing; mini red-team across three jailbreak categories; factual QA eval with McNemar significance testing |
+| [**Week 16**](practicals/week16_practical.py) | **DPO from scratch**: implement DPO, IPO, and SimPO losses; train a toy LM on synthetic preferences; monitor chosen/rejected rewards, margin, accuracy, and KL; demonstrate likelihood displacement; two-iteration online DPO; comparison plots across all three methods |
 
 ---
 
@@ -312,6 +319,21 @@ By the end of Week 13, students will be able to:
 - **Describe** process reward models (PRMs), explain why step-level reward signals improve performance on multi-step reasoning tasks, and outline the annotation challenges they introduce.
 - **Detect** reward hacking empirically by monitoring the divergence between RM score and true human preference across training iterations and interpreting the resulting plots.
 
+### 13. Direct Preference Optimisation *(Week 16)*
+
+By the end of Week 16, students will be able to:
+
+- **Derive** the DPO loss from the KL-constrained RLHF objective in full algebraic detail: writing the analytical optimal policy, expressing the reward in terms of the policy, substituting into the Bradley-Terry model, and explaining why the partition function Z(x) cancels.
+- **Interpret** the DPO gradient, explaining the role of the residual factor (1 − σ(ĥ)) as an implicit difficulty-weighting mechanism that down-weights pairs the model already ranks correctly.
+- **Implement** the DPO loss from scratch in PyTorch, including correct computation of per-sequence log-probabilities for both the policy and a frozen reference model.
+- **Monitor** DPO training using the full diagnostic suite: chosen reward, rejected reward, reward margin, preference accuracy, absolute log-probabilities, and KL divergence from the reference policy.
+- **Explain** likelihood displacement — the failure mode where DPO decreases the absolute probability of the preferred completion even as the margin increases — and propose at least two mitigations.
+- **Compare** DPO, IPO, KTO, SimPO, and ORPO: for each variant, identify the specific limitation of standard DPO it addresses, the mathematical change it makes, and the trade-off it introduces.
+- **Implement** IPO and SimPO losses from scratch and evaluate all three methods on the same synthetic preference dataset.
+- **Describe** iterative (online) DPO, explain why it addresses distribution shift, and implement a two-iteration online DPO loop showing improved reward accuracy on successive iterations.
+- **Select** between DPO and PPO for a given alignment task, justifying the choice across the dimensions of engineering complexity, data requirements, stability, and task type.
+- **Apply** TRL’s DPOTrainer to fine-tune a real model with LoRA, configuring the key hyperparameters (β, learning rate, max sequence length) and interpreting the logged diagnostics.
+
 ---
 
 ### Mapping to Bloom's Revised Taxonomy
@@ -333,7 +355,7 @@ The objectives above span all six cognitive levels:
 
 | Component | Weight | Details |
 |-----------|--------|---------|
-| Weekly practicals (submitted as scripts/notebooks) | 30% | 13 short submissions, one per week |
+| Weekly practicals (submitted as scripts/notebooks) | 30% | 16 short submissions, one per week |
 | Mid-term written assignment (Week 6) | 20% | 1500-word essay on scaling laws or fine-tuning |
 | Final group project | 50% | Working LLM application + 10-page report + live demo |
 
@@ -410,6 +432,11 @@ python practicals/week01_practical.py
 | Yao et al. (2022) — ReAct | https://arxiv.org/abs/2210.03629 |
 | Dettmers et al. (2023) — QLoRA | https://arxiv.org/abs/2305.14314 |
 | DeepSeek-R1 (2025) — Incentivising Reasoning via RL (GRPO) | https://arxiv.org/abs/2501.12948 |
+| Azar et al. (2023) — IPO | https://arxiv.org/abs/2310.12036 |
+| Ethayarajh et al. (2024) — KTO | https://arxiv.org/abs/2402.01306 |
+| Meng et al. (2024) — SimPO | https://arxiv.org/abs/2405.14734 |
+| Hong et al. (2024) — ORPO | https://arxiv.org/abs/2403.07691 |
+| Rafailov et al. (2024) — Scaling Laws for DPO Overoptimisation | https://arxiv.org/abs/2406.02900 |
 
 ---
 
