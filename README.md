@@ -2,13 +2,13 @@
 
 **University of York — Department of Computer Science**
 
-> A 16-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A 17-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
 ---
 
 ## Course Overview
 
-This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO.
+This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO. Week 17 covers efficiency in attention and alternative architectures: the quadratic cost of full attention, sparse attention patterns (sliding window, BigBird), FlashAttention (tiling and online softmax), linear attention approximations (Performer, RWKV), state space models (S4, Mamba), grouped-query attention, and hybrid Mamba/transformer architectures.
 
 Each week has:
 - A **lecture note** (detailed Markdown in `materials/`)
@@ -38,7 +38,8 @@ teaching_llm_applications/
 │   ├── week13_rlhf_deep_dive.md
 │   ├── week14_mechanistic_interpretability.md
 │   ├── week15_evals.md
-│   └── week16_dpo.md
+│   ├── week16_dpo.md
+│   └── week17_efficiency_attention.md
 └── practicals/
     ├── week01_practical.py
     ├── week02_practical.py
@@ -55,7 +56,8 @@ teaching_llm_applications/
     ├── week13_practical.py
     ├── week14_practical.py
     ├── week15_practical.py
-    └── week16_practical.py
+    ├── week16_practical.py
+    └── week17_practical.py
 ```
 
 ---
@@ -80,6 +82,7 @@ teaching_llm_applications/
 | 14 | Mechanistic Interpretability | [materials/week14_mechanistic_interpretability.md](materials/week14_mechanistic_interpretability.md) | [practicals/week14_practical.py](practicals/week14_practical.py) |
 | 15 | **Evals: Evaluating LLMs** | [materials/week15_evals.md](materials/week15_evals.md) | [practicals/week15_practical.py](practicals/week15_practical.py) |
 | 16 | **Direct Preference Optimisation (DPO)** | [materials/week16_dpo.md](materials/week16_dpo.md) | [practicals/week16_practical.py](practicals/week16_practical.py) |
+| 17 | **Efficiency: Attention Variants & Architectures** | [materials/week17_efficiency_attention.md](materials/week17_efficiency_attention.md) | [practicals/week17_practical.py](practicals/week17_practical.py) |
 
 ---
 
@@ -139,6 +142,9 @@ teaching_llm_applications/
 - **Week 16** — [Direct Preference Optimisation (DPO)](materials/week16_dpo.md)
   Full mathematical derivation of DPO from the KL-constrained RLHF objective: the analytical optimal policy, rearranging for the implicit reward, cancellation of the partition function, the Bradley-Terry substitution, and the final DPO loss. Gradient interpretation and implicit curriculum. PyTorch implementation from scratch. Key hyperparameters (β, reference policy, data quality). Training diagnostics: chosen/rejected rewards, reward margin, preference accuracy, likelihood displacement. Failure modes: likelihood displacement mechanism, over-optimisation, distribution shift, preference noise. DPO variants: IPO (bounded margin), KTO (unpaired data), SimPO (no reference model, length normalisation), ORPO (one-stage SFT + alignment). Iterative and online DPO. DPO vs PPO decision guide. Practical tips with TRL’s DPOTrainer.
 
+- **Week 17** — [Efficiency: Attention Variants and Alternative Architectures](materials/week17_efficiency_attention.md)
+  The quadratic O(n²) cost of full self-attention: time, memory, and practical limits. Sparse attention patterns: local/window attention, strided/dilated attention, global+local (Longformer, BigBird), sliding window attention in Mistral. FlashAttention: HBM vs SRAM bottleneck, tiling, online softmax algorithm, FlashAttention-2 and -3, PyTorch integration. Linear attention approximations: the kernel trick for attention, Performer (random Fourier features), RWKV (linear recurrent form), limitations. State space models (SSMs): continuous-time formulation, ZOH discretisation, S4 (HiPPO matrix, convolutional form, O(n log n) training), Mamba (selective/input-dependent B, C, Δ), Mamba vs transformer comparison, hybrid models (Jamba, Griffin). Grouped-query attention (GQA) and multi-query attention (MQA): KV cache reduction. Efficient inference architecture: combining FlashAttention + GQA + sliding window + speculative decoding.
+
 ---
 
 ## Guest Lectures
@@ -178,6 +184,7 @@ python practicals/weekNN_practical.py
 | [**Week 14**](practicals/week14_practical.py) | **Mechanistic interpretability**: logit lens across GPT-2 layers; activation patching heatmap (IOI heads); linear probe for verb detection per layer; sparse autoencoder trained on MLP activations with feature inspection; grokking on modular arithmetic |
 | [**Week 15**](practicals/week15_practical.py) | **Evals**: BLEU/ROUGE/BERTScore/MAUVE comparison; LLM-as-judge pipeline with position-bias mitigation (swap A/B); position bias measurement; sycophancy probing; mini red-team across three jailbreak categories; factual QA eval with McNemar significance testing |
 | [**Week 16**](practicals/week16_practical.py) | **DPO from scratch**: implement DPO, IPO, and SimPO losses; train a toy LM on synthetic preferences; monitor chosen/rejected rewards, margin, accuracy, and KL; demonstrate likelihood displacement; two-iteration online DPO; comparison plots across all three methods |
+| [**Week 17**](practicals/week17_practical.py) | **Efficiency**: time/memory scaling of naive vs tiled (FlashAttention-style) vs sliding-window attention; S4-style SSM from scratch — verify recurrent == convolutional form via FFT; Mamba selective SSM with input-dependent Δ; KV-cache memory comparison (MHA vs GQA vs SSM) across sequence lengths up to 262k tokens; output quality analysis of sliding window at varying window sizes |
 
 ---
 
@@ -355,7 +362,7 @@ The objectives above span all six cognitive levels:
 
 | Component | Weight | Details |
 |-----------|--------|---------|
-| Weekly practicals (submitted as scripts/notebooks) | 30% | 16 short submissions, one per week |
+| Weekly practicals (submitted as scripts/notebooks) | 30% | 17 short submissions, one per week |
 | Mid-term written assignment (Week 6) | 20% | 1500-word essay on scaling laws or fine-tuning |
 | Final group project | 50% | Working LLM application + 10-page report + live demo |
 
@@ -437,6 +444,16 @@ python practicals/week01_practical.py
 | Meng et al. (2024) — SimPO | https://arxiv.org/abs/2405.14734 |
 | Hong et al. (2024) — ORPO | https://arxiv.org/abs/2403.07691 |
 | Rafailov et al. (2024) — Scaling Laws for DPO Overoptimisation | https://arxiv.org/abs/2406.02900 |
+| Dao et al. (2022) — FlashAttention | https://arxiv.org/abs/2205.14135 |
+| Dao (2023) — FlashAttention-2 | https://arxiv.org/abs/2307.08691 |
+| Beltagy et al. (2020) — Longformer | https://arxiv.org/abs/2004.05150 |
+| Zaheer et al. (2020) — BigBird | https://arxiv.org/abs/2007.14062 |
+| Choromanski et al. (2021) — Performers | https://arxiv.org/abs/2009.14794 |
+| Peng et al. (2023) — RWKV | https://arxiv.org/abs/2305.13048 |
+| Gu et al. (2022) — S4 | https://arxiv.org/abs/2111.00396 |
+| Gu and Dao (2023) — Mamba | https://arxiv.org/abs/2312.00752 |
+| Ainslie et al. (2023) — GQA | https://arxiv.org/abs/2305.13245 |
+| Team AI21 (2024) — Jamba | https://arxiv.org/abs/2403.19887 |
 
 ---
 
