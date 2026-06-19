@@ -126,7 +126,7 @@ P(w_1, ..., w_n) = P(w_1) * P(w_2 | w_1) * P(w_3 | w_1, w_2) * ...
 
 This is the **autoregressive** view: each token is predicted given all previous tokens.
 
-A **large** language model is simply one trained at scale — billions of parameters on trillions of tokens.
+- 🧩 🚀 A **large** language model is simply one trained at scale — billions of parameters on trillions of tokens.
 
 ---
 
