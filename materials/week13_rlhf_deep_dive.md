@@ -2,6 +2,8 @@
 
 ## Lecture Overview
 
+- 🎥 [Video](https://www.youtube.com/watch?v=Z_JUqJBpVOk)
+
 Week 7 introduced RLHF as one component of the fine-tuning pipeline. This week we go considerably deeper: deriving the mathematics from first principles, understanding the reward model in detail, working through the PPO update rule as applied to language models, examining failure modes, and surveying the frontier of RLHF alternatives. By the end of this week students should be able to implement every stage of RLHF from scratch on a toy problem.
 
 ---

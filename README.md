@@ -7,7 +7,7 @@
 
 ## Course Overview
 
-This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO. Week 17 covers efficiency in attention and alternative architectures: the quadratic cost of full attention, sparse attention patterns (sliding window, BigBird), FlashAttention (tiling and online softmax), linear attention approximations (Performer, RWKV), state space models (S4, Mamba), grouped-query attention, and hybrid Mamba/transformer architectures. Week 18 is a foundational primer on classical reinforcement learning — Markov decision processes, value functions, the Bellman equation, dynamic programming, Monte Carlo and TD learning, Q-learning, SARSA, and policy gradient methods (REINFORCE through actor-critic) — providing the theoretical grounding that underlies PPO, DPO, and GRPO from Weeks 13 and 16.
+This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO. Week 17 covers efficiency in attention and alternative architectures: the quadratic cost of full attention, sparse attention patterns (sliding window, BigBird), FlashAttention (tiling and online softmax), linear attention approximations (Performer, RWKV), state space models (S4, Mamba), grouped-query attention, and hybrid Mamba/transformer architectures. Week 18 is a short, practical primer on reinforcement learning — just enough RL intuition (policies, rewards, REINFORCE, baselines) to understand why PPO, DPO, and GRPO are shaped the way they are.
 
 Each week has:
 - A **lecture note** (detailed Markdown in `materials/`)
@@ -148,7 +148,7 @@ teaching_llm_applications/
   The quadratic O(n²) cost of full self-attention: time, memory, and practical limits. Sparse attention patterns: local/window attention, strided/dilated attention, global+local (Longformer, BigBird), sliding window attention in Mistral. FlashAttention: HBM vs SRAM bottleneck, tiling, online softmax algorithm, FlashAttention-2 and -3, PyTorch integration. Linear attention approximations: the kernel trick for attention, Performer (random Fourier features), RWKV (linear recurrent form), limitations. State space models (SSMs): continuous-time formulation, ZOH discretisation, S4 (HiPPO matrix, convolutional form, O(n log n) training), Mamba (selective/input-dependent B, C, Δ), Mamba vs transformer comparison, hybrid models (Jamba, Griffin). Grouped-query attention (GQA) and multi-query attention (MQA): KV cache reduction. Efficient inference architecture: combining FlashAttention + GQA + sliding window + speculative decoding.
 
 - **Week 18** — [Introduction to Reinforcement Learning](materials/week18_intro_to_rl.md)
-  A from-scratch classical RL primer: the agent-environment loop and why RL differs from supervised learning. Markov decision processes, the Markov property, policies, returns, and discounting. Value functions: state-value, action-value (Q), and advantage functions. The Bellman expectation and optimality equations. Dynamic programming: value iteration and policy iteration when the model is known. Model-free learning: Monte Carlo estimation vs TD(0) bootstrapping, bias-variance trade-offs, the TD error and its link to dopaminergic reward prediction error. Q-learning (off-policy) vs SARSA (on-policy); the exploration-exploitation trade-off; ε-greedy; Deep Q-Networks (experience replay, target networks). Policy gradient methods: the policy gradient theorem and log-derivative trick, REINFORCE, variance reduction with baselines, actor-critic methods — building the direct conceptual throughline from REINFORCE through TRPO to PPO and GRPO (Week 13). Multi-armed bandits, regret, and UCB — the simplest RL setting and its structural connection to single-turn RLHF.
+  A short, practical RL primer: the agent-environment loop, policies, rewards, and returns. The core REINFORCE update rule and the intuition behind it (push up actions that worked, push down ones that didn't). Variance reduction via baselines and a one-paragraph sketch of actor-critic. A one-line summary of the conceptual path from REINFORCE to PPO and GRPO. Why single-turn RLHF behaves like a bandit problem rather than full multi-step RL.
 
 ---
 
@@ -190,7 +190,7 @@ python practicals/weekNN_practical.py
 | [**Week 15**](practicals/week15_practical.py) | **Evals**: BLEU/ROUGE/BERTScore/MAUVE comparison; LLM-as-judge pipeline with position-bias mitigation (swap A/B); position bias measurement; sycophancy probing; mini red-team across three jailbreak categories; factual QA eval with McNemar significance testing |
 | [**Week 16**](practicals/week16_practical.py) | **DPO from scratch**: implement DPO, IPO, and SimPO losses; train a toy LM on synthetic preferences; monitor chosen/rejected rewards, margin, accuracy, and KL; demonstrate likelihood displacement; two-iteration online DPO; comparison plots across all three methods |
 | [**Week 17**](practicals/week17_practical.py) | **Efficiency**: time/memory scaling of naive vs tiled (FlashAttention-style) vs sliding-window attention; S4-style SSM from scratch — verify recurrent == convolutional form via FFT; Mamba selective SSM with input-dependent Δ; KV-cache memory comparison (MHA vs GQA vs SSM) across sequence lengths up to 262k tokens; output quality analysis of sliding window at varying window sizes |
-| [**Week 18**](practicals/week18_practical.py) | **Classical RL from scratch**: value iteration and policy iteration on a gridworld MDP; Monte Carlo vs TD(0) value estimation with variance comparison; Q-learning vs SARSA under ε-greedy exploration on a slippery gridworld; REINFORCE with and without a baseline on a toy contextual bandit; actor-critic vs plain REINFORCE; UCB vs ε-greedy cumulative regret on a multi-armed bandit |
+| [**Week 18**](practicals/week18_practical.py) | **REINFORCE basics**: a minimal policy-gradient agent on a toy bandit, trained with and without a baseline, showing the variance reduction directly in a plot |
 
 ---
 
@@ -351,17 +351,12 @@ By the end of Week 16, students will be able to:
 
 By the end of Week 18, students will be able to:
 
-- **Explain** how reinforcement learning differs from supervised learning along the dimensions of feedback structure, data generation, and the credit-assignment problem.
-- **Formalise** a sequential decision problem as a Markov decision process, correctly identifying the state space, action space, transition dynamics, reward function, and discount factor.
-- **Derive** the Bellman expectation and optimality equations from the definition of the value function, and explain the recursive structure they exploit.
-- **Implement** value iteration and policy iteration on a tabular MDP and verify that both converge to the same optimal policy.
-- **Compare** Monte Carlo and TD(0) value estimation in terms of bias, variance, and update frequency, and explain why most deep RL algorithms favour TD-style bootstrapping.
-- **Implement** Q-learning and SARSA on the same environment and explain the practical consequences of off-policy vs on-policy learning under ε-greedy exploration.
-- **Derive** the policy gradient theorem using the log-derivative trick and explain why it permits gradient estimation without access to the environment's transition model.
-- **Implement** REINFORCE from scratch, demonstrate empirically that a state-dependent baseline reduces variance without introducing bias, and implement a simple actor-critic method as a direct extension.
-- **Trace** the conceptual lineage from REINFORCE through baselines, actor-critic, TRPO, to PPO, explaining what each step adds and why GRPO removes the critic network in favour of group-relative advantage estimation.
-- **Explain** why single-turn RLHF for LLMs is structurally a contextual bandit problem, and discuss whether this characterisation extends to multi-turn conversational RLHF or agentic tasks with tool use.
-- **Implement** ε-greedy and UCB on a multi-armed bandit and compare their cumulative regret empirically.
+- **Explain** the agent-environment loop and how RL differs from supervised learning (no fixed correct-answer labels; feedback via reward instead).
+- **State** the REINFORCE update rule and explain its intuition: increasing the probability of actions that led to good outcomes, decreasing it for actions that led to poor ones.
+- **Implement** REINFORCE from scratch on a toy bandit task.
+- **Explain** why subtracting a baseline reduces variance without introducing bias, and demonstrate this empirically.
+- **Describe**, at a high level, how actor-critic, TRPO, PPO, and GRPO each build on REINFORCE.
+- **Explain** why single-turn RLHF for LLMs can be treated as a bandit problem rather than requiring full multi-step RL machinery.
 
 ---
 
@@ -476,11 +471,7 @@ python practicals/week01_practical.py
 | Gu and Dao (2023) — Mamba | https://arxiv.org/abs/2312.00752 |
 | Ainslie et al. (2023) — GQA | https://arxiv.org/abs/2305.13245 |
 | Team AI21 (2024) — Jamba | https://arxiv.org/abs/2403.19887 |
-| Sutton et al. (2000) — Policy Gradient Methods | https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation |
 | Williams (1992) — REINFORCE | https://link.springer.com/article/10.1007/BF00992696 |
-| Mnih et al. (2015) — Deep Q-Networks (DQN) | https://www.nature.com/articles/nature14236 |
-| Schulman et al. (2015) — TRPO | https://arxiv.org/abs/1502.05477 |
-| Schulman et al. (2015) — GAE | https://arxiv.org/abs/1506.02438 |
 
 ---
 

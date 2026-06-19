@@ -38,6 +38,11 @@ Here is a comprehensive 2-hour lesson plan and Python practical designed to brin
 * **The Paradigm Shift:** Introduce the pivot from *instructing* computers on the rules of language to *showing* them vast amounts of text and letting them figure out the associations themselves.
 * **Context is Everything:** Explain the foundational linguistic theory by J.R. Firth: *"You shall know a word by the company it keeps."* Deep learning models look at a word and learn its meaning based on the words that frequently surround it.
 
+- 🤔 🎥 [Video by 3blue1brown on how word vectors encode meaning](https://www.youtube.com/shorts/FJtFZwbvkI4)
+
+- 🤔 🎥 [Video by 3blue1brown on how transfomes and GPT works](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+
 ### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
 
 * **Visualizing the Math:** This is where you introduce the **3Blue1Brown** concepts. Highly recommend pointing your students to Grant Sanderson's video: *"But what is a GPT? Visual intro to transformers."*
@@ -61,7 +66,7 @@ For the practical, we will use `gensim`, a robust Python library for topic model
 
 > **Prerequisites:** Have your students install the library by running `pip install gensim` in their terminal or Jupyter Notebook.
 
-### The Code
+### 🎮 🛠️ Practical: The Code
 
 ```python
 import gensim.downloader as api
