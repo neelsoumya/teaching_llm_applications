@@ -17,6 +17,51 @@ Agent observes state → picks an action → environment gives a reward
 
 The hard part: rewards can be delayed and sparse, so the agent must figure out *which* past actions deserve credit for a later reward (the **credit assignment problem**).
 
+
+### 1.1 The Agent-Environment Loop
+In supervised learning, you have labelled (input, correct output) pairs. In RL, an **agent** takes **actions** in an **environment**, receives a **reward**, and learns to act so as to maximise cumulative reward over time — without ever being told the "correct" action directly.
+
+```
+        ┌─────────────┐
+   a_t  │             │  s_t, r_t
+  ──────▶   Agent      │◀──────────
+        │             │
+        └─────────────┘
+              │  a_t
+              ▼
+        ┌─────────────┐
+        │ Environment │
+        └─────────────┘
+              │  s_{t+1}, r_{t+1}
+              ▼
+            (repeat)
+Agent observes state → picks an action → environment gives a reward
+                 and a new state → repeat
+```
+
+At each timestep t:
+1. The agent observes state s_t.
+2. The agent selects action a_t according to its **policy** π.
+3. The environment transitions to state s_{t+1} and emits reward r_{t+1}.
+4. The cycle repeats.
+
+### 1.2 Why RL Matters for LLMs
+
+- RLHF (Week 13):
+
+-  🧩 🚀 the LLM is the policy; 
+
+- the "environment" is a single-step bandit problem (generate a response, receive a reward, episode ends).
+- GRPO / RLOO (Week 13): group-relative variants of policy gradient methods for reasoning tasks.
+- Agents (Week 10): the LLM acts in a genuinely multi-step environment with tools, observations, and delayed rewards.
+- DPO (Week 16): derived from the optimal solution to an RL problem with a KL constraint, even though DPO training itself involves no explicit RL loop.
+
+Understanding classical RL is what allows you to read papers, understand *why* PPO is shaped the way it is, and recognise when a problem genuinely needs RL versus when supervised or preference-based methods suffice.
+The hard part: rewards can be delayed and sparse, so the agent must figure out *which* past actions deserve credit for a later reward (the **credit assignment problem**).
+
+---
+
+
 ---
 
 ## 2. The Key Ingredients
