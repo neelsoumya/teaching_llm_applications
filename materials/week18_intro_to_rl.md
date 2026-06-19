@@ -46,7 +46,11 @@ At each timestep t:
 
 ### 1.2 Why RL Matters for LLMs
 
-- RLHF (Week 13): the LLM is the policy; the "environment" is a single-step bandit problem (generate a response, receive a reward, episode ends).
+- RLHF (Week 13):
+
+-  🧩 🚀 the LLM is the policy; 
+
+- the "environment" is a single-step bandit problem (generate a response, receive a reward, episode ends).
 - GRPO / RLOO (Week 13): group-relative variants of policy gradient methods for reasoning tasks.
 - Agents (Week 10): the LLM acts in a genuinely multi-step environment with tools, observations, and delayed rewards.
 - DPO (Week 16): derived from the optimal solution to an RL problem with a KL constraint, even though DPO training itself involves no explicit RL loop.

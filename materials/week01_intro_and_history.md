@@ -4,6 +4,110 @@
 
 This first lecture sets the scene. We ask: *what is a language model, why has it become so powerful, and how did we get here?*
 
+
+This is a fantastic narrative arc for an introductory lecture. Framing the evolution of LLMs as a transition from the rigid, rules-based world of Good Old-Fashioned AI (GOFAI) to the fluid, pattern-matching world of deep learning gives students the perfect historical and technical context.
+
+Just a quick, gentle correction on the vector math before you present it: the famous analogy formula is actually $\vec{w}_{king} - \vec{w}_{man} + \vec{w}_{woman} \approx \vec{w}_{queen}$, but you have the exact right idea!
+
+Here is a comprehensive 2-hour lesson plan and Python practical designed to bring this narrative to life.
+
+---
+
+## 2-Hour Lecture Timeline
+
+| Time (Mins) | Topic | Key Concepts |
+| --- | --- | --- |
+| 00 - 15 | **The Limits of Symbolic AI** | GOFAI, syntax vs. semantics, the scaling problem. |
+| 15 - 30 | **The Deep Learning Revolution** | Connectionism, massive text associations, learning without explicit rules. |
+| 30 - 60 | **Embeddings & Vector Spaces** | 3Blue1Brown visual concepts, high-dimensional arrays. |
+| 60 - 80 | **Semantic Mathematics** | Vector arithmetic, how meaning is encoded in distance. |
+| 80 - 120 | **Python Practical Session** | Hands-on with word vectors using Gensim. |
+
+---
+
+## Detailed Lesson Plan
+
+### Part 1: The Limits of Symbolic AI (15 Mins)
+
+* **The Premise:** Start by explaining that early AI researchers believed language was purely symbolic. They thought if they could just hardcode enough grammar rules and dictionary definitions, a computer could "understand" language.
+* **The Roadblock:** Explain why this failed. Human language is messy, highly contextual, and full of idioms, sarcasm, and evolving slang.
+* **The Takeaway:** Hardcoding syntactic rules simply did not scale. You cannot write a rule for every conceivable way a human might phrase a thought.
+
+### Part 2: The Deep Learning Revolution (15 Mins)
+
+* **The Paradigm Shift:** Introduce the pivot from *instructing* computers on the rules of language to *showing* them vast amounts of text and letting them figure out the associations themselves.
+* **Context is Everything:** Explain the foundational linguistic theory by J.R. Firth: *"You shall know a word by the company it keeps."* Deep learning models look at a word and learn its meaning based on the words that frequently surround it.
+
+### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
+
+* **Visualizing the Math:** This is where you introduce the **3Blue1Brown** concepts. Highly recommend pointing your students to Grant Sanderson's video: *"But what is a GPT? Visual intro to transformers."*
+* **What is an Embedding?** Explain that models don't read text; they read numbers. An embedding is a high-dimensional vector (a list of numbers) that represents a word.
+* **The Spatial Metaphor:** Ask students to imagine a 3D space. If we map words as coordinates, words with similar meanings (like "dog" and "puppy") will be clustered close together. Now, ask them to scale that imagination up to 10,000 dimensions. That is the shared vector space.
+
+### Part 4: Semantic Mathematics (20 Mins)
+
+* **Encoding Meaning:** Explain that the distance and direction between vectors encode actual semantics.
+* **The Crown Jewel Example:** Introduce the famous vector equation. If you take the vector for "King", subtract the vector for "Man" (removing the male concept), and add the vector for "Woman" (adding the female concept), you land on a coordinate in the vector space that is astonishingly close to the word "Queen".
+* **Formula:** $\vec{w}_{king} - \vec{w}_{man} + \vec{w}_{woman} \approx \vec{w}_{queen}$
+
+
+* **Other Examples:** Mention that this works for grammar (e.g., $\vec{w}_{walking} - \vec{w}_{walk} + \vec{w}_{swim} \approx \vec{w}_{swimming}$) and geography (e.g., $\vec{w}_{Paris} - \vec{w}_{France} + \vec{w}_{Italy} \approx \vec{w}_{Rome}$).
+
+---
+
+## Python Practical: Exploring Vector Spaces (40 Mins)
+
+For the practical, we will use `gensim`, a robust Python library for topic modeling and document similarity, to download a pre-trained set of GloVe (Global Vectors for Word Representation) embeddings.
+
+> **Prerequisites:** Have your students install the library by running `pip install gensim` in their terminal or Jupyter Notebook.
+
+### The Code
+
+```python
+import gensim.downloader as api
+
+print("Downloading/Loading the word vector model... (This may take a minute or two)")
+# We use a relatively small 50-dimensional model for speed in a classroom setting
+model = api.load("glove-wiki-gigaword-50")
+print("Model loaded successfully!\n")
+
+# --- EXPERIMENT 1: Finding Similar Words ---
+print("--- Experiment 1: Nearest Neighbors ---")
+word = "computer"
+print(f"Words most similar to '{word}':")
+for similar_word, similarity_score in model.most_similar(word, topn=5):
+    # Formatting the score to 2 decimal places using standard Python formatting
+    print(f"- {similar_word} (Score: {similarity_score:.2f})")
+print("\n")
+
+
+# --- EXPERIMENT 2: Semantic Mathematics ---
+# King - Man + Woman = ?
+print("--- Experiment 2: Vector Arithmetic ---")
+print("Equation: King - Man + Woman = ?")
+
+# In Gensim, positive=[additions], negative=[subtractions]
+result = model.most_similar(positive=['king', 'woman'], negative=['man'], topn=1)
+
+print(f"Result: {result[0][0]} (Confidence: {result[0][1]:.2f})\n")
+
+
+# --- EXPERIMENT 3: The Odd One Out ---
+print("--- Experiment 3: Finding the Outlier ---")
+word_list = ["breakfast", "cereal", "dinner", "lunch", "car"]
+print(f"List: {word_list}")
+
+outlier = model.doesnt_match(word_list)
+print(f"The model thinks the odd one out is: '{outlier}'")
+
+```
+
+### How to Guide the Practical
+
+1. **Run the Basics:** Have students run the script exactly as written so they can see the magic happen instantly.
+2. **Experimentation:** Encourage them to change the words in **Experiment 1**. Have them look up slang or complex verbs to see how the model groups them.
+3. **Break the Math:** Have them try to come up with their own semantic equations in **Experiment 2** (e.g., `doctor - human + dog = vet`). Warn them that it doesn't *always* work perfectly, which opens up a great discussion on the biases and limitations of training data!
+
 ---
 
 ## 1. What Is a Language Model?
