@@ -49,7 +49,12 @@ At each timestep t:
 
 - RLHF (Week 13):
 
--  🧩 🚀 the LLM is the policy; 
+-  _Concept_ 🧩 🚀 the LLM is the policy; 
+
+
+-  _Concept_ 🧩 🚀 Policy network is the transformer; 
+
+![image](../images/rl_policy.png)
 
 - the "environment" is a single-step bandit problem (generate a response, receive a reward, episode ends).
 - GRPO / RLOO (Week 13): group-relative variants of policy gradient methods for reasoning tasks.
