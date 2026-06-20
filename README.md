@@ -478,6 +478,8 @@ python practicals/week01_practical.py
 
 ## Acknowledgements and courses for inspiration
 
+- [Stanford CS336 Language Modelling from Scratch](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV) and [course webpage](https://cs336.stanford.edu/)
+
 - Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
 
 - `NanoGPT`
