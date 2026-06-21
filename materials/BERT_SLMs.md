@@ -7,3 +7,7 @@
 - Global South SLMs finetuned for finance, healthcare, etc. can still outperform general purpose LLMs
 
 - Other niche applications: Text-to-SQL (cite my papers)
+
+- ⚠️ Assignment/project: Sarvam model applied to finance/healthcare
+
+- ⚠️ Assignment/project: Implement SLM on low-resource language such as Swahili
