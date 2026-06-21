@@ -5,11 +5,11 @@
 This first lecture sets the scene. We ask: *what is a language model, why has it become so powerful, and how did we get here?*
 
 
-This is a fantastic narrative arc for an introductory lecture. Framing the evolution of LLMs as a transition from the rigid, rules-based world of Good Old-Fashioned AI (GOFAI) to the fluid, pattern-matching world of deep learning gives students the perfect historical and technical context.
+A fantastic narrative arc for an introductory lecture. Framing the evolution of LLMs as a transition from the rigid, rules-based world of Good Old-Fashioned AI (GOFAI) to the fluid, pattern-matching world of deep learning gives students the perfect historical and technical context.
 
 Just a quick, gentle correction on the vector math before you present it: the famous analogy formula is actually $\vec{w}_{king} - \vec{w}_{man} + \vec{w}_{woman} \approx \vec{w}_{queen}$, but you have the exact right idea!
 
-Here is a comprehensive 2-hour lesson plan and Python practical designed to bring this narrative to life.
+
 
 ---
 
@@ -40,8 +40,9 @@ Here is a comprehensive 2-hour lesson plan and Python practical designed to brin
 
 - 🤔 🎥 [Video by 3blue1brown on how word vectors encode meaning](https://www.youtube.com/shorts/FJtFZwbvkI4)
 
-- 🤔 🎥 [Video by 3blue1brown on how transfomes and GPT works](https://www.youtube.com/watch?v=wjZofJX0v4M)
+- 🤔 🎥 [Video by 3blue1brown on how transformers and GPT works](https://www.youtube.com/watch?v=wjZofJX0v4M)
 
+- [basic introduction to unsupervised machine learning](https://cambiotraining.github.io/ml-unsupervised/)
 
 ### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
 
