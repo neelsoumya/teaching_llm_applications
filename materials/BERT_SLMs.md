@@ -10,4 +10,4 @@
 
 - ⚠️ Assignment/project: Sarvam model applied to finance/healthcare
 
-- ⚠️ Assignment/project: Implement SLM on low-resource language such as Swahili
+- ⚠️ Assignment/project: Implement SLM on low-resource language such as Swahili/some other hypothetical low resource language. This will show importance of tokenizers and data.
