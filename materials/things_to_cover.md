@@ -1,6 +1,6 @@
 # Things to cover
 
-- token budget
+- token budget (you train until run out of money! )
 
 - DAMPTP LLM course material see
 
