@@ -360,3 +360,8 @@ Topics include:
 > **The Bitter Lesson → Scaling Laws → GPT-3 → Chinchilla → Data and Compute Limits**
 >
 > Understanding this progression provides a foundation for understanding both the successes and the future challenges of large language models.
+
+
+## 🎮 💡Practicals
+
+- [Data limited LLMs](../practicals/data_limited_lms.py)
