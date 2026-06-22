@@ -44,6 +44,12 @@ Just a quick, gentle correction on the vector math before you present it: the fa
 
 - [basic introduction to unsupervised machine learning](https://cambiotraining.github.io/ml-unsupervised/)
 
+- Bag of words model: how that fails to capture _context_. 
+
+- _Concept_ 🧩 🚀 Context is everything!
+
+
+
 ### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
 
 * **Visualizing the Math:** This is where you introduce the **3Blue1Brown** concepts. Highly recommend pointing your students to Grant Sanderson's video: *"But what is a GPT? Visual intro to transformers."*
