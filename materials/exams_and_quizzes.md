@@ -12,6 +12,11 @@ Portfolio:
 
 - ⚠️ Assignment/project: Implement SLM on low-resource language such as Swahili/some other hypothetical low resource language. This will show importance of tokenizers and data.
 
+- ⚠️ Small language models (SLMs) for low resource languages
+
+- ⚠️ SLMs finetuned on specific use cases for finance/healthcare
+
+- ⚠️ Training AI models on private data on-premise (healthcare, NASA, space, government sectors, defense, TREs [trusted research environments] etc.)
 
 
 
