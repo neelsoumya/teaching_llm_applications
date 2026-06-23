@@ -24,8 +24,7 @@ Portfolio:
 
 * Start with a clear scenario and a paper prototype before coding.
 * Keep scope small: a single, well-polished interaction beats many half-built features.
-* Prioritize explainability and uncertainty over fancy visuals.
-* Test early with real people and iterate.
+
 
 ---
 
