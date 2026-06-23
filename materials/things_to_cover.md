@@ -5,3 +5,9 @@
 - DAMPTP LLM course material see
 
 - `bluedotimpact` practical
+
+- Small language models (SLMs) for low resource languages
+
+- SLMs finetuned on specific use cases for finance/healthcare
+
+- Training AI models on private data on-premise

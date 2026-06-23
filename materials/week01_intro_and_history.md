@@ -46,7 +46,13 @@ Just a quick, gentle correction on the vector math before you present it: the fa
 
 - Bag of words model: how that fails to capture _context_. 
 
-- _Concept_ 🧩 🚀 Context is everything!
+- _Concept_ 🧩 🚀 Context is everything! Bag of words model cannot capture context
+
+- Enter LLMs
+
+- transformers model long-range dependencies in text
+
+- Reading: Attention is all you need
 
 
 
