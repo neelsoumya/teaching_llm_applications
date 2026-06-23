@@ -10,5 +10,5 @@
 
 - SLMs finetuned on specific use cases for finance/healthcare
 
-- Training AI models on private data on-premise (healthcare, NASA, space, government sectors, defense, etc.)
+- Training AI models on private data on-premise (healthcare, NASA, space, government sectors, defense, TREs [trusted research environments] etc.)
 
