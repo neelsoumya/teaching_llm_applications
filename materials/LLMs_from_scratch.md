@@ -4,7 +4,9 @@
 
 - [LLMs from scratch by Sebastian Rashcka book and video]
 
-- [LLMs from scratch Vizuara]
+- [LLMs from scratch Vizuara](https://www.youtube.com/watch?v=Xpr8D6LeAtw)
+
+- [Reasoning LLMs from scratch](https://www.youtube.com/watch?v=k2QEElQ9eeM)
 
 - [LLMs from scratch Karpathy](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 
