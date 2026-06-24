@@ -475,6 +475,16 @@ python practicals/week01_practical.py
 
 ---
 
+## Additional material
+
+- [LLMs from scratch](materials/LLMs_from_scratch.md)
+
+- [BERT SLMs](materials/BERT_SLMs.md)
+
+- [Scaling](materials/scaling.md)
+
+- [Things to cover](materials/things_to_cover.md)
+
 
 ## Acknowledgements and courses for inspiration
 
