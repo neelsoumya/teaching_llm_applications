@@ -2,6 +2,8 @@
 
 - Lecture and practical on LLMs from scratch
 
+- [LLMs from scratch by Sebastian Rashcka book and video]
+
 - [LLMs from scratch Vizuara]
 
 - [LLMs from scratch Karpathy](https://www.youtube.com/watch?v=kCc8FmEb1nY)
