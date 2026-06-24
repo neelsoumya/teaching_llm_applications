@@ -12,3 +12,6 @@
 
 - Training AI models on private data on-premise (healthcare, NASA, space, government sectors, defense, TREs [trusted research environments] etc.)
 
+- [Paged attention Vizuara video](https://www.youtube.com/watch?v=-AB6m0Spo6c)
+
+- [KV cache Vizuara video](https://www.youtube.com/watch?v=CxRGWfcGVbs)
