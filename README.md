@@ -483,6 +483,8 @@ python practicals/week01_practical.py
 
 - [Scaling](materials/scaling.md)
 
+- [Explainable AI in the context of LLMs](materials/explainableAI.md)
+
 - [Things to cover](materials/things_to_cover.md)
 
 
