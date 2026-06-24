@@ -244,6 +244,7 @@ Students can:
 * Evaluate reasoning performance
 * Investigate scaling trends
 
+
 🔗 [https://github.com/WANGXinyiLinda/reasoning-scaling-law](https://github.com/WANGXinyiLinda/reasoning-scaling-law)
 
 ---
