@@ -18,6 +18,9 @@ Portfolio:
 
 - ⚠️ Training AI models on private data on-premise (healthcare, NASA, space, government sectors, defense, TREs [trusted research environments] etc.)
 
+- SLMs/guardrails
+       > train on curated datasets so that they remain on task remain on task  do not hallucinate cannot be jailbroken. Use SLMs for these tasks (trained for a specific task and on curated datasets)
+
 
 
 ## Hints & quick checklist

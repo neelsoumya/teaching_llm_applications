@@ -11,3 +11,6 @@
 - ⚠️ Assignment/project: Sarvam model applied to finance/healthcare
 
 - ⚠️ Assignment/project: Implement SLM on low-resource language such as Swahili/some other hypothetical low resource language. This will show importance of tokenizers and data.
+
+- SLMs/guardrails
+       > train on curated datasets so that they remain on task remain on task  do not hallucinate cannot be jailbroken. Use SLMs for these tasks (trained for a specific task and on curated datasets)
