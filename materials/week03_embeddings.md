@@ -14,6 +14,10 @@ This week we go deep into *embeddings* — how discrete token IDs become dense, 
 
 - embeddings optimized for specific task. See why and see notes for UG class [here](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private) and [here](https://github.com/neelsoumya/public_teaching_unsupervised_learning/) and [notes](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/pca_notes_advanced_2.pdf) and [notes](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private/tree/main/supervisions)
 
+- [slides from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
+
+## Other thoughts
+
 -  Lecture Prep: Fundamentals of Embeddings and Large Language Models
 
 - 1. Core Concepts: Why Do We Need Embeddings?
@@ -48,7 +52,13 @@ For highly visual and intuitive breakdowns of these exact concepts, the followin
 * **[Large Language Models Explained Briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs):** A visually compelling introduction covering how neural networks, chatbots, and transformers process and generate human language.
 * **[But What Is a Neural Network?](https://www.youtube.com/watch?v=aircAruvnKk):** This foundational lesson breaks down the math underlying deep learning layers, weights, and biases, which is vital for understanding how embedding vectors are manipulated mathematically.
 
+
 ---
+
+## Practicals
+
+- [practical material from book and github repo by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch)
+
 
 ## 1. From Tokens to Vectors
 
