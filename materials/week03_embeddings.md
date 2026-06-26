@@ -14,6 +14,40 @@ This week we go deep into *embeddings* — how discrete token IDs become dense, 
 
 - embeddings optimized for specific task. See why and see notes for UG class [here](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private) and [here](https://github.com/neelsoumya/public_teaching_unsupervised_learning/) and [notes](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/pca_notes_advanced_2.pdf) and [notes](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private/tree/main/supervisions)
 
+-  Lecture Prep: Fundamentals of Embeddings and Large Language Models
+
+- 1. Core Concepts: Why Do We Need Embeddings?
+Computers, neural networks, and mathematical algorithms inherently process numbers—they cannot natively comprehend raw text, symbols, or semantic nuance. To bridge this gap, textual data must be converted into a numerical format. 
+
+However, simple methods like assigning a unique integer to each word or using one-hot encoding fall short because they fail to capture meaning. 
+
+### The Evolution of Representations
+* **Discrete Symbols (The Problem):** If "apple" is assigned the index `1` and "orange" is assigned `2`, a mathematical model treats them as completely independent units. The numerical distance between 1 and 2 holds no intrinsic semantic relationship, meaning the model cannot infer that both are types of fruit.
+* **Vector Spaces (The Solution):** Embeddings map discrete symbols into a continuous, high-dimensional vector space. In this space, geometric proximity correlates directly with semantic similarity. Words or concepts with similar meanings are located closer together, allowing models to leverage mathematical tools (like cosine similarity) to capture human-like intuition.
+
+
+
+---
+
+-  End-to-End Training and Task Specificity
+
+A crucial point for students to grasp is that embeddings are **not static or absolute representations**; they are tied explicitly to a specific objective and are trained end-to-end.
+
+* **Context & Task Definition:** When a representation is optimized for a particular task, the dimensions of the embedding learn to reflect the properties most useful for solving that task. The objective dictates the underlying geometry of the vector space.
+
+* **Example: Word Prediction:** If the target task is next-word prediction (the foundational objective of LLMs), the trained embeddings will manifest as highly specific numbers optimized exclusively to facilitate that prediction loop. 
+
+* **End-to-End Optimization:** Rather than manually assigning features, initial embedding weights are usually randomized. Through the process of backpropagation, the gradients flow all the way back to the input embedding layer. The network iteratively tunes these vector coordinates until the spatial layout minimizes the error rate of the target task.
+
+---
+
+-  Recommended Educational Resources (3Blue1Brown)
+
+For highly visual and intuitive breakdowns of these exact concepts, the following video lessons from the 3Blue1Brown channel are exceptional tools for both lecture planning and student reference:
+
+* **[Large Language Models Explained Briefly](https://www.youtube.com/watch?v=LPZh9BOjkQs):** A visually compelling introduction covering how neural networks, chatbots, and transformers process and generate human language.
+* **[But What Is a Neural Network?](https://www.youtube.com/watch?v=aircAruvnKk):** This foundational lesson breaks down the math underlying deep learning layers, weights, and biases, which is vital for understanding how embedding vectors are manipulated mathematically.
+
 ---
 
 ## 1. From Tokens to Vectors
