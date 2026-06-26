@@ -4,6 +4,16 @@
 
 This week we go deep into *embeddings* — how discrete token IDs become dense, meaningful vectors, how those vectors encode semantic relationships, and how to work with them in practice.
 
+## Thoughts
+
+- [Embeddings and why we need them](https://cambiotraining.github.io/ml-unsupervised/materials/normalization.html#hands-on-coding) see section on categorical data and encoding
+
+- words in similar context have similar meanings
+
+- we need embeddings which take care of context
+
+- embeddings optimized for specific task. See why and see notes for UG class [here](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private) and [here](https://github.com/neelsoumya/public_teaching_unsupervised_learning/) and [notes](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/pca_notes_advanced_2.pdf) and [notes](https://github.com/neelsoumya/teaching_unsupervised_machine_learning_private/tree/main/supervisions)
+
 ---
 
 ## 1. From Tokens to Vectors
