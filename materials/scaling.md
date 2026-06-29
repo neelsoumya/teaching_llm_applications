@@ -21,7 +21,7 @@
 
 - `treat intelligence less as a single score and more as a family of efficiency frontiers under task and resource constraints`
 
-- Energetic Niche Theory of Intelligence
+- 🤔❓more derivations here [Energetic Niche Theory of Intelligence](https://github.com/neelsoumya/energetic_theory_intelligence)
 
 - For biology, those costs are metabolic, attentional, developmental, and social. For AI, they are FLOPs, latency, tokens, memory bandwidth, training data, and dollar cost.
 
