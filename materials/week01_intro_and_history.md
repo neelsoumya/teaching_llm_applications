@@ -215,6 +215,34 @@ One of the most surprising properties: LLMs can perform new tasks **just from ex
 
 ---
 
+
+## Intro
+
+- [Stanford CS336 class](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV)
+
+- Design decisions
+
+- Loss function
+
+- Optimizer
+
+- Initialization scale
+
+- Learning rate schedule
+
+- Regularization
+
+- Batch size
+
+- Assignment: BPE encoding and create model while doing _Resource accounting_
+
+- `DGX B200`
+
+- Operator fusion, flash attention
+
+- `Minimize data movement` principle
+
+
 ## 4. Common Applications
 
 | Domain | Example Application |
