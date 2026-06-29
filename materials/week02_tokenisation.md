@@ -6,6 +6,74 @@ Before a language model can process text, that text must be converted into a seq
 
 ---
 
+- [slides from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
+
+
+## 🎮 Practical
+
+- 🎮 [code from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
+
+```python
+from importlib.metadata import version
+
+import os
+import requests
+
+if not os.path.exists("the-verdict.txt"):
+    url = (
+        "https://raw.githubusercontent.com/rasbt/"
+        "LLMs-from-scratch/main/ch02/01_main-chapter-code/"
+        "the-verdict.txt"
+    )
+    file_path = "the-verdict.txt"
+
+    response = requests.get(url, timeout=30)
+    response.raise_for_status()
+    with open(file_path, "wb") as f:
+        f.write(response.content)
+
+with open("the-verdict.txt", "r", encoding="utf-8") as f:
+    raw_text = f.read()
+    
+print("Total number of character:", len(raw_text))
+print(raw_text[:99])
+
+
+import re
+
+text = "Hello, world. This, is a test."
+result = re.split(r'(\s)', text)
+
+print(result)
+
+
+result = re.split(r'([,.]|\s)', text)
+
+print(result)
+
+# Strip whitespace from each item and then filter out any empty strings.
+result = [item for item in result if item.strip()]
+print(result)
+
+
+
+text = "Hello, world. Is this-- a test?"
+
+result = re.split(r'([,.:;?_!"()\']|--|\s)', text)
+result = [item.strip() for item in result if item.strip()]
+print(result)
+
+
+preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
+preprocessed = [item.strip() for item in preprocessed if item.strip()]
+print(preprocessed[:30])
+
+
+print(len(preprocessed))
+
+```
+
+
 ## 1. Why Tokenisation?
 
 Neural networks require numerical inputs. Text is a sequence of characters. The simplest approach would be character-level modelling — but:

@@ -16,6 +16,12 @@ This week we go deep into *embeddings* — how discrete token IDs become dense, 
 
 - [slides from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
 
+
+## Practical
+
+- [code from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
+
+
 ## Other thoughts
 
 -  Lecture Prep: Fundamentals of Embeddings and Large Language Models
