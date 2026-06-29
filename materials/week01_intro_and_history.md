@@ -242,6 +242,9 @@ One of the most surprising properties: LLMs can perform new tasks **just from ex
 
 - `Minimize data movement` principle
 
+- Shard memory: split data o split models, layers, sequences, etc.
+
+
 
 ## 4. Common Applications
 
