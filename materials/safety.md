@@ -38,7 +38,7 @@
 
 - Small language models (SLMs) for low resource languages
 
-- SLMs (for finance, guardrails, etc.() which are specific to that problem
+- SLMs (for finance, guardrails, etc.) which are specific to that problem
 
 
 - Toby Smythe and Simon Davies guest lecture
