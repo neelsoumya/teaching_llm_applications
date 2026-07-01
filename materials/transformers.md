@@ -24,6 +24,13 @@
 
 - ![1 layer Transformer with Attention](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
 
+- _Concept_ 🧩 🚀 Concept behind attention
+
+> The idea with attention is to build a mechanism by which a neural network can give more weight to some part of a sequence and less weight to others contextually, depending on the current input being processed
+
+![image](https://deeplearningwithpython.io/images/ch15/attention-concept.fde57742.png)
+
+
 ## Basics of RNNs
 
 - [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
