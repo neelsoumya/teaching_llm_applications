@@ -24,6 +24,9 @@
 
 - ![1 layer Transformer with Attention](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
 
+## Basics of RNNs
+
+- [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
 
 ## 🎮 Practicals
 
