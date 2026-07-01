@@ -12,6 +12,18 @@
 
 - ![Architecture](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
 
+- 🧩 🚀 Unlike recurrent neural networks (RNNs), Transformers are parallelizable. This makes them efficient on hardware like GPUs and TPUs. The main reasons is that Transformers replaced recurrence with attention, and computations can happen simultaneously. Layer outputs can be computed in parallel, instead of a series like an RNN.
+
+- 🧩 🚀 Unlike RNNs (such as seq2seq, 2014) or convolutional neural networks (CNNs) (for example, ByteNet), Transformers are able to capture distant or long-range contexts and dependencies in the data between distant positions in the input or output sequences. Thus, longer connections can be learned. 
+
+> Attention allows each location to have access to the entire input at each layer, while in RNNs and CNNs, the information needs to pass through many processing steps to move a long distance, which makes it harder to learn.
+
+## Architectures
+
+- ![RNN + Attention](https://www.tensorflow.org/images/tutorials/transformer/RNN+attention-words.png)
+
+- ![1 layer Transformer with Attention](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
+
 
 ## Practicals
 

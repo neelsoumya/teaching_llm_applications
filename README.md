@@ -477,6 +477,8 @@ python practicals/week01_practical.py
 
 ## Additional material
 
+- [Transformers fundamentals](materials/transformers.md)
+
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
 
 - [BERT SLMs](materials/BERT_SLMs.md)
