@@ -35,6 +35,8 @@
 
 - [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
 
+> RNNs, on the other hand, lack any mechanism to refer back to a previous section of a sequence directly. All information must, by design, be passed through an RNN cell’s internal state in a loop, through every position in a sequence. It’s a bit like finishing this book, closing it, and trying to implement that weather prediction model entirely from memory.
+
 ## Basics of transformers (VERY GOOD)
 
 - [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
