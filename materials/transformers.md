@@ -28,6 +28,10 @@
 
 - [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
 
+## Basics of transformers (VERY GOOD)
+
+- [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
 ## 🎮 Practicals
 
 - 🎮 [code](https://www.tensorflow.org/text/tutorials/transformer)
