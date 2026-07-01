@@ -25,6 +25,8 @@
 - ![1 layer Transformer with Attention](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
 
 
-## Practicals
+## 🎮 Practicals
 
 - 🎮 [code](https://www.tensorflow.org/text/tutorials/transformer)
+
+- 🎮 [keras transformers](https://keras.io/examples/nlp/text_classification_with_transformer/)
