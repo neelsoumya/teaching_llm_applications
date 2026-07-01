@@ -28,9 +28,17 @@
 
 - _Concept_ 🧩 🚀 Concept behind attention
 
+- Some concepts and text from an [online book](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
+> humans can be selective and contextual in how we pull information from text.
+
 > The idea with attention is to build a mechanism by which a neural network can give more weight to some part of a sequence and less weight to others contextually, depending on the current input being processed
 
 ![image](https://deeplearningwithpython.io/images/ch15/attention-concept.fde57742.png)
+
+> With attention, our goal is to give the model a way to score every single vector in our source sequence based on its relevance to the current word we are trying to predict
+
+- Eigensum and dot product notation
 
 
 ## Basics of RNNs
