@@ -51,7 +51,28 @@ scores = softmax(scores)
 combined = np.sum(scores * sources)
 ```
 
-> But how should we compute this relevance score? When researchers first worked with attention, this question was a big topic of inquiry. It turns out that one of the most straightforward approaches is best. We can use a dot-product as a simple measure of the distance between target and source vectors. If the source and target vectors are close together, we assume that means the source token is relevant to our prediction. At the end of this chapter, we will examine why this assumption makes intuitive sense.
+> But how should we compute this relevance score? When researchers first worked with attention, this question was a big topic of inquiry. It turns out that one of the most straightforward approaches is best. We can use a dot-product as a simple measure of the distance between target and source vectors. If the source and target vectors are close together, we assume that means the source token is relevant to our prediction. 
+
+> We can make our snippet more complete by handling the entire target sequence at once — it will be equivalent to running our previous snippet in a loop for each token in the target sequence. When both target and source are sequences, the attention scores will be a matrix. Each row represents how much a target word will value a source word in the weighted sum (see figure 15.5). We will use the Einsum notation as a convenient way to write the dot-product and weighted sum:
+
+```python
+def dot_product_attention(target, source):
+    # Takes the dot-product between all target and source vectors,
+    # where b = batch size, t = target length, s = source length, and d
+    # = vector size
+    scores = np.einsum("btd,bsd->bts", target, source)
+    scores = softmax(scores, axis=-1)
+    # Computes a weighted sum of all source vectors for each target
+    # vector
+    return np.einsum("bts,bsd->btd", scores, source)
+
+dot_product_attention(target, source)
+```
+
+
+- _Concept_ 🧩 🚀 `parameterized attention`
+> much richer if we give the model parameters to control the attention score. If we project both source and target vectors with Dense layers, the model can find a good shared space where source vectors are close to target vectors if they help the overall prediction quality. Similarly, we should allow the model to project the source vectors into an entirely separate space before they are combined and once again after the summation.
+
 
 ## Basics of RNNs
 
