@@ -41,8 +41,17 @@
 
 ## Eigensum
 
-- [Eigensum and dot product notation form Francois Chollet's online book]()
+- [Eigensum and dot product notation form Francois Chollet's online book (Chapter 15)](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
+> For attention to work well, we want to avoid passing information about important tokens through a loop potentially as long as our combined source and target sequence length — this is where RNNs start to fail. A simple way to do this is to take a weighted sum of all the source vectors based on this score we will compute. It would also be convenient if the sum of all attention scores for a given target were 1, as this would give our weighted sum a predictable magnitude. We can achieve this by running the scores through a softmax function — something like this, in NumPy pseudocode:
+
+```python
+scores = [score(target, source) for source in sources]
+scores = softmax(scores)
+combined = np.sum(scores * sources)
+```
+
+> But how should we compute this relevance score? When researchers first worked with attention, this question was a big topic of inquiry. It turns out that one of the most straightforward approaches is best. We can use a dot-product as a simple measure of the distance between target and source vectors. If the source and target vectors are close together, we assume that means the source token is relevant to our prediction. At the end of this chapter, we will examine why this assumption makes intuitive sense.
 
 ## Basics of RNNs
 
