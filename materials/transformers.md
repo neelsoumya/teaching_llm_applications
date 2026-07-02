@@ -38,7 +38,10 @@
 
 > With attention, our goal is to give the model a way to score every single vector in our source sequence based on its relevance to the current word we are trying to predict
 
-- Eigensum and dot product notation
+
+## Eigensum
+
+- [Eigensum and dot product notation form Francois Chollet's online book]()
 
 
 ## Basics of RNNs

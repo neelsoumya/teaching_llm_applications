@@ -522,7 +522,10 @@ python practicals/week01_practical.py
 
 7. **MIT OCW 15.773, Lecture 10: Adapting LLMs with Parameter-Efficient Fine-Tuning** — useful for the post-pretraining part of the course, especially **instruction tuning** and adapting base models. ([MIT OpenCourseWare][7])
 
-8. [deeplearning.ai](https://learn.deeplearning.ai/) search for transformers.
+-  [deeplearning.ai](https://learn.deeplearning.ai/) search for transformers.
+
+- [Francois Chollet's online book](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
 
 A sensible design pattern would be to use **CS224N** for the course spine, **CS324** for the “LLM systems + theory” lens, **MIT’s transformer lecture** for the internals exposition, and **Berkeley’s courses** for safety, interpretability, and application modules. ([Stanford University][2])
 
