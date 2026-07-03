@@ -73,6 +73,36 @@ dot_product_attention(target, source)
 - _Concept_ 🧩 🚀 `parameterized attention`
 > much richer if we give the model parameters to control the attention score. If we project both source and target vectors with Dense layers, the model can find a good shared space where source vectors are close to target vectors if they help the overall prediction quality. Similarly, we should allow the model to project the source vectors into an entirely separate space before they are combined and once again after the summation.
 
+- _Concept_ 🧩 🚀 key-value pairs
+
+> We can also adopt a slightly different naming for inputs that has become standard in the field. What we just wrote is roughly summarized as sum(score(target, source) * source). We will write this equivalently with different input names as sum(score(query, key) * value). This three-argument version is more general — in rare cases, you might not want to use the same vector to score your source inputs as you use to sum your source inputs.
+
+> The terminology comes from search engines and recommender systems. Imagine a search tool to look up photos in a database — the “query” is your search term, the “keys” are photo tags you use to match with the query, and finally, the “values” are the photos themselves (figure 15.6). The attention mechanism we are building is roughly analogous to this sort of lookup.
+
+![image](https://deeplearningwithpython.io/images/ch15/query-key-value.b57cceb0.png)
+
+
+- parameterized attention using our new key-value pairs
+
+```python
+query_dense = layers.Dense(dim)
+key_dense = layers.Dense(dim)
+value_dense = layers.Dense(dim)
+output_dense = layers.Dense(dim)
+
+def parameterized_attention(query, key, value):
+    query = query_dense(query)
+    key = key_dense(key)
+    value = value_dense(value)
+    scores = np.einsum("btd,bsd->bts", query, key)
+    scores = softmax(scores, axis=-1)
+    outputs = np.einsum("bts,bsd->btd", scores, value)
+    return output_dense(outputs)
+
+parameterized_attention(query=target, key=source, value=source)
+```
+
+- This block is a perfectly functional attention mechanism! We just wrote a function that will allow the model to pull information from anywhere in the source sequence, contextually, depending on the target word we are decoding.
 
 ## Basics of RNNs
 
