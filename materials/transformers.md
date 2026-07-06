@@ -110,6 +110,60 @@ Here is the equation for the Scaled Dot-Product Attention mechanism as described
 
 ![image](../images/scaled.png)
 
+
+> The other has to do with the expressivity of the attention mechanism. The softmax sum we are doing is powerful — it allows a direct connection across distant parts of a sequence. But the summation is also blunt: if the model tries to attend to too many tokens at once, the interesting features of individual source tokens will get “washed out” in the combined representation. A simple trick that works well is to do this attention operation several times for the same sequence, with several different attention heads running the same computation with different parameters:
+
+```python
+query_dense = [layers.Dense(head_dim) for i in range(num_heads)]
+key_dense = [layers.Dense(head_dim) for i in range(num_heads)]
+value_dense = [layers.Dense(head_dim) for i in range(num_heads)]
+output_dense = layers.Dense(head_dim * num_heads)
+
+def multi_head_attention(query, key, value):
+    head_outputs = []
+    for i in range(num_heads):
+        query = query_dense[i](query)
+        key = key_dense[i](key)
+        value = value_dense[i](value)
+        scores = np.einsum("btd,bsd->bts", target, source)
+        scores = softmax(scores / math.sqrt(head_dim), axis=-1)
+        head_output = np.einsum("bts,bsd->btd", scores, source)
+        head_outputs.append(head_output)
+    outputs = ops.concatenate(head_outputs, axis=-1)
+    return output_dense(outputs)
+
+multi_head_attention(query=target, key=source, value=source)
+```
+
+> By projecting the query and key differently, one head might learn to match the subject of the source sentence, while another head might attend to punctuation. This multi-headed attention avoids the limitation of needing to combine the entire source sequence with a single softmax sum
+
+![image](https://deeplearningwithpython.io/images/ch15/multi-head-attention.718456ad.png)
+
+
+- In `Keras` you will use the `MultiHeadAttention` layer:
+
+```python
+multi_head_attention = keras.layers.MultiHeadAttention(
+    num_heads=num_heads,
+    head_dim=head_dim,
+)
+multi_head_attention(query=target, key=source, value=source)
+```
+
+> However, the authors of “Attention is all you need” realized you could go further and use attention as a general mechanism for handling all sequence data in a model. Although so far we have only looked at attention as a way to handle information passing between two sequences, you could also use attention as a way to let a sequence attend to itself:
+
+```python
+multi_head_attention(key=source, value=source, query=source)
+```
+
+> This is called self-attention, and it is quite powerful. With self-attention, each token can attend to every token in its own sequence, including itself, allowing the model to learn a representation of the word in context.
+
+> Consider an example sentence: “The train left the station on time.” Now, consider one word in the sentence: “station.” What kind of station are we talking about? Could it be a radio station? Maybe the International Space Station? With self-attention, the model could learn to give a high attention score to the pair of “station” and “train,” summing the vector used to represent “train” into the representation of the word “station.”
+
+
+
+
+
 ## Basics of RNNs
 
 - [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
