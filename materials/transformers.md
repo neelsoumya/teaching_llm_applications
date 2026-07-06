@@ -104,6 +104,12 @@ parameterized_attention(query=target, key=source, value=source)
 
 - This block is a perfectly functional attention mechanism! We just wrote a function that will allow the model to pull information from anywhere in the source sequence, contextually, depending on the target word we are decoding.
 
+> The “Attention is all you need” authors made two more changes to our mechanism through trial and error. The first is a simple scaling factor. When input vectors get long, the dot-product scores can get quite large, which can affect the stability of our softmax gradients. The fix is simple: we can scale down our softmax scores slightly. Scaling by the square root of the vector length works well for any vector size.
+
+Here is the equation for the Scaled Dot-Product Attention mechanism as described by the authors. In this formula, the dot product of the queries ($Q$) and keys ($K$) is divided by the square root of the dimension of the keys ($d_k$), which is the specific scaling factor they found to improve gradient stability.
+
+![image](../images/scaled.png)
+
 ## Basics of RNNs
 
 - [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
