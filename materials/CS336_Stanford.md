@@ -72,6 +72,18 @@ Imagine you are handed a piece of paper with a complex math word problem on it.
 
 - quantize, distill
 
+### Week 1 assignment/practical
+
+- [week 1](https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_assignment1_basics.pdf)
+
+- FLOP budget -> hyperparameters
+
+- Scaling laws Flops budget = 6 * N * D: use a bigger model (N) or more tokens (D)? Hoffman2022 (Chinchilla caling laws)
+
+- 🤔 `D = 20 * N` 70B parameter model should be trained on 1.4T tokens
+
+
+
 ## Divine Benevolence
 
 ![image](https://github.com/stanford-cs336/lectures/blob/main/images/divine-benevolence.png)
