@@ -479,6 +479,8 @@ python practicals/week01_practical.py
 
 - [Transformers fundamentals](materials/transformers.md)
 
+- [Stanford CS336 my own notes](materials/CS336_Stanford.md)
+
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
 
 - [BERT SLMs](materials/BERT_SLMs.md)
