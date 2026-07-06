@@ -66,6 +66,11 @@ Imagine you are handed a piece of paper with a complex math word problem on it.
 * **The Prefill Phase:** You read the entire paragraph at once, understand the context, set up the equation in your head (building the cache), and write down the very first number of your answer. 
 * **The Decode Phase:** You write down the rest of the numbers one by one to finish the equation, relying on your memory of the problem rather than re-reading the paragraph for every single digit.
 
+![image](../images/prefill.png)
+
+### Remedies
+
+- quantize, distill
 
 ## Divine Benevolence
 
