@@ -4,7 +4,7 @@
 
 - [CS336 Stanford coursework](https://cs336.stanford.edu/#coursework)
 
-- `nanoGPT`
+- [`nanoGPT`](https://github.com/karpathy/nanogpt)
 
 - Google Colab and restrict to only a few open-source models
 
