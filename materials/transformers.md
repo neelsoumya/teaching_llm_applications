@@ -18,11 +18,40 @@
 
 > Attention allows each location to have access to the entire input at each layer, while in RNNs and CNNs, the information needs to pass through many processing steps to move a long distance, which makes it harder to learn.
 
+## Basics of RNNs
+
+- [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
+
+> RNNs, on the other hand, lack any mechanism to refer back to a previous section of a sequence directly. All information must, by design, be passed through an RNN cell’s internal state in a loop, through every position in a sequence. It’s a bit like finishing this book, closing it, and trying to implement that weather prediction model entirely from memory.
+
+## Basics of transformers (VERY GOOD)
+
+- [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
+
 ## Architectures
 
 - ![RNN + Attention](https://www.tensorflow.org/images/tutorials/transformer/RNN+attention-words.png)
 
 - ![1 layer Transformer with Attention](https://www.tensorflow.org/images/tutorials/transformer/Transformer-1layer-words.png)
+
+## Basics
+
+- an integer sequence as a natural numeric representation for text.
+
+- `tokenizing` a string, where we split inputs into tokens and map each token to an int.
+
+- `detokenize` a sequence by proceeding in reverse — map ints back to string tokens and join them together
+
+- our problem becomes building a model that can predict an integer sequence of tokens.
+
+> The simplest option to consider might be to train a direct classifier over the space of all possible output integer sequences, but some back-of-the-envelope math will quickly show this is intractable. With a vocabulary of 20,000 words, there are 20,000 ^ 4, or 160 quadrillion possible 4-word sequences, and fewer atoms in the universe than possible 20-word sequences. Attempting to represent every output sequence as a unique classifier output would overwhelm compute resources no matter how we design our model.
+
+-  A _language model_ is a model that learns a : `p(token|past tokens)`
+
+## Practical 1
+
+- [See RNN and GRU practical](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
 ## Attention
 
@@ -164,15 +193,6 @@ multi_head_attention(key=source, value=source, query=source)
 
 
 
-## Basics of RNNs
-
-- [Basics of RNNs](https://www.tensorflow.org/text/tutorials/text_generation)
-
-> RNNs, on the other hand, lack any mechanism to refer back to a previous section of a sequence directly. All information must, by design, be passed through an RNN cell’s internal state in a loop, through every position in a sequence. It’s a bit like finishing this book, closing it, and trying to implement that weather prediction model entirely from memory.
-
-## Basics of transformers (VERY GOOD)
-
-- [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
 ## 🎮 Practicals
 

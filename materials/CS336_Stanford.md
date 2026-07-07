@@ -1,6 +1,6 @@
 # CS 336 Stanford Language modelling from scratch
 
-- [course](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV&index=2)
+- [🎥 course](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV&index=2)
 
 
 ## Week 1
@@ -80,7 +80,11 @@ Imagine you are handed a piece of paper with a complex math word problem on it.
 
 - Scaling laws Flops budget = 6 * N * D: use a bigger model (N) or more tokens (D)? Hoffman2022 (Chinchilla caling laws)
 
-- 🤔 `D = 20 * N` 70B parameter model should be trained on 1.4T tokens
+- 🤔 `D = 20 * N` scaling law: 70B parameter model should be trained on 1.4T tokens
+
+- this can be used to calculate a token budget 
+
+- 💡 also used to ask for more money to investors!
 
 
 
