@@ -53,6 +53,12 @@
 
 - [See RNN and GRU practical](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
+- nanoGPT
+
+- Google Colab
+
+- Huggingface spaces
+
 ## Attention
 
 - _Concept_ 🧩 🚀 Concept behind attention
