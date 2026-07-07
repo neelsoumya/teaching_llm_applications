@@ -24,3 +24,4 @@ pip install torch numpy transformers datasets tiktoken wandb tqdm
 ```python
 python data/shakespeare_char/prepare.py
 ```
+
