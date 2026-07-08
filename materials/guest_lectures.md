@@ -4,7 +4,13 @@ Guest lectures bring practitioner and research perspectives that complement the 
 
 ---
 
-## Confirmed Speakers
+## Speakers
+
+### Nirav Bhatt
+
+- Low resource languages Swahili
+- Practicals on creating SLMs/LLMs on low resource languages
+
 
 ### Cole Robertson — Speech, Language, and LLMs in Industry
 
