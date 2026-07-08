@@ -94,7 +94,9 @@ Imagine you are handed a piece of paper with a complex math word problem on it.
 
 - licesing issues: lot of github code does not have a license. So assume permissive?
 
-- efficiency: hardware, data, compute, memory, communication bandwidth. How do you build the best model? Faster inference
+- efficiency: hardware, data, compute, memory, communication bandwidth. How do you build the best model? 
+
+- Faster inference
 
 
 
