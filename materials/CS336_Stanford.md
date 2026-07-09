@@ -82,6 +82,8 @@ Imagine you are handed a piece of paper with a complex math word problem on it.
 
 - 🤔 `D = 20 * N` scaling law: 70B parameter model should be trained on 1.4T tokens
 
+- 🎮 scaling laws practical VERY GOOD using [nanoGPT by Andrew Karpathy](https://github.com/karpathy/nanoGPT/blob/master/scaling_laws.ipynb)
+
 - this can be used to calculate a token budget 
 
 - 💡 also used to ask for more money to investors!
