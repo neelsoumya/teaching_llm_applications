@@ -30,6 +30,7 @@ python data/shakespeare_char/prepare.py
 
 - [Chinchilla paper](https://arxiv.org/pdf/2203.15556.pdf)
 
+🤔
 > Given a fixed FLOPs budget,1 how should one trade-off model size and the number of training tokens?
 
 - 🎮 scaling laws practical VERY GOOD using [nanoGPT by Andrew Karpathy](https://github.com/karpathy/nanoGPT/blob/master/scaling_laws.ipynb)
@@ -93,3 +94,17 @@ xquery = 124e6 # query model size here (e.g. GPT-2 small is 124M)
 yquery = 10**(m*np.log10(xquery) + c)
 print(f"predicted parameters for {xquery:e} tokens: {yquery:e}")
 ```
+
+
+### Reproducing GPT-2 using `nanoGPT`
+
+- [Reproducing GPT-2](https://github.com/karpathy/nanogpt#reproducing-gpt-2)
+
+### Baselines using `nanoGPT`
+
+- [Baselines using `nanoGPT`](https://github.com/karpathy/nanogpt#baselines)
+
+### Finetuning using `nanoGPT`
+
+- [Finetuning using `nanoGPT`](https://github.com/karpathy/nanogpt#finetuning)
+
