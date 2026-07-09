@@ -2,6 +2,8 @@
 
 - BERT
 
+- [🎥 BERT vs. GPT](https://www.youtube.com/shorts/EYv9k7qUj8w)
+
 - Small language models (SLMs) are still relevant
 
 - Global South SLMs finetuned for finance, healthcare, etc. can still outperform general purpose LLMs
