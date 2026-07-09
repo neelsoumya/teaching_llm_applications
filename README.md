@@ -485,6 +485,8 @@ python practicals/week01_practical.py
 
 - [Guest lectures](materials/guest_lectures.md)
 
+- [Flash attention](materials/flash_attention.md)
+
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
 
 - [BERT SLMs](materials/BERT_SLMs.md)
