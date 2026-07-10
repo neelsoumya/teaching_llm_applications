@@ -59,6 +59,23 @@
 
 - Huggingface spaces
 
+## Decoder and Encoder
+
+> During training, the following happens:
+
+- An encoder model turns the source sequence into an intermediate representation.
+- A decoder is trained using the language modeling setup we saw previously. It will recursively predict the next token in the target sequence by looking at all previous target tokens and our encoder’s representation of the source sequence.
+
+- During inference we don’t have access to the target sequence — we’re trying to predict it from scratch. We will generate it one token at a time, just as we did with our Shakespeare generator:
+
+- We obtain the encoded source sequence from the encoder.
+
+- The decoder starts by looking at the encoded source sequence as well as an initial “seed” token (such as the string "[start]") and uses them to predict the first real token in the sequence.
+- The predicted sequence so far is fed back into the decoder, in a loop, until it generates a stop token (such as the string "[end]").
+
+
+![image](https://deeplearningwithpython.io/images/ch15/seq2seq-learning.0e1e1c31.png)
+
 ## Attention
 
 - _Concept_ 🧩 🚀 Concept behind attention
