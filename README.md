@@ -510,6 +510,9 @@ python practicals/week01_practical.py
 
 - [Lecture notes by Francois Chollet](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
+- [🤗 Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
+
+
 - Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
 
 - `NanoGPT`

@@ -78,7 +78,7 @@
 
 ![image](https://deeplearningwithpython.io/images/ch15/seq2seq-learning.0e1e1c31.png)
 
-- [Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
+- [🤗 Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
 
 ## Attention
 
