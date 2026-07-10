@@ -475,7 +475,7 @@ python practicals/week01_practical.py
 
 ---
 
-## Additional material
+## Material
 
 - [Transformers fundamentals](materials/transformers.md)
 
@@ -502,9 +502,13 @@ python practicals/week01_practical.py
 
 ## Acknowledgements and courses for inspiration
 
+- [Jay Alamar Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
 - [Stanford CS336 Language Modelling from Scratch](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV) and [course webpage](https://cs336.stanford.edu/)
 
 - [deeplearning.ai course on transformers by Jay Alammar and Maarten Grootendorst](https://learn.deeplearning.ai/courses/how-transformer-llms-work)
+
+- [Lecture notes by Francois Chollet](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
 - Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
 

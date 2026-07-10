@@ -7,6 +7,10 @@ Welcome to this guide on understanding and teaching the fundamental architectura
 
 - [very good resource for understanding encoders and decoders](https://jalammar.github.io/illustrated-transformer/)
 
+## Practical
+
+- [Tensor2Tensor notebook where you can load a Transformer model, and examine it using this interactive visualization](https://colab.research.google.com/github/tensorflow/tensor2tensor/blob/master/tensor2tensor/notebooks/hello_t2t.ipynb)
+
 ---
 
 ## Part 1: Core Concepts for Your Understanding
