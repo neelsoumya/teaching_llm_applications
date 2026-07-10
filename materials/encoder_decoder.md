@@ -1,7 +1,9 @@
 # Encoders vs. Decoders in Large Language Models
 ## A Comprehensive Guide & Teaching Resource
 
-Welcome to this guide on understanding and teaching the fundamental architectural differences in Large Language Models (LLMs): **Encoders** and **Decoders**. This document is structured to help you internalize the concepts first, and then provides a framework for teaching them to your students.
+Welcome to this guide on understanding and teaching the fundamental architectural differences in Large Language Models (LLMs): **Encoders** and **Decoders**. 
+
+![image](../images/encoder_decoder.png)
 
 ---
 
