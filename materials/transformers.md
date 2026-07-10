@@ -61,6 +61,8 @@
 
 ## Decoder and Encoder
 
+- [Encoder vs. decoder](encoder_decoder.md)
+
 > During training, the following happens:
 
 - An encoder model turns the source sequence into an intermediate representation.
