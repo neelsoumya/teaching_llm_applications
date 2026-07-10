@@ -5,6 +5,8 @@ Welcome to this guide on understanding and teaching the fundamental architectura
 
 ![image](../images/encoder_decoder.png)
 
+- [very good resource for understanding encoders and decoders](https://jalammar.github.io/illustrated-transformer/)
+
 ---
 
 ## Part 1: Core Concepts for Your Understanding
