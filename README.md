@@ -493,6 +493,8 @@ python practicals/week01_practical.py
 
 - [Scaling](materials/scaling.md)
 
+- [LoRA](materials/LORA.md)
+
 - [Energy](materials/energy.md)
 
 - [Explainable AI in the context of LLMs](materials/explainableAI.md)
