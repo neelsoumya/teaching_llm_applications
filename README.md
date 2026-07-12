@@ -491,6 +491,8 @@ python practicals/week01_practical.py
 
 - [BERT SLMs](materials/BERT_SLMs.md)
 
+- [Costs](materials/costs.md)
+
 - [Scaling](materials/scaling.md)
 
 - [LoRA](materials/LORA.md)
