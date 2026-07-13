@@ -21,7 +21,7 @@ Portfolio:
 - SLMs/guardrails
        > train on curated datasets so that they remain on task remain on task  do not hallucinate cannot be jailbroken. Use SLMs for these tasks (trained for a specific task and on curated datasets)
 
-
+- Mechanistic interpretability on a SLM: see lecture material [here](explainableAI.md)
 
 ## Hints & quick checklist
 
