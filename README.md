@@ -499,7 +499,7 @@ python practicals/week01_practical.py
 
 - [Energy](materials/energy.md)
 
-- [Explainable AI in the context of LLMs](materials/explainableAI.md)
+- [Explainable AI in the context of LLMs and mechanistic interpretability + reading](materials/explainableAI.md)
 
 - [Things to cover](materials/things_to_cover.md)
 
