@@ -503,6 +503,11 @@ python practicals/week01_practical.py
 
 - [Things to cover](materials/things_to_cover.md)
 
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Acknowledgements and courses for inspiration
 
