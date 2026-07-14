@@ -23,7 +23,7 @@
 
 _NOTE_: 
 
-- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) that has this quote:
+- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) and Neel Nanda's [blog](https://www.neelnanda.io/mechanistic-interpretability/glossary) that has this quote:
 
 >specialized toolchains such as TransformerLens, CircuitsVis, and Neuroscope,researchers can map neurons, attention heads, and residual streams to interpretable computational motifs, paving the way toward transparent and auditable AI systems.
 
@@ -41,7 +41,13 @@ _NOTE_:
 
 - [demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
 
+
+
 ## Mechanistic interpretability: short code in python and a small practical to demonstate this
+
+- image summarizing the practical
+
+![image](../images/mech_interp.png)
 
 ```python
 """
