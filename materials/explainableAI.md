@@ -143,6 +143,19 @@ for tok, weight in zip(str_tokens, last_token_attention):
 - Pick one head that looks interesting and test it on 3 different prompts. Does its behavior generalize, or was your first observation a coincidence?
 - Optional: install `circuitsvis` (`pip install circuitsvis`) for a visual attention pattern plot instead of printed numbers.
 
+
+**REVIEW of exlainability**
+
+- Post hoc attribution techniques, inherently interpretable architectures (e.g. decision trees or generalized additive models (GAMs)), and concept-based explanations do not open the black box
+
+_NOTE_: 
+
+- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) that has this quote:
+
+>specialized toolchains such as TransformerLens, CircuitsVis, and Neuroscope,researchers can map neurons, attention heads, and residual streams to interpretable computational motifs, paving the way toward transparent and auditable AI systems.
+
+
+
 ---
 
 **Exercise 3 — Induction heads**
