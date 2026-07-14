@@ -16,21 +16,23 @@
 
 - [J-space Anthropic paper](https://kenhuangus.substack.com/p/claudes-hidden-workspace-why-j-space) and [here](https://transformer-circuits.pub/2026/workspace/index.html)
 
-## More reading
+## 📚 More reading
 
-- [Book by Neel Nanda](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
+- [ 📚 Book by Neel Nanda](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
 
-- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) and Neel Nanda's [blog](https://www.neelnanda.io/mechanistic-interpretability/glossary)
+- 📚 Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) and Neel Nanda's [blog](https://www.neelnanda.io/mechanistic-interpretability/glossary)
 
 - [Linear probes](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
 
-## Libraries
+## Python Libraries
 
 - [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens)
 
 - [CircuitsVis](https://github.com/TransformerLensOrg/CircuitsVis)
 
-- [Demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
+## 🎮 Practical
+
+- [🎮 Demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
 
 
 ## Review of explainability
