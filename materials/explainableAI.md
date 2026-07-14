@@ -16,8 +16,28 @@
 
 - [J-space Anthropic paper](https://kenhuangus.substack.com/p/claudes-hidden-workspace-why-j-space) and [here](https://transformer-circuits.pub/2026/workspace/index.html)
 
+## More reading
+
+- [Book by Neel Nanda](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
+
+- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) and Neel Nanda's [blog](https://www.neelnanda.io/mechanistic-interpretability/glossary)
+
+- [Linear probes](https://learn.arena.education/chapter1_transformer_interp/02_intro_mech_interp/)
+
+## Libraries
+
+- [TransformerLens](https://github.com/TransformerLensOrg/TransformerLens)
+
+- [CircuitsVis](https://github.com/TransformerLensOrg/CircuitsVis)
+
+- [Demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
+
+
+## Review of explainability
 
 **REVIEW of exlainability**
+
+- Review paper by John Miller: Explainability from the social sciences
 
 - Post hoc attribution techniques, inherently interpretable architectures (e.g. decision trees or generalized additive models (GAMs)), and concept-based explanations do not open the black box
 
@@ -269,3 +289,10 @@ for layer in range(model.cfg.n_layers):
 - ARENA course (Callum McDougall) — a full structured curriculum this worksheet borrows ideas from: https://arena-chapter1-transformer-interp.streamlit.app/
 - Anthropic, "A Mathematical Framework for Transformer Circuits": https://transformer-circuits.pub/2021/framework/index.html
 - Neel Nanda's YouTube channel (walkthroughs of exactly these techniques): https://www.youtube.com/@neelnanda2469
+
+
+## Advanced topics
+
+- `Grokking`
+
+>A recurring phenomenon observed during training is grokking, where models transition from memorization to generalization after extended training despite initially poor generalization. This process—analyzed through metrics like restricted and excluded loss—reveals phase transitions between memorization, circuit formation, and cleanup, offering a window into how functional algorithms emerge in small transformers
