@@ -16,6 +16,31 @@
 
 - [J-space Anthropic paper](https://kenhuangus.substack.com/p/claudes-hidden-workspace-why-j-space) and [here](https://transformer-circuits.pub/2026/workspace/index.html)
 
+
+**REVIEW of exlainability**
+
+- Post hoc attribution techniques, inherently interpretable architectures (e.g. decision trees or generalized additive models (GAMs)), and concept-based explanations do not open the black box
+
+_NOTE_: 
+
+- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) that has this quote:
+
+>specialized toolchains such as TransformerLens, CircuitsVis, and Neuroscope,researchers can map neurons, attention heads, and residual streams to interpretable computational motifs, paving the way toward transparent and auditable AI systems.
+
+> Central challenges that confront Mechanistic Interpretability, including scalability to billion-parameter models, and entangled (polysemantic) features
+
+>Mechanistic interpretability moves beyond post hoc analysis by reverse-engineering the internal computations of neural networks. Instead of correlating inputs and outputs, it identifies functional subgraphs–neurons, attention heads, and residual streams–that causally implement behaviors.
+
+- `circuits microscope` for tracing activations. Read the [paper](https://distill.pub/2020/circuits/zoom-in/)
+
+- image of sparse autoencoder
+
+![image](https://dl.acm.org/cms/10.1145/3787104/asset/15c81570-d800-4501-a863-c4cc8620b220/assets/images/medium/csur-2025-0787-f07.jpg)
+
+## Demo
+
+- [demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
+
 ## Mechanistic interpretability: short code in python and a small practical to demonstate this
 
 ```python
@@ -142,18 +167,6 @@ for tok, weight in zip(str_tokens, last_token_attention):
 - Loop over all heads in layer 9 and print the top-attended source token for the last position in each. Do any heads look like they have a clear, describable job (e.g. "attends to the subject noun")?
 - Pick one head that looks interesting and test it on 3 different prompts. Does its behavior generalize, or was your first observation a coincidence?
 - Optional: install `circuitsvis` (`pip install circuitsvis`) for a visual attention pattern plot instead of printed numbers.
-
-
-**REVIEW of exlainability**
-
-- Post hoc attribution techniques, inherently interpretable architectures (e.g. decision trees or generalized additive models (GAMs)), and concept-based explanations do not open the black box
-
-_NOTE_: 
-
-- Read the following [review paper](https://dl.acm.org/doi/full/10.1145/3787104) that has this quote:
-
->specialized toolchains such as TransformerLens, CircuitsVis, and Neuroscope,researchers can map neurons, attention heads, and residual streams to interpretable computational motifs, paving the way toward transparent and auditable AI systems.
-
 
 
 ---
