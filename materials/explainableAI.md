@@ -59,13 +59,13 @@ _NOTE_:
 
 ![image](https://dl.acm.org/cms/10.1145/3787104/asset/15c81570-d800-4501-a863-c4cc8620b220/assets/images/medium/csur-2025-0787-f07.jpg)
 
-## Demo
+## 🎮 Demo
 
-- [demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
+- [🎮 demo](https://transformerlensorg.github.io/CircuitsVis/?path=/story/activations-textneuronactivations--multiple-samples)
 
 
 
-## Mechanistic interpretability: short code in python and a small practical to demonstate this
+## 🎮 Practical: Mechanistic interpretability: short code in python and a small practical to demonstate this
 
 - image summarizing the practical
 
