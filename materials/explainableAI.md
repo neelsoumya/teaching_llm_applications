@@ -132,6 +132,71 @@ for tok, weight in zip(str_tokens, last_token_attention):
 ```
 
 
+## 🎉 Simple explanation
+
+- Here is a simple explanation of the code above.
+
+- Mechanistic interpretability is fundamentally about taking a massive, unreadable matrix of numbers and finding ways to map it into human-legible concepts. It is an immense data visualization and human-computer interaction challenge applied to the inside of a neural network.
+
+- Traditional explainable AI (like the Miller paper you referenced) treats the model as a black box. 
+
+> It looks at the input (salary < 40K) and the output (loan denied) and tries to infer the relationship. 
+
+- Mechanistic interpretability opens the black box. Instead of guessing based on correlations, it seeks to reverse-engineer the actual functional circuits — the literal gears and levers — that causally compute the answer.
+
+- When evaluating the safety, alignment, or geopolitical risks of an AI, knowing *why* it produced an output is just as important as the output itself. 
+
+- Here is the simplest way to visualize how these models actually process information, mapping directly to the Python practical.
+
+### The Anatomy of a Model's "Thought"
+
+To understand the code in your worksheet, you only need to understand one core analogy: **The Whiteboard**.
+
+### 1. The Residual Stream (The Whiteboard)
+
+The most important concept in a Transformer is the **residual stream**. Think of it as a giant, shared whiteboard that runs straight from the beginning of the model to the end.
+
+- see image below (image credit LessWrong)
+
+![image](../images/residual_stream.png)
+
+- When you feed the model a prompt like "The Eiffel Tower is located in the city of", it writes those words onto the whiteboard. Every subsequent layer in the model (the attention heads and neurons) gathers around this whiteboard. 
+
+- They read what is currently written, perform some calculation, and then *write their conclusions back onto the whiteboard*. They never overwrite the original text; they just add to it. 
+
+- By the end of the final layer, the whiteboard is full of accumulated context, which the model uses to output " Paris".
+
+### 2. The Logit Lens (Reading the Whiteboard Early)
+
+- In standard ML, we only look at the whiteboard after the final layer finishes its work. 
+
+- The **Logit Lens** (Exercise 1 in your code) is a clever trick: it takes a snapshot of the whiteboard halfway through the network and forces the model to translate it into a prediction right then and there.
+
+- When you loop through `cache["resid_post", layer]`, you are stopping the model at Layer 0, Layer 1, Layer 2, etc., and asking, "If you had to guess the next word right now, what would it be?" You will often see the model's "internal belief" form across the layers, perhaps starting with a generic guess like "the" at Layer 1, shifting to "France" at Layer 5, and finally locking onto "Paris" by Layer 9.
+
+### 3. Attention Heads (The Workers)
+
+If the residual stream is the whiteboard, the **Attention Heads** (Exercise 2) are the specialized workers reading and writing to it.
+
+Instead of looking at the whole board, each head has a specific job. Your code pulls out an attention pattern (`cache["pattern"]`) to see exactly where a worker is looking.
+
+* **Previous-Token Heads:** Always look at the word immediately to the left.
+* **Subject Heads:** Scan the sentence specifically for nouns.
+* **Induction Heads:** (Exercise 3) These are the most famous discovered circuits. Their entire job is pattern matching. If they see the sequence `[A][B] ... [A]`, they instantly look back at the first `[B]` and write "predict B next" onto the whiteboard. This is how models learn to copy text or repeat in-context patterns.
+
+### 4. Activation Patching (The Controlled Experiment)
+
+The logit lens and attention patterns are observational — you are just watching the model work. **Activation Patching** (Exercise 4) is how you prove causality. It is the surgical intervention.
+
+If you suspect that Layer 9 is where the model realizes the answer should be "Paris", you can run an experiment. You give the model a corrupted prompt ("The capital of Germany is"). Right as the model reaches Layer 9, you pause it, erase its current whiteboard state, and paste in the whiteboard state from a clean run ("The capital of France is"). If the model suddenly outputs "Paris" despite the prompt saying "Germany," you have definitively proven exactly *where* that fact is stored and processed.
+
+### The Broader Context
+
+This brings us to **Grokking** and Anthropic's **J-space**.
+When a model is first training, its attention heads are uncoordinated. It simply memorizes answers (correlating inputs to outputs). But as training continues, the network undergoes a phase transition — it suddenly wires those heads into efficient, functional algorithms (like the induction circuits). This is Grokking.
+
+Anthropic's research into these internal spaces (like J-space) and the use of tools like `TransformerLens` are all attempts to map this alien architecture. By identifying these circuits, we move away from treating AI as an unpredictable black box, paving the way for systems whose reasoning can be audited layer by layer.
+
 ## Mechanistic Interpretability: A Practical Worksheet
 
 **Goal:** by the end of this worksheet you should be able to (1) explain what the residual stream is, (2) use the logit lens to see a prediction "form" across layers, (3) find and characterize an attention head's behavior, and (4) run a simple causal intervention (activation patching) to test a hypothesis about what a component does.
