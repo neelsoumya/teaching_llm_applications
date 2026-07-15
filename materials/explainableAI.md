@@ -197,7 +197,60 @@ When a model is first training, its attention heads are uncoordinated. It simply
 
 Anthropic's research into these internal spaces (like J-space) and the use of tools like `TransformerLens` are all attempts to map this alien architecture. By identifying these circuits, we move away from treating AI as an unpredictable black box, paving the way for systems whose reasoning can be audited layer by layer.
 
-## Mechanistic Interpretability: A Practical Worksheet
+## 🎉 Induction Heads: A simple explanation
+
+- Induction heads are arguably the most important discovery in mechanistic interpretability. 
+
+- They are the specific mechanical circuits that allow a Large Language Model to perform "in-context learning" — the ability to read a pattern in a prompt and continue it, rather than just reciting facts it memorized during training.
+
+To understand how they work, how they form, and why they matter, we have to look at the exact mechanism.
+
+## The Mechanism: A Two-Layer Algorithm
+
+An induction head does not exist in isolation. It is actually a **two-head circuit** that spans across two different layers. Its entire algorithm is designed to solve a single problem: *If I am looking at token [A] right now, find the last time [A] appeared, and predict whatever came immediately after it.*
+
+Imagine feeding the model a prompt containing the sequence: `... [Harry] [Potter] ... [Harry]`
+
+When the model reaches that second `[Harry]`, it needs to predict `[Potter]`. A single attention head cannot do this alone. A single head at the second `[Harry]` can easily look back and find the *first* `[Harry]`, but it cannot easily look at the first `[Harry]` and say, "Now shift one space to the right and grab the next word."
+
+Instead, the model solves this cooperatively using the residual stream (the "whiteboard").
+
+### Step 1: The "Previous Token" Head (Layer 1)
+
+Early in the network, a dedicated attention head fires. Its only job is to look at the token immediately behind it.
+When this head processes the word `[Potter]`, it looks back at `[Harry]`. It then writes a new piece of information onto `[Potter]`'s whiteboard space: *"Hey, just so everyone knows, I am a token that follows the word [Harry]."*
+
+### Step 2: The Induction Head (Layer 2)
+
+Later in the network, the actual induction head fires.
+We are now at the very end of the prompt, looking at the second `[Harry]`. This head's job is to search the entire past context, but it is not looking for another `[Harry]`. It is specifically searching the whiteboard for the tag: *"I am a token that follows the word [Harry]."*
+
+It scans back, finds that tag written on the word `[Potter]`, pays heavy attention to it, and pulls that information forward to predict `[Potter]` as the next word.
+
+## How It Forms: The "Grokking" Phase Transition
+
+Models are not born with induction heads, and they do not slowly learn them linearly. They emerge through a sudden phase transition during training, a phenomenon often tied to **grokking**.
+
+1. **The Memorization Phase:** Early in training, the model is essentially a massive lookup table. If it sees `[Harry]`, it predicts `[Potter]` because it has memorized that statistical relationship in its weights. It is using brute force to drive down its error rate (loss).
+2. **The Plateau:** Eventually, brute force memorization becomes inefficient. There are too many patterns and not enough parameters to store them all individually. The model's learning stalls.
+3. **Circuit Formation:** Under the pressure to compress information, the model's gradient descent "discovers" that wiring a Layer 1 head to a Layer 2 head creates a universal copying algorithm.
+4. **The Cleanup:** Once this circuit clicks into place, the model experiences a rapid drop in loss. It stops relying on memorized weights to predict repeated sequences and shifts to using this new, efficient circuit.
+
+Researchers can track this exact moment during training. There is a distinct spike in the "induction score" (from your Exercise 3) that correlates perfectly with the model suddenly gaining the ability to do complex in-context learning tasks, like few-shot translation or following formatting instructions.
+
+## Why This Generalizes Beyond Memorization
+
+Memorization relies on the model's static weights — its long-term memory. If a concept is not in the training data, a memorizing model fails completely.
+
+The induction circuit, however, relies entirely on the residual stream — the model's short-term working memory. Because the algorithm is purely mechanical (tag the previous word $\to$ search for the tag $\to$ copy), it is completely agnostic to the actual content of the words.
+
+This is how generalization occurs. If you prompt the model with completely made-up nonsense:
+`[Zorblax] [Fronk] ... [Zorblax]`
+
+A memorizing model has no idea what comes next; "Zorblax" isn't in its weights. But a model with an induction head runs the circuit perfectly. Layer 1 tags `[Fronk]` as "follows Zorblax". Layer 2 sees the second `[Zorblax]`, searches for the tag, finds `[Fronk]`, and copies it. The model has generalized the abstract *concept* of pattern continuation, freeing it from the limits of its training data.
+
+
+## 🎥 Mechanistic Interpretability: A Practical Worksheet
 
 **Goal:** by the end of this worksheet you should be able to (1) explain what the residual stream is, (2) use the logit lens to see a prediction "form" across layers, (3) find and characterize an attention head's behavior, and (4) run a simple causal intervention (activation patching) to test a hypothesis about what a component does.
 
