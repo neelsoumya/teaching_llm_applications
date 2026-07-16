@@ -199,6 +199,10 @@ Anthropic's research into these internal spaces (like J-space) and the use of to
 
 ## 🎉 Induction Heads: A simple explanation
 
+- [🎮 code](https://github.com/ayyucekizrak/Mechanistic-Interpretability)
+
+- [📝 article](https://ayyucekizrak.medium.com/mechanistic-interpretability-c2a3549b6ff2)
+
 - Induction heads are arguably the most important discovery in mechanistic interpretability. 
 
 - They are the specific mechanical circuits that allow a Large Language Model to perform "in-context learning" — the ability to read a pattern in a prompt and continue it, rather than just reciting facts it memorized during training.
