@@ -22,3 +22,5 @@
 
 - _Energy = Energy(prefill) + Energy(decode)_
 
+- [Guest lecture by Amit More](guest_lectures.md) 
+
