@@ -501,8 +501,8 @@ python practicals/week01_practical.py
 
 - [Guest lectures](materials/guest_lectures.md)
 
-
 - [Things to cover](materials/things_to_cover.md)
+
 
 ## Installation
 
