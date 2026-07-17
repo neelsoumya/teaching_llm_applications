@@ -483,8 +483,6 @@ python practicals/week01_practical.py
 
 - [Practicals](materials/practicals.md)
 
-- [Guest lectures](materials/guest_lectures.md)
-
 - [Flash attention](materials/flash_attention.md)
 
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
@@ -500,6 +498,9 @@ python practicals/week01_practical.py
 - [Energy](materials/energy.md)
 
 - [Explainable AI in the context of LLMs and mechanistic interpretability + reading](materials/explainableAI.md)
+
+- [Guest lectures](materials/guest_lectures.md)
+
 
 - [Things to cover](materials/things_to_cover.md)
 

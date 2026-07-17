@@ -6,6 +6,13 @@ Guest lectures bring practitioner and research perspectives that complement the 
 
 ## Speakers
 
+### Amit More
+
+- Energy 
+- Tools
+- Industry whitepapers and industry specific problems
+- [Energy](energy.md)
+
 ### Nirav Bhatt
 
 - Low resource languages Swahili
