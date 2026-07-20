@@ -213,6 +213,12 @@ To understand how they work, how they form, and why they matter, we have to look
 
 ## The Mechanism: A Two-Layer Algorithm
 
+
+![image](../images/induction_head1.png)
+
+![image](../images/induction_head2.png)
+
+
 An induction head does not exist in isolation. It is actually a **two-head circuit** that spans across two different layers. Its entire algorithm is designed to solve a single problem: *If I am looking at token [A] right now, find the last time [A] appeared, and predict whatever came immediately after it.*
 
 Imagine feeding the model a prompt containing the sequence: `... [Harry] [Potter] ... [Harry]`
