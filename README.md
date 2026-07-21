@@ -505,6 +505,9 @@ python practicals/week01_practical.py
 
 - [K-V Cache](materials/kvcache.md)
 
+- [Practicals using `nanoGPT`](materials/practicals.md)
+
+- [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
 
 ## Installation
 
