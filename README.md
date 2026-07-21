@@ -503,6 +503,8 @@ python practicals/week01_practical.py
 
 - [Things to cover](materials/things_to_cover.md)
 
+- [K-V Cache](materials/kvcache.md)
+
 
 ## Installation
 
