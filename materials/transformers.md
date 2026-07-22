@@ -1,8 +1,12 @@
 # Transformers
 
+
+
 - Why transformers are better than RNNs? Parallelizeable. Memory.
 
 - [Code, material and slides](https://www.tensorflow.org/text/tutorials/transformer)
+
+- [Jay Alammar deeplearning.ai course](https://learn.deeplearning.ai/courses/how-transformer-llms-work/lesson/hrpcy/understanding-language-models%3A-transformers)
 
 - [text from Google AI blog](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
 
