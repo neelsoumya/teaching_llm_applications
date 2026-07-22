@@ -5,7 +5,7 @@
 This first lecture sets the scene. We ask: *what is a language model, why has it become so powerful, and how did we get here?*
 
 
-A fantastic narrative arc for an introductory lecture. Framing the evolution of LLMs as a transition from the rigid, rules-based world of Good Old-Fashioned AI (GOFAI) to the fluid, pattern-matching world of deep learning gives students the perfect historical and technical context.
+- A fantastic narrative arc for an introductory lecture. Framing the evolution of LLMs as a transition from the rigid, rules-based world of Good Old-Fashioned AI (GOFAI) to the fluid, pattern-matching world of deep learning gives students the perfect historical and technical context.
 
 Just a quick, gentle correction on the vector math before you present it: the famous analogy formula is actually $\vec{w}_{king} - \vec{w}_{man} + \vec{w}_{woman} \approx \vec{w}_{queen}$, but you have the exact right idea!
 
@@ -57,6 +57,8 @@ Just a quick, gentle correction on the vector math before you present it: the fa
 
 
 ### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
+
+- [🎥 Video: deeplearning.ai video on word embeddings](https://learn.deeplearning.ai/courses/how-transformer-llms-work/lesson/ch1aa/understanding-language-models%3A-(word)-embeddings)
 
 * **Visualizing the Math:** This is where you introduce the **3Blue1Brown** concepts. Highly recommend pointing your students to Grant Sanderson's video: *"But what is a GPT? Visual intro to transformers."*
 * **What is an Embedding?** Explain that models don't read text; they read numbers. An embedding is a high-dimensional vector (a list of numbers) that represents a word.
@@ -242,7 +244,7 @@ One of the most surprising properties: LLMs can perform new tasks **just from ex
 
 - `Minimize data movement` principle
 
-- Shard memory: split data o split models, layers, sequences, etc.
+- Shard memory: split data or split models, layers, sequences, etc.
 
 
 

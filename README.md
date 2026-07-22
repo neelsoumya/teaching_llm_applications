@@ -477,6 +477,8 @@ python practicals/week01_practical.py
 
 ## Material
 
+- [Introduction](materials/week01_intro_and_history.md)
+
 - [Transformers fundamentals](materials/transformers.md)
 
 - [Stanford CS336 my own notes](materials/CS336_Stanford.md)
