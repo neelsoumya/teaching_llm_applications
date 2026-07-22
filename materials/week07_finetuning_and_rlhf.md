@@ -2,7 +2,9 @@
 
 ## Lecture Overview
 
-Pre-trained LLMs are powerful but raw: they continue text rather than follow instructions, and they may produce harmful or unhelpful outputs. This week we cover the techniques used to adapt pre-trained models: supervised fine-tuning (SFT), parameter-efficient fine-tuning (PEFT), LoRA, and reinforcement learning from human feedback (RLHF).
+- [Code from Jay Alammar book](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter11)
+
+- Pre-trained LLMs are powerful but raw: they continue text rather than follow instructions, and they may produce harmful or unhelpful outputs. This week we cover the techniques used to adapt pre-trained models: supervised fine-tuning (SFT), parameter-efficient fine-tuning (PEFT), LoRA, and reinforcement learning from human feedback (RLHF).
 
 ---
 

@@ -491,6 +491,8 @@ python practicals/week01_practical.py
 
 - [BERT SLMs](materials/BERT_SLMs.md)
 
+- [Finetuning](materials/week07_finetuning_and_rlhf.md)
+
 - [Costs](materials/costs.md)
 
 - [Scaling](materials/scaling.md)

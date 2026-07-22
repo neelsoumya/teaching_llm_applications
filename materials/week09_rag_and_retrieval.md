@@ -2,7 +2,9 @@
 
 ## Lecture Overview
 
-LLMs have a knowledge cutoff and limited context windows. They also hallucinate. **Retrieval-Augmented Generation (RAG)** addresses these limitations by grounding the model in retrieved documents at inference time — no retraining required.
+- [Code from Alammar book](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter08)
+
+- LLMs have a knowledge cutoff and limited context windows. They also hallucinate. **Retrieval-Augmented Generation (RAG)** addresses these limitations by grounding the model in retrieved documents at inference time — no retraining required.
 
 ---
 
