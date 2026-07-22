@@ -338,3 +338,38 @@ Every new query sees more history
 THE FUNDAMENTAL TRADE-OFF
 
 Memory  ↔  Computation
+
+
+- _context length is not free_.
+
+- A model advertised as having a 1M-token context window does not mean that 1M tokens are computationally equivalent to 1K tokens. 
+
+- 💡 The model may accept the context, but the cost of storing, moving, and attending over that context can become substantial.
+
+- This is also why application developers should think carefully about:
+
+blindly sending entire chat histories,
+
+excessive RAG retrieval,
+
+unnecessarily large system prompts,
+
+conversation summarization,
+
+context pruning,
+
+caching strategies,
+
+and choosing the right context window.
+
+- The practical engineering lesson is:
+
+> A good LLM application is not necessarily the one that gives the model the most context. It is the one that gives the model the most useful context per unit of compute and memory.
+
+- ⚠️ Something to remember
+
+> KV caching eliminates the need to recompute the past, but it does not eliminate the cost of having a large past.
+
+## 🎮 Practicals
+
+- [Practicals](../practicals/kv_cache_huggingface_practical.ipynb)
