@@ -375,23 +375,12 @@ The objectives above span all six cognitive levels:
 
 ---
 
-## Assessment
-
-| Component | Weight | Details |
-|-----------|--------|---------|
-| Weekly practicals (submitted as scripts/notebooks) | 30% | 18 short submissions, one per week |
-| Mid-term written assignment (Week 6) | 20% | 1500-word essay on scaling laws or fine-tuning |
-| Final group project | 50% | Working LLM application + 10-page report + live demo |
-
----
 
 ## Prerequisites
 
 - Python (intermediate level)
 - Basic probability and linear algebra
 - Some familiarity with machine learning (e.g. logistic regression, neural networks)
-
-No prior NLP experience required.
 
 ---
 
