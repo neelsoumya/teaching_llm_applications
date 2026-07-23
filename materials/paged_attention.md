@@ -1,0 +1,29 @@
+# Paged attention and vLLM (virtual LLM)
+
+- [Video by Vizuara on vLLM](https://www.youtube.com/shorts/LHtLaKyTxoM)
+
+- vLLM (virtual LLM)
+
+- an engine, not a model
+
+- same model served to thousands of people on _same_ GPU
+
+- KV cache
+
+- every user gets their own KV cache
+
+- on a busy GPU, KV cache gets bigger
+
+- you can reserve a certain amount of KV cache for each user (for the longest possible answer), but you potentially waste space
+
+- 💡 OS trick - operating systems faced and solved a similar problem (`virtual memory`)
+
+- _Concept_ 🧩 🚀 Paged Attention
+
+> Break up the KV cache into small pieces
+
+- Virtual memory for the KV cache
+
+- PagedAttention blocks
+
+![image](../images/pagedattention.png)
