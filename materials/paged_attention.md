@@ -2,6 +2,8 @@
 
 - [Video by Vizuara on vLLM](https://www.youtube.com/shorts/LHtLaKyTxoM)
 
+- [Video by Vizuara on one GPU serving multiple requests](https://www.youtube.com/shorts/8EB4gJa3btg)
+
 - vLLM (virtual LLM)
 
 - an engine, not a model
@@ -27,3 +29,7 @@
 - PagedAttention blocks
 
 ![image](../images/pagedattention.png)
+
+- [Video by Vizuara on one GPU serving multiple requests](https://www.youtube.com/shorts/8EB4gJa3btg)
+
+![image](../images/oneGPU_multiple_requests.png)
