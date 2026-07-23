@@ -15,6 +15,79 @@ Each week has:
 
 ---
 
+## Material
+
+- [Introduction](materials/week01_intro_and_history.md)
+
+- [Transformers fundamentals](materials/transformers.md)
+
+- [Stanford CS336 my own notes](materials/CS336_Stanford.md)
+
+- [Practicals](materials/practicals.md)
+
+- [Flash attention](materials/flash_attention.md)
+
+- [LLMs from scratch](materials/LLMs_from_scratch.md)
+
+- [BERT SLMs](materials/BERT_SLMs.md)
+
+- [Finetuning](materials/week07_finetuning_and_rlhf.md)
+
+- [Costs](materials/costs.md)
+
+- [Scaling](materials/scaling.md)
+
+- [LoRA](materials/LORA.md)
+
+- [Energy](materials/energy.md)
+
+- [Explainable AI in the context of LLMs and mechanistic interpretability + reading](materials/explainableAI.md)
+
+- [Guest lectures](materials/guest_lectures.md)
+
+- [Things to cover](materials/things_to_cover.md)
+
+- [K-V Cache](materials/kvcache.md)
+
+- [Practicals using `nanoGPT`](materials/practicals.md)
+
+- [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
+
+- [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
+
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Acknowledgements and courses for inspiration
+
+- [Jay Alamar Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+
+- [Stanford CS336 Language Modelling from Scratch](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV) and [course webpage](https://cs336.stanford.edu/)
+
+- [deeplearning.ai course on transformers by Jay Alammar and Maarten Grootendorst](https://learn.deeplearning.ai/courses/how-transformer-llms-work)
+
+- [Lecture notes by Francois Chollet](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
+- [🤗 Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
+
+
+- Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
+
+- `NanoGPT`
+
+- Vizuara videos coding transformers from scratch
+
+- DAMTP and CAISH courses math department cambridge 2025
+
+- Bluedot impact courses
+
+
+---
+
 ## Directory Structure
 
 ```
@@ -464,75 +537,7 @@ python practicals/week01_practical.py
 
 ---
 
-## Material
-
-- [Introduction](materials/week01_intro_and_history.md)
-
-- [Transformers fundamentals](materials/transformers.md)
-
-- [Stanford CS336 my own notes](materials/CS336_Stanford.md)
-
-- [Practicals](materials/practicals.md)
-
-- [Flash attention](materials/flash_attention.md)
-
-- [LLMs from scratch](materials/LLMs_from_scratch.md)
-
-- [BERT SLMs](materials/BERT_SLMs.md)
-
-- [Finetuning](materials/week07_finetuning_and_rlhf.md)
-
-- [Costs](materials/costs.md)
-
-- [Scaling](materials/scaling.md)
-
-- [LoRA](materials/LORA.md)
-
-- [Energy](materials/energy.md)
-
-- [Explainable AI in the context of LLMs and mechanistic interpretability + reading](materials/explainableAI.md)
-
-- [Guest lectures](materials/guest_lectures.md)
-
-- [Things to cover](materials/things_to_cover.md)
-
-- [K-V Cache](materials/kvcache.md)
-
-- [Practicals using `nanoGPT`](materials/practicals.md)
-
-- [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
-
-- [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
-
-
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
-
-## Acknowledgements and courses for inspiration
-
-- [Jay Alamar Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
-
-- [Stanford CS336 Language Modelling from Scratch](https://www.youtube.com/watch?v=JuoVZkPBiKk&list=PLoROMvodv4rMqXOcazWaTUHhq-yembLCV) and [course webpage](https://cs336.stanford.edu/)
-
-- [deeplearning.ai course on transformers by Jay Alammar and Maarten Grootendorst](https://learn.deeplearning.ai/courses/how-transformer-llms-work)
-
-- [Lecture notes by Francois Chollet](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
-
-- [🤗 Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
-
-
-- Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
-
-- `NanoGPT`
-
-- Vizuara videos coding transformers from scratch
-
-- DAMTP and CAISH courses math department cambridge 2025
-
-- Bluedot impact courses
+## Inspiration
 
 1. **Stanford CS324: Understanding and Developing Large Language Models** — this is probably the best single Stanford reference for your purpose because it explicitly combines **modeling, theory, ethics, and systems**, and it is designed to give hands-on experience with massive language models. ([Stanford CRFM][1])
 
