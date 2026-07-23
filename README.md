@@ -502,6 +502,9 @@ python practicals/week01_practical.py
 
 - [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
 
+- [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
+
+
 ## Installation
 
 ```bash

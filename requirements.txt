@@ -3,6 +3,8 @@ numpy
 transformers
 circuitsvis
 transformer_lens
+ipykernel
+matplotlib
 datasets
 tiktoken
 wandb
