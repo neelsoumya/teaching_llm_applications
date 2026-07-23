@@ -172,7 +172,7 @@ Modern large models also use:
 
 ## 10. Practical This Week
 
-See `practicals/week05_practical.py`:
+See `practicals/week05_practical.py` [here](../practicals/week05_practical.py):
 - Implement a complete decoder-only Transformer from scratch in PyTorch.
 - Train it on a small character-level or word-level text dataset.
 - Plot training and validation loss.

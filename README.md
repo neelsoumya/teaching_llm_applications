@@ -21,6 +21,8 @@ Each week has:
 
 - [Transformers fundamentals](materials/transformers.md)
 
+- [Week 5 Transformers Architecture](materials/week05_transformer_architecture.md)
+
 - [Stanford CS336 my own notes](materials/CS336_Stanford.md)
 
 - [Practicals](materials/practicals.md)
