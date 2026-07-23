@@ -18,6 +18,14 @@ Guest lectures bring practitioner and research perspectives that complement the 
 - Low resource languages Swahili
 - Practicals on creating SLMs/LLMs on low resource languages
 
+## Ignatius Ezeani
+
+- low resource languages
+- Nigeria
+- LLMs for low resource languages
+- 2000 languages in Africa; none of them represented well enough
+- challenges in building LLMs/SLMs in low resource contexts
+- [SLMs](BERT_SLMs.md)
 
 ### Cole Robertson — Speech, Language, and LLMs in Industry
 
