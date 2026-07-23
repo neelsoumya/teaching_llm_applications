@@ -267,9 +267,7 @@ if __name__ == "__main__":
     train_losses, val_losses = train(model)
 
     # ── Loss curve ────────────────────────────────────────────────────────────
-    iters_logged = list(range(EVAL_INTERVAL, MAX_ITERS + 1, EVAL_INTERVAL))
-    if len(iters_logged) > len(train_losses):
-        iters_logged = iters_logged[:len(train_losses)]
+    iters_logged = [1] + list(range(EVAL_INTERVAL, MAX_ITERS + 1, EVAL_INTERVAL))
 
     plt.figure(figsize=(8, 4))
     plt.plot(iters_logged, train_losses, label="Train loss")
