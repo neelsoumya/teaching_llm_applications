@@ -9,7 +9,7 @@
 
 - [keras transformers lecture and practical: VERY GOOD](https://www.tensorflow.org/text/tutorials/transformer)
 
-- [positional encoding](https://www.tensorflow.org/text/tutorials/transformer))
+- [positional encoding](https://www.tensorflow.org/text/tutorials/transformer)
 
 - [text from Google AI blog](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
 
