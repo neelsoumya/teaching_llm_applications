@@ -172,11 +172,14 @@ Modern large models also use:
 
 ## 10. Practical This Week
 
-See `practicals/week05_practical.py` [here](../practicals/week05_practical.py):
+- [keras transformers lecture and practical: VERY GOOD](https://www.tensorflow.org/text/tutorials/transformer)
+- See `practicals/week05_practical.py` [here](../practicals/week05_practical.py):
 - Implement a complete decoder-only Transformer from scratch in PyTorch.
 - Train it on a small character-level or word-level text dataset.
 - Plot training and validation loss.
 - Generate text from the trained model using greedy decoding and temperature sampling.
+
+![image](../images/week05_training_curve.png)
 
 ---
 
