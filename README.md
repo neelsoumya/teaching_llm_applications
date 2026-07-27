@@ -27,8 +27,6 @@ Each week has:
 
 - [Practicals](materials/practicals.md)
 
-- [Flash attention](materials/flash_attention.md)
-
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
 
 - [BERT SLMs](materials/BERT_SLMs.md)
@@ -51,11 +49,15 @@ Each week has:
 
 - [K-V Cache](materials/kvcache.md)
 
+- [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
+
+- [Flash attention](materials/flash_attention.md)
+
+
 - [Practicals using `nanoGPT`](materials/practicals.md)
 
 - [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
 
-- [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
 
 
 ## Installation

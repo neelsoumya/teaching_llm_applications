@@ -4,6 +4,10 @@
 
 ![image](../images/kvcache.png)
 
+- [Vizuara video on how KV cache gets fragmented](https://www.youtube.com/shorts/XiQjAJa8REg)
+
+- 🤔 Solution: paging (from the 1960s)
+
 - Paged caches and sliding windows
 
 - [Why longer chats take more time, relation to K-V cache](https://www.youtube.com/shorts/UjbbwDnqpMw)

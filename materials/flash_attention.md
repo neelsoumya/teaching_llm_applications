@@ -3,6 +3,7 @@
 - 🎥 [`Flash Attention`](https://www.youtube.com/shorts/OSAelpOrqWs)
 
 ## 1. Introduction: The Bottleneck in Modern LLMs
+
 When discussing transformer architectures, the immediate focus is often on the $O(N^2)$ computational complexity of the self-attention mechanism. However, for practical implementation, the true bottleneck is often the **Memory Wall**—the widening gap between computational speed (FLOPs) and memory bandwidth.
 
 Standard attention materializes the entire $N \\times N$ attention matrix on the GPU's High Bandwidth Memory (HBM). For long sequences, reading and writing this massive matrix to HBM takes more time than the actual mathematical operations. 

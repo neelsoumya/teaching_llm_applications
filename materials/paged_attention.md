@@ -6,6 +6,10 @@
 
 - vLLM (virtual LLM)
 
+- [Vizuara video on how KV cache gets fragmented](https://www.youtube.com/shorts/XiQjAJa8REg)
+
+- 🤔 Solution: paging (from the 1960s)
+
 - an engine, not a model
 
 - same model served to thousands of people on _same_ GPU
