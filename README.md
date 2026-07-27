@@ -23,6 +23,8 @@ Each week has:
 
 - [Week 5 Transformers Architecture](materials/week05_transformer_architecture.md)
 
+- [Masked language models (BERT vs. GPT)](materials/masked_language_modelling_vs_generative.md)
+
 - [Stanford CS336 my own notes](materials/CS336_Stanford.md)
 
 - [Practicals](materials/practicals.md)
