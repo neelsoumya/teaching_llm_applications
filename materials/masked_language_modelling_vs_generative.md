@@ -21,3 +21,6 @@
 - Differences between the two kinds of models
 
 ![image](../images/BERT_vs_GPT.png)
+
+> Image credit Jay Alammar deeplearning.ai
+

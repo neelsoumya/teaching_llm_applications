@@ -53,6 +53,8 @@ Each week has:
 
 - [Paged attention and virtual LLM (vLLM)](materials/paged_attention.md)
 
+- [Prefill](materials/prefill.md)
+
 - [Flash attention](materials/flash_attention.md)
 
 
