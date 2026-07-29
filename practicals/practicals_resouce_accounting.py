@@ -2,10 +2,12 @@
 Practical for Resource Accounting
 '''
 
+# pyrefly: ignore [missing-import]
+import torch
+
 def get_memory_usage(x: torch.Tensor):
     return x.numel() * x.element_size()
 
-import torch
 x = torch.zeros(4, 8)  
 assert x.dtype == torch.float32  # Default type
 assert x.numel() == 4 * 8
