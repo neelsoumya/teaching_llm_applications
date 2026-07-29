@@ -62,7 +62,7 @@ Each week has:
 
 - [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
 
-
+- [Quantization](materials/quantization.md)
 
 ## Installation
 
