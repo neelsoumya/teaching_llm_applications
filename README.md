@@ -64,6 +64,9 @@ Each week has:
 
 - [Quantization](materials/quantization.md)
 
+- [Resource accounting](materials/resource_accounting.md)
+
+
 ## Installation
 
 ```bash
