@@ -8,6 +8,8 @@
 
 - Python code
 
+- [🎮 Practicals](../practicals/practicals_resouce_accounting.py)
+
 ```python
     import torch
     x = torch.zeros(4, 8)  
