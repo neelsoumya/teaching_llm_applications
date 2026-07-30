@@ -108,3 +108,16 @@ def einops_einsum():
     flops_per_day = h100_flop_per_sec * mfu * 1024 * 60 * 60 * 24  
     days = total_flops / flops_per_day  
 ```
+
+- matrix multiplication is a very costly operation in AI/ML
+
+- `B`: number of points, `D`: dimension, `K`: number of outputs
+
+- `FLOPS = 2 * B * D * K`
+
+- element wise operation on a matrix M x N = `O(MN)` FLOPS
+
+- MFU: Model FLOPs Utilization - how close to the theoretical maximum are we?
+
+- FLOPS for forward pass: `2 * num_parameters * num_tokens`
+
