@@ -20,13 +20,15 @@
 
 - [KV cache management](kvcache.md)
 
-- [📝 The Sunk Carbon Fallacy Bashir et al.](https://arxiv.org/abs/2410.15087)
 
 - Carbon aware computing: serving across geographical data centres
 
 - In-flight efficiency
 
 - [📝 CEDAR paper GreenSys paper Amit More, Tarique Anwar, Poonam Yadav, 2026](https://dl.acm.org/doi/10.1145/3802973.3804457)
+
+- [📝 The Sunk Carbon Fallacy Bashir et al.](https://arxiv.org/abs/2410.15087)
+
 
 - _Energy = Energy(prefill) + Energy(decode)_
 
