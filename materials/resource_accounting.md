@@ -48,3 +48,5 @@ x = torch.zeros(4, 8, dtype=torch.float16)
 - cast into _bf16_ (safe for `matmul` not `exp`)
 
 - _Concept_ 🧩 🚀 Train on high precision (bf16) and then quantize
+
+- 🤔 Is quantization at training time or inference time?
