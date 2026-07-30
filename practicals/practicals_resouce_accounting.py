@@ -6,9 +6,11 @@ https://cs336.stanford.edu/lectures/?trace=lecture_02_recording
 '''
 
 # pyrefly: ignore [missing-import]
+import enum
 import torch
 import timeit
 import einops
+from einops import einsum
 from torch import nn
 
 # In PyTorch, the numel() method 
@@ -81,3 +83,28 @@ def einops_einsum():
     z = einsum(x, y, "batch seq1 hidden, batch seq2 hidden -> batch seq1 seq2")  
     # Dimensions that are not named in the output are summed over. 
 
+
+
+def motivating_questions():
+    # Question: How long would it take to train a 70B parameter model on 15T tokens on 1024 B100s?
+    total_flops = 6 * 70e9 * 15e12  
+    h100_flop_per_sec = 1979e12 / 2
+    mfu = 0.5
+    flops_per_day = h100_flop_per_sec * mfu * 1024 * 60 * 60 * 24  
+    days = total_flops / flops_per_day  
+    print("Days to train:", days)
+
+    # Question: What's the largest model that can you can train on 8 H100s using AdamW (naively)?
+    h100_bytes = 80e9  
+    bytes_per_parameter = 2 + 2 + (4 + 4)  # parameters, gradients, optimizer state  
+    num_parameters = (h100_bytes * 8) / bytes_per_parameter  
+    print("Number of parameters:", num_parameters )
+    #Caveat: activations are not accounted for (depends on batch size and sequence length).
+    #This is a rough back-of-the-envelope calculation
+
+if __name__ == "__main__":
+    motivating_questions()
+
+    einops_einsum()
+    
+    einops_motivation()

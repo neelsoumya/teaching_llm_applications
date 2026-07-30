@@ -85,3 +85,26 @@ def einops_einsum():
     z = einsum(x, y, "batch seq1 hidden, batch seq2 hidden -> batch seq1 seq2")  
     # Dimensions that are not named in the output are summed over.  
 ```
+
+- `rearrange`
+
+- floating point operation (FLOP)
+
+- `x + y` is 1 FLOP
+
+- $x + y + z$ is 2 FLOPs
+
+- $x @ y$ is $mnp$ FLOPs for matrices of size $(m, n)$ and $(n, p)$
+
+- Training `GPT-3` took 3.14e23 FLOPS
+
+- Question: How long would it take to train a 70B parameter model on 15T tokens on 1024 B100s?
+
+
+```python
+    total_flops = 6 * 70e9 * 15e12  
+    h100_flop_per_sec = 1979e12 / 2
+    mfu = 0.5
+    flops_per_day = h100_flop_per_sec * mfu * 1024 * 60 * 60 * 24  
+    days = total_flops / flops_per_day  
+```
