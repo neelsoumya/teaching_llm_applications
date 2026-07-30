@@ -1,9 +1,15 @@
 '''
 Practical for Resource Accounting
+
+https://cs336.stanford.edu/lectures/?trace=lecture_02_recording
+
 '''
 
 # pyrefly: ignore [missing-import]
 import torch
+import timeit
+import einops
+from torch import nn
 
 # In PyTorch, the numel() method 
 # returns the total number of elements in a tensor (short for "number of elements").
@@ -20,3 +26,58 @@ assert x.element_size() == 4  # Float is 4 bytes
 assert get_memory_usage(x) == 4 * 8 * 4  # 128 bytes
 # One matrix in the feedforward layer of GPT-3:
 assert get_memory_usage(torch.empty(12288 * 4, 12288)) == 2304 * 1024 * 1024  # 2.3 GB 
+
+
+
+def time_matmul(a: torch.Tensor, b: torch.Tensor) -> float:
+    """Return the number of seconds required to perform `a @ b`."""
+    # Wait until previous CUDA threads are done
+    if torch.cuda.is_available():
+        torch.cuda.synchronize()
+    def run():
+        # Perform the operation
+        a @ b
+        # Wait until CUDA threads are done
+        if torch.cuda.is_available():
+            torch.cuda.synchronize()
+    # Time the operation `num_trials` times
+    num_trials = 5
+    total_time = timeit.timeit(run, number=num_trials)
+    return total_time / num_trials
+
+
+
+def get_num_parameters(model: nn.Module) -> int:
+    '''
+    Get number of parameters
+    '''
+    return sum(param.numel() for param in model.parameters())
+
+
+def einops_motivation():
+    #Easy to mess up the dimensions (what is -2, -1?)...
+    # Traditional PyTorch code:
+    x = torch.ones(2, 2, 3)      # batch seq hidden  
+    y = torch.ones(2, 2, 3)      # batch seq hidden  
+    z = x @ y.transpose(-2, -1)  # batch seq seq  
+    #Easy to mess up the dimensions (what is -2, -1?)...
+
+
+def einops_einsum():
+    #Einsum is generalized matrix multiplication with good bookkeeping.
+    x = torch.ones(3, 4)  # seq1 hidden 
+    y = torch.ones(4, 3)  # hidden seq2 
+    # Old way
+    z = x @ y   # seq1 seq2  
+    # New (einops) way
+    z = einsum(x, y, "seq1 hidden, hidden seq2 -> seq1 seq2")    
+
+    # Let's try a more complex example...
+    x = torch.ones(2, 3, 4)  # batch seq1 hidden 
+    y = torch.ones(2, 3, 4)  # batch seq2 hidden 
+    # Old way
+    z = x @ y.transpose(-2, -1)  # batch seq1 seq2  
+    # New (einops) way
+    z = einsum(x, y, "batch seq1 hidden, batch seq2 hidden -> batch seq1 seq2")  
+    # Dimensions that are not named in the output are summed over. 
+

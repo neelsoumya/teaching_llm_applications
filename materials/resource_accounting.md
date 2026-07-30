@@ -8,7 +8,7 @@
 
 - Python code
 
-- [🎮 Practicals](../practicals/practicals_resouce_accounting.py)
+- [🎮 Practicals](../practicals/practicals_resouce_accounting.py) and [here](https://cs336.stanford.edu/lectures/?trace=lecture_02_recording)
 
 ```python
     import torch
@@ -24,7 +24,7 @@
 
 - reduce storage [quantization](quantization.md)
 
-- [float 16](https://cs336.stanford.edu/lectures/?trace=lecture_02_recording#:~:text=122-,%5BWikipedia%5D,-Wikipedia)
+- [float 16 practicals](https://cs336.stanford.edu/lectures/?trace=lecture_02_recording#:~:text=122-,%5BWikipedia%5D,-Wikipedia)
 
 ```python
 x = torch.zeros(4, 8, dtype=torch.float16)  
@@ -50,3 +50,38 @@ x = torch.zeros(4, 8, dtype=torch.float16)
 - _Concept_ 🧩 🚀 Train on high precision (bf16) and then quantize
 
 - 🤔 Is quantization at training time or inference time?
+
+- move tensors to GPUs
+
+- [einops tutorial](https://einops.rocks/1-einops-basics/)
+
+- 💡 generalized matrix multiplication where dimensions are named
+
+```python
+def einops_motivation():
+    #Easy to mess up the dimensions (what is -2, -1?)...
+    Traditional PyTorch code:
+    x = torch.ones(2, 2, 3)      # batch seq hidden  
+    y = torch.ones(2, 2, 3)      # batch seq hidden  
+    z = x @ y.transpose(-2, -1)  # batch seq seq  
+    #Easy to mess up the dimensions (what is -2, -1?)...
+
+
+def einops_einsum():
+    #Einsum is generalized matrix multiplication with good bookkeeping.
+    x = torch.ones(3, 4)  # seq1 hidden 
+    y = torch.ones(4, 3)  # hidden seq2 
+    # Old way
+    z = x @ y   # seq1 seq2  
+    # New (einops) way
+    z = einsum(x, y, "seq1 hidden, hidden seq2 -> seq1 seq2")    
+
+    # Let's try a more complex example...
+    x = torch.ones(2, 3, 4)  # batch seq1 hidden 
+    y = torch.ones(2, 3, 4)  # batch seq2 hidden 
+    # Old way
+    z = x @ y.transpose(-2, -1)  # batch seq1 seq2  
+    # New (einops) way
+    z = einsum(x, y, "batch seq1 hidden, batch seq2 hidden -> batch seq1 seq2")  
+    # Dimensions that are not named in the output are summed over.  
+```
