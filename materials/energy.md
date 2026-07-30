@@ -6,6 +6,14 @@
 
 - Read the following article in [Nature](https://www.nature.com/articles/d41586-026-01951-5) on the impacts this is having in the Global South
 
+- [🎥 Video by Vizuara on energy](http://youtube.com/shorts/0Ui5Y2-5OVs)
+
+- 🤔 That is why batching, caching, quantization and speculation are so important
+
+- 🤔 Politeness costs tokens: should you be _polite_ to your LLM?
+
+- Cost is mostly in GPU time
+
 - 🎮 Practicals on estimating energy usage (and links to scaling) in LLMs
 
 - Queue management/SLO aware scheduling
