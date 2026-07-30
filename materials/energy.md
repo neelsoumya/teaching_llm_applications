@@ -18,9 +18,9 @@
 
 - Queue management/SLO aware scheduling
 
-- KV cache management
+- [KV cache management](kvcache.md)
 
-- The Sunk Carbon Fallacy Bashir et al.
+- [📝 The Sunk Carbon Fallacy Bashir et al.](https://arxiv.org/abs/2410.15087)
 
 - Carbon aware computing: serving across geographical data centres
 
