@@ -13,6 +13,13 @@ Guest lectures bring practitioner and research perspectives that complement the 
 - Industry whitepapers and industry specific problems
 - [Energy](energy.md)
 
+## Julio Santiseteban
+
+- Peru
+- Quechua (indigenous language)
+- Oral traditions (Amazon) oral/speech models
+- GPT-Latam
+
 ### Nirav Bhatt
 
 - Low resource languages Swahili
