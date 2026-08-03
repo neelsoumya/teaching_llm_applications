@@ -1,5 +1,6 @@
 torch
 numpy
+einops
 transformers
 circuitsvis
 transformer_lens
