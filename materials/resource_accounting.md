@@ -196,4 +196,76 @@ def arithmetic_intensity_dot_product():
 
 - [🎥 Roofline plots](https://youtu.be/kuYAsz7zspQ?si=VVU3QEjQ8mByoQ16&t=3404)
 
+- [Roofline plots](https://jax-ml.github.io/scaling-book/roofline/)
+
 - Roofline plots plot the arithmetic intensity on x-axis and performance (FLOPS) on y-axis.
+
+# Deep networks cost
+
+- Forward pass cost: `2 * data_points * num_parameters` FLOPS
+
+- Backward pass cost: `4 * data_points * num_parameters` FLOPS
+
+- Total: `6 * data_points * num_parameters` FLOPS
+
+- This is for multi-layer perceptrons but works for transformers as well (for short context length)
+
+- for longer context length: `* sequence_length` factor also appears (roughly) `* sequence_length^2` in the memory cost (not just compute)
+
+- practical
+
+```python
+def deep_linear_network():
+    
+    Consider a deep network with L layers and D-dimensional inputs, activations, and outputs.
+    # Define the network
+    D = 8  # Dimensionality of input, activations, and output
+    L = 3  # Number of layers
+    model = DeepNetwork(dim=D, num_layers=L).to(cuda_if_available())
+    num_parameters = get_num_parameters(model)  
+    assert num_parameters == (D * D) * L
+    # Run the model on a batch of data
+    B = 4  # Batch size
+    x = torch.randn(B, D, device=cuda_if_available())  
+    y = model(x)  
+
+class Block(nn.Module):
+    """Simple block that applies a linear transformation followed by a ReLU nonlinearity."""
+    def __init__(self, dim: int):
+        super().__init__()
+        self.weight = nn.Parameter(torch.randn(dim, dim) / np.sqrt(dim))
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = x @ self.weight  # Linear
+        x = F.relu(x)        # Activation
+        return x
+        
+class DeepNetwork(nn.Module):
+    """Map `dim`-vector to a `dim`-vector."""
+    def __init__(self, dim: int, num_layers: int):
+        super().__init__()
+        self.layers = nn.ModuleList([Block(dim) for i in range(num_layers)])
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        # Apply all the layers sequentially
+        for layer in self.layers:
+            x = layer(x)  
+        return x
+```
+
+
+
+
+- `gradient accumulation` hack: compute gradient on micro-batches and accumulate the gradients, update the parameters only once in a while (and then zero out the gradients)
+
+
+- `activation checkpointing`
+
+- for training we need to store all activations
+
+- for inference we only need activations for the current layer (no gradients)
+
+- 🤔 if you want to reduce memory, recompute activations during the backward pass (but this is slower)
+
+
+
+
+    

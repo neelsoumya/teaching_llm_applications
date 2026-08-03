@@ -132,6 +132,43 @@ def arithmetic_intensity_dot_product():
     assert arithmetic_intensity < h100_accelerator_intensity
     # Memory-bound!
 
+
+def deep_linear_network():
+    
+    # Consider a deep network with L layers and D-dimensional inputs, activations, and outputs.
+    
+    # Define the network
+    D = 8  # Dimensionality of input, activations, and output
+    L = 3  # Number of layers
+    model = DeepNetwork(dim=D, num_layers=L).to(cuda_if_available())
+    num_parameters = get_num_parameters(model)  
+    assert num_parameters == (D * D) * L
+    # Run the model on a batch of data
+    B = 4  # Batch size
+    x = torch.randn(B, D, device=cuda_if_available())  
+    y = model(x)  
+
+class Block(nn.Module):
+    """Simple block that applies a linear transformation followed by a ReLU nonlinearity."""
+    def __init__(self, dim: int):
+        super().__init__()
+        self.weight = nn.Parameter(torch.randn(dim, dim) / np.sqrt(dim))
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        x = x @ self.weight  # Linear
+        x = F.relu(x)        # Activation
+        return x
+
+class DeepNetwork(nn.Module):
+    """Map `dim`-vector to a `dim`-vector."""
+    def __init__(self, dim: int, num_layers: int):
+        super().__init__()
+        self.layers = nn.ModuleList([Block(dim) for i in range(num_layers)])
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        # Apply all the layers sequentially
+        for layer in self.layers:
+            x = layer(x)  
+        return x
+
 if __name__ == "__main__":
     motivating_questions()
 
@@ -142,4 +179,6 @@ if __name__ == "__main__":
     arithmetic_intensity_gelu()
 
     arithmetic_intensity_dot_product()
+
+    deep_linear_network()
     
