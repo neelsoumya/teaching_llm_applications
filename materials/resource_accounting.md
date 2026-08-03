@@ -238,7 +238,7 @@ class Block(nn.Module):
         x = x @ self.weight  # Linear
         x = F.relu(x)        # Activation
         return x
-        
+
 class DeepNetwork(nn.Module):
     """Map `dim`-vector to a `dim`-vector."""
     def __init__(self, dim: int, num_layers: int):
@@ -268,4 +268,32 @@ class DeepNetwork(nn.Module):
 
 
 
-    
+## Summary
+
+- everything is in tensors (parameters, activations, gradients, optimizer state, data)
+
+- einops
+
+- compute vs memory bounds
+
+- matrix multiplication is very compute intensive; element-wise operations are memory intensive
+
+- reduce memory usage by gradient accumulation (trade-off: slower training) and activation checkpointing (trade-off: slower training)   
+
+- 🤔 How long would it take to train a 70B parameter model on 15T tokens on 1024 B100s? 
+
+<!--
+- total_flops = 6 * 70e9 * 15e12  
+- h100_flop_per_sec = 1979e12 / 2
+- mfu = 0.5
+- flops_per_day = h100_flop_per_sec * mfu * 1024 * 60 * 60 * 24  
+- days = total_flops / flops_per_day  
+-->
+
+<!--
+
+- answer: 165 days
+
+-->
+
+
