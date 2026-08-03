@@ -121,3 +121,11 @@ def einops_einsum():
 
 - FLOPS for forward pass: `2 * num_parameters * num_tokens`
 
+- Memory bound vs. Compute bound:
+
+    >The theoretical maximum number of floating point operations per second of a processor is its theoretical maximum speed. For example, an NVIDIA H100 has a theoretical maximum speed of about 2000 teraflops (that is $2 \times 10^{15}$ flop/s), where a flop may be an addition, multiplication, division, etc.   
+    
+    > For matrix multiplication of two matrices of shape $M \times N$ and $N \times P$, we perform $M \times N \times P$ multiplications and $M \times N \times P - M \times P$ additions. This is approximately $2MNP$ flops.   
+    - 
+
+- `GeLU` is computationally more expensive than `ReLU`, in `GPT` architecture we use `GeLU`

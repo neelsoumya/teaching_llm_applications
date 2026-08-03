@@ -12,6 +12,8 @@ import timeit
 import einops
 from einops import einsum
 from torch import nn
+from facts import h100_flop_per_sec, h100_bytes_per_sec
+
 
 # In PyTorch, the numel() method 
 # returns the total number of elements in a tensor (short for "number of elements").
@@ -99,8 +101,22 @@ def motivating_questions():
     bytes_per_parameter = 2 + 2 + (4 + 4)  # parameters, gradients, optimizer state  
     num_parameters = (h100_bytes * 8) / bytes_per_parameter  
     print("Number of parameters:", num_parameters )
-    #Caveat: activations are not accounted for (depends on batch size and sequence length).
-    #This is a rough back-of-the-envelope calculation
+    # Caveat: activations are not accounted for (depends on batch size and sequence length).
+    # This is a rough back-of-the-envelope calculation
+
+def arithmetic_intensity_gelu():
+    n = 1024
+    x = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    y = F.gelu(x)  # GELU(x) = 0.5 x (1 + tanh(sqrt(2/pi) (x + 0.044715 x^3)))
+    bytes = (2 * n) + (2 * n)  # Read x, write y (bf16 is 2 bytes/float)
+    flops = 20 * n  # tanh can approximated in various ways (e.g., polynomial)
+    arithmetic_intensity = flops / bytes  
+    h100_accelerator_intensity = h100_flop_per_sec / h100_bytes_per_sec  
+    assert arithmetic_intensity < h100_accelerator_intensity
+
+    # Note that GeLU does more work than ReLU per byte moved, so it has higher arithmetic intensity.
+    # But still memory-bound!
+    # In other words, ReLU is not faster than GeLU (when doing things in an isolated way).
 
 if __name__ == "__main__":
     motivating_questions()
@@ -108,3 +124,5 @@ if __name__ == "__main__":
     einops_einsum()
     
     einops_motivation()
+
+    arithmetic_intensity_gelu()
