@@ -66,6 +66,8 @@ Each week has:
 
 - [Resource accounting](materials/resource_accounting.md)
 
+- [Architectures](materials/architectures.md)
+
 
 ## Installation
 
