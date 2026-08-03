@@ -129,3 +129,41 @@ def einops_einsum():
     - 
 
 - `GeLU` is computationally more expensive than `ReLU`, in `GPT` architecture we use `GeLU`
+
+- Practical
+
+```python
+def arithmetic_intensity_gelu():
+    n = 1024
+    x = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    y = F.gelu(x)  # GELU(x) = 0.5 x (1 + tanh(sqrt(2/pi) (x + 0.044715 x^3)))
+    bytes = (2 * n) + (2 * n)  # Read x, write y (bf16 is 2 bytes/float)
+    flops = 20 * n  # tanh can approximated in various ways (e.g., polynomial)
+    arithmetic_intensity = flops / bytes  
+    h100_accelerator_intensity = h100_flop_per_sec / h100_bytes_per_sec  
+    assert arithmetic_intensity < h100_accelerator_intensity
+
+    # Note that GeLU does more work than ReLU per byte moved, so it has higher arithmetic intensity.
+    # But still memory-bound!
+    # In other words, ReLU is not faster than GeLU (when doing things in an isolated way).
+```
+
+- arithmetic intensity = flops / bytes
+
+- it means flops per byte
+
+- it measures how computationally intensive the operation is
+
+- it is a measure of how effectively we use the computational resources of the processor
+
+- _Concept_ 🧩 🚀 _Transformers_ have very high arithmetic intensity (so it exploits the compute resources of the processor well)
+
+- During inference we are doing matrix vector product
+
+- As long as we have big matrices, we are compute bound
+
+- 💡 Inference is faster than training
+
+- Matrix vector product is what happens in inference because we only have one input vector (and so inference is memory bound)
+
+- 💡 Training transformers is compute bound and involves big matrix multiplications (and so training is compute bound)
