@@ -128,6 +128,25 @@ def einops_einsum():
     > For matrix multiplication of two matrices of shape $M \times N$ and $N \times P$, we perform $M \times N \times P$ multiplications and $M \times N \times P - M \times P$ additions. This is approximately $2MNP$ flops.   
     - 
 
+- MFU 
+
+
+- _arithmetic intensity = flops / bytes_
+
+- it means flops per byte
+
+- it measures how computationally intensive the operation is
+
+- it is a measure of how effectively we use the computational resources of the processor
+
+- _Concept_ 🧩 🚀 _Transformers_ have very high arithmetic intensity (so it exploits the compute resources of the processor well)
+
+- accelerator speed and memory bandwidth
+
+- $\text{flops/byte} = \frac{\text{peak FLOPS}}{\text{memory bandwidth in bytes/sec}}$
+
+- If you have something in memory it needs to be moved also
+
 - `GeLU` is computationally more expensive than `ReLU`, in `GPT` architecture we use `GeLU`
 
 - Practical
@@ -148,15 +167,22 @@ def arithmetic_intensity_gelu():
     # In other words, ReLU is not faster than GeLU (when doing things in an isolated way).
 ```
 
-- arithmetic intensity = flops / bytes
 
-- it means flops per byte
+- Practical
 
-- it measures how computationally intensive the operation is
-
-- it is a measure of how effectively we use the computational resources of the processor
-
-- _Concept_ 🧩 🚀 _Transformers_ have very high arithmetic intensity (so it exploits the compute resources of the processor well)
+```python
+def arithmetic_intensity_dot_product():
+    n = 1024
+    x = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    w = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    y = x @ w
+    bytes = (2 * n) + (2 * n) + 2  # Read x, read w, write y
+    flops = 2 * n - 1  # n multiplications, n-1 additions
+    arithmetic_intensity = flops / bytes  # ~1/2 
+    h100_accelerator_intensity = h100_flop_per_sec / h100_bytes_per_sec  
+    assert arithmetic_intensity < h100_accelerator_intensity
+    # Memory-bound!
+```
 
 - During inference we are doing matrix vector product
 
@@ -164,6 +190,10 @@ def arithmetic_intensity_gelu():
 
 - 💡 Inference is faster than training
 
-- Matrix vector product is what happens in inference because we only have one input vector (and so inference is memory bound)
+- 💡 Matrix vector product is what happens in inference because we only have one input vector which we dot product with a matrix (and so inference is memory bound)
 
 - 💡 Training transformers is compute bound and involves big matrix multiplications (and so training is compute bound)
+
+- [🎥 Roofline plots](https://youtu.be/kuYAsz7zspQ?si=VVU3QEjQ8mByoQ16&t=3404)
+
+- Roofline plots plot the arithmetic intensity on x-axis and performance (FLOPS) on y-axis.

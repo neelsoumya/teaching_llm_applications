@@ -1,6 +1,8 @@
 '''
 Practical for Resource Accounting
 
+Credits: Adapted from 
+
 https://cs336.stanford.edu/lectures/?trace=lecture_02_recording
 
 '''
@@ -118,6 +120,18 @@ def arithmetic_intensity_gelu():
     # But still memory-bound!
     # In other words, ReLU is not faster than GeLU (when doing things in an isolated way).
 
+def arithmetic_intensity_dot_product():
+    n = 1024
+    x = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    w = torch.ones(n, dtype=torch.bfloat16, device=cuda_if_available())
+    y = x @ w
+    bytes = (2 * n) + (2 * n) + 2  # Read x, read w, write y
+    flops = 2 * n - 1  # n multiplications, n-1 additions
+    arithmetic_intensity = flops / bytes  # ~1/2 
+    h100_accelerator_intensity = h100_flop_per_sec / h100_bytes_per_sec  
+    assert arithmetic_intensity < h100_accelerator_intensity
+    # Memory-bound!
+
 if __name__ == "__main__":
     motivating_questions()
 
@@ -126,3 +140,6 @@ if __name__ == "__main__":
     einops_motivation()
 
     arithmetic_intensity_gelu()
+
+    arithmetic_intensity_dot_product()
+    
