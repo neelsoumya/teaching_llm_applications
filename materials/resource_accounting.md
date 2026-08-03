@@ -143,6 +143,8 @@ def einops_einsum():
 
 - accelerator speed and memory bandwidth
 
+- ![image](../images/gpu_memory.png)
+
 - $\text{flops/byte} = \frac{\text{peak FLOPS}}{\text{memory bandwidth in bytes/sec}}$
 
 - If you have something in memory it needs to be moved also
