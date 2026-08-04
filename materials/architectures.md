@@ -32,3 +32,19 @@
 
 - _Concept_ 🧩 🚀 💡 architecture modifications that make training more stable
 - when `Llama 2` came out, everyone started making minor modifications to it
+
+## Pre vs. Post norm
+
+- Original transformer paper residual layer (post norm)
+- GPT 2, 3, Llama 2 are pre-norm
+
+### Why Pre-norm?
+
+- helps with training stability
+- smoother gradient flow
+
+- ⚠️ All modern LLMs push the layer norm outside the residual stream (but before the compuations/multi-head attention)
+
+- Residual layer has the norm
+
+![image](../images/pre_vs_post_norm.png)
