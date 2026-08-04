@@ -10,7 +10,7 @@
 
 - LayerNorm, post-norm
 
-## Assignment
+## 🎮 Practical
 
 - SWIGLU in FFN
 - Rotary Positional Embeddings
@@ -19,3 +19,16 @@
 
 - `Llama`
 - why choose these?
+
+## Zoo of models
+
+- why so many models/architectures?
+- 🤔 stabilty tricks (during training)
+- how many vocab elements?
+- train efficiently on GPUs
+- `QK-norm`
+- Hybrid attention
+- lots of experimentation
+
+- _Concept_ 🧩 🚀 💡 architecture modifications that make training more stable
+- when `Llama 2` came out, everyone started making minor modifications to it
