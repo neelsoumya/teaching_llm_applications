@@ -109,3 +109,47 @@ The Residual Stream (yellow arrows)::
     
 ## Bias terms 
 
+- Bias terms not helpful for transformers
+
+- Original transformer FFN(x) = max(xW1 + b1, xW2 + b2) + b3
+- Llama 2 FFN(x) = (xW1 + b1, xW2 + b2, xW3 + b3)   
+
+- Most implementations now: FFN(x) = sigma(xW1)W2
+
+- reasons: memory, efficiency, training stability
+
+- get the easy systems win!
+
+- drop bias terms: keep the system more arithematically intense
+
+- you do lots of experiments: no way to know what will work beforehand
+
+## Zoo of activations
+
+- [🎥 Zoo of activations](https://youtu.be/lVynu4bo1rY?si=fXi-WhvRNLUACmxy&t=1226)
+
+- ReLU: FF(x) = max(0, xW1) W2 used in `Chinchilla`
+- GeLU:  Gaussian noise around 0 (used in `GPT-2`)
+
+- Gated ReLU (reGLU): gating is very effective
+
+- SwiGLU: swish is x * sigmoid(x)
+
+- 💡 GLUs (gated) are better at loss (not much loss in computational cost)
+
+## Serial vs Parallel 
+
+- normal transformer blocks are _serial_: they compute attention and then FFN/MLP
+
+- serial still preferred (depth loss deleterious)
+
+
+## Position embeddings
+
+- attention is position agnostic
+- so need a way to represent position
+- if you have `sines` and `cosines` then you can recover relative positions (similar to a _Fourier transform_)
+
+![image](../images/fourier.png)
+
+- 
