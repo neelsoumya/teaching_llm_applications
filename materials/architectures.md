@@ -148,8 +148,9 @@ The Residual Stream (yellow arrows)::
 
 - attention is position agnostic
 - so need a way to represent position
-- if you have `sines` and `cosines` then you can recover relative positions (similar to a _Fourier transform_)
+
+- _Concept_ 🧩 🚀 if you have `sines` and `cosines` then you can recover relative positions (similar to a _Fourier transform_)
 
 ![image](../images/fourier.png)
 
-- 
+-  
