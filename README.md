@@ -68,6 +68,7 @@ Each week has:
 
 - [Architectures](materials/architectures.md)
 
+- [Softmax](materials/softmax.md)
 
 ## Installation
 

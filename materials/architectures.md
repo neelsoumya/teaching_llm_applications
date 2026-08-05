@@ -48,3 +48,6 @@
 - Residual layer has the norm
 
 ![image](../images/pre_vs_post_norm.png)
+
+- keep your residual stream clean
+- allow gradients to flow backwards more easily
