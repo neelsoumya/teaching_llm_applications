@@ -80,7 +80,32 @@ The Residual Stream (yellow arrows)::
 
 - LayerNorm at the beginning and/or end of Multi-Head Attention (MHA) and Feed Forward Network (FFN) _but_ still outside the residual stream
 
-- 
+## Why Layer Norm?
 
+- LayerNorm: normalize the input features (per token) across the hidden dimension
+
+- RMSNorm: does not add a bias term unlike layer norm or subtract mean , it only normalize by the square root of the mean square
+
+![images](../images/rmsnorm.png)
+
+- RMSNorm is faster computationally
+
+- 💡 This is where architecture interacts with system design. 
+
+- Think back to [arithmetic intensity and the need to keep the GPUs busy](resource_accounting.md)
+
+- do not move memory back and forth between memory and the compute units
+
+- inefficient use of GPU
+
+- FLOPS important but runtime is what matters for inference speed
+
+- Keep the GPUs fed!
+
+- [🎥 Normalization can be upto 25% of total runtime!](https://youtu.be/lVynu4bo1rY?si=sN3xwuSZAYirGlIS&t=979)
+
+- RMSNorm can still matter due to _data movement_
+
+    
 
 
