@@ -107,5 +107,5 @@ The Residual Stream (yellow arrows)::
 - RMSNorm can still matter due to _data movement_
 
     
-
+## Bias terms 
 
