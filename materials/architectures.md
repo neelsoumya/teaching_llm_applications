@@ -177,6 +177,24 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 
 ![image](../images/rope2.png)
 
+- _Gemma_ has proportional rotary position embeddings (PROPE): just rotate first two
+
+### 🎮 Practical: implementation and code for ROPE
+
+- [🎥 Video on Stanford CS336](https://youtu.be/lVynu4bo1rY?si=FfdXX59mB43Ju7UV&t=2311)
+- TODO: Forthcoming: add notebooks
+
+- [📝 Notebook](../images/practical_rope.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
