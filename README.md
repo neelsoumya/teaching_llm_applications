@@ -70,6 +70,10 @@ Each week has:
 
 - [Softmax](materials/softmax.md)
 
+- More advanced topics
+
+- [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
+
 ## Installation
 
 ```bash
@@ -92,6 +96,7 @@ pip install -r requirements.txt
 
 - [🤗 Huggingface resources on transformers](https://huggingface.co/learn/llm-course/chapter1/4)
 
+- [Stanford CME295](https://cme295.stanford.edu/) and [on youtube](https://www.youtube.com/watch?v=k5Fh-UgTuCo)
 
 - Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
 
