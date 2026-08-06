@@ -171,7 +171,10 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 
 - now you can take inner products
 
-- what do you in _d_ dimensions?
+- what do you in _d_ dimensions? How do you rotate in higher dimensions?
+
+- low frequency parts (f1) change slowly, high frequency parts (f2) change quickly
+
 
 - 📝 Image from [Paper on ROPE](https://arxiv.org/pdf/2104.09864)
 
@@ -182,9 +185,12 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 ### 🎮 Practical: implementation and code for ROPE
 
 - [🎥 Video on Stanford CS336](https://youtu.be/lVynu4bo1rY?si=FfdXX59mB43Ju7UV&t=2311)
-- TODO: Forthcoming: add notebooks
 
 - [📝 Notebook](../images/practical_rope.png)
+
+- [📝 Notebook](../practicals/rope_practical.py)
+
+- [📝 Notebook](../practicals/rope_practical_solutions.py)
 
 
 
