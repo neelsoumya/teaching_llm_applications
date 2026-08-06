@@ -193,6 +193,51 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 - [📝 Notebook](../practicals/rope_practical_solutions.py)
 
 
+## Consensus hyperparameters
+
+- `dff = 4 * d_model`
+- dff (feedforward dimension)
+- d_model (model dimension)
+- richness of your MLP (multi layer perceptron)
+
+
+- Exceptions: GLU variants
+
+- `T5`: 64 multiplier to keep GPU busy
+
+## Consensus hyperparameter 2
+
+- Multi head attention
+
+- [How many heads](https://youtu.be/lVynu4bo1rY?si=3xPGar6HAPEt8OjT&t=3063)
+
+
+## Aspect ratio
+
+- aspect ratio: deep vs. shallow
+
+- `aspect ratio = d_model / n_layer`
+
+- approx. 100 for most models
+
+ - 100 deep for every layer 
+
+- deep models are hard to parallelize (Tay et al 2021)
+
+- `expressiveness` reasons to go deep
+
+- `systems` reasons to go wide
+
+
+## Vocabulary size
+
+- Original Transformer (37k tokens)
+- Larger vocabulary -> larger embedding matrix
+
+- multi-modal models (images and text): use larger vocabulary with its own image tokenizer and image vocab
+
+## Dropout and regularization
+
 
 
 
