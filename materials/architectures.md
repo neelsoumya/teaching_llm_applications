@@ -153,4 +153,35 @@ The Residual Stream (yellow arrows)::
 
 ![image](../images/fourier.png)
 
--  
+- Absolute embeddings : 
+
+- Relative embeddings : add a vector to the attention mechanism
+
+- Rope embeddings: RoPE (Rotary Position Embedding) : 
+
+- inner products are invariant to arbitrary rotations
+
+- we want embeddings to be position dependent
+
+- RoPE intuition : _Concept_ 🧩 🚀
+
+![image](../images/rope.png)
+
+Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FLjIVDSMc-&t=2155)
+
+- now you can take inner products
+
+- what do you in _d_ dimensions?
+
+- 📝 Image from [Paper on ROPE](https://arxiv.org/pdf/2104.09864)
+
+![image](../images/rope2.png)
+
+
+
+
+ 
+
+
+
+
