@@ -76,6 +76,7 @@ Each week has:
 
 - [Different kinds of attention](materials/different_kinds_attention.md)
 
+- [📝 Sarvam](materials/sarvam.md)
 
 ## Installation
 
