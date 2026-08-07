@@ -74,6 +74,9 @@ Each week has:
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
+- [Different kinds of attention](materials/different_kinds_attention.md)
+
+
 ## Installation
 
 ```bash
