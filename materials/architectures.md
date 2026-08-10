@@ -238,13 +238,78 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 
 ## Dropout and regularization
 
+- dropout
+- weight decay
+- weight decay interacts with learning rates (cosine schedule)
+- regularization affects optimization
+- allows you to use learn faster
+- TODO: add practical for this
 
 
+## Stability tricks
+
+- no spikes in loss during training
+- softmax can be ill-behaved (due to exponent and divide by zero)
+- [video](https://youtu.be/lVynu4bo1rY?si=98cgShM7n59EdxME&t=4022)
+
+- `z-loss` penalizes large logits
+- adds a regularizing term to the loss function
+- penalizes large values and how far from 0 it is
+- Devlin 2014
+- useful for stable training
+- used in `PaLM`
+
+## Attention softmax stability
+
+- `QK norm`
+- if you have instabilities, throw a layer norm in there
+- query and key values are layer (RMS) normed
+- then inputs to softmax are better behaved
+- TODO [practical on this](../practicals/qk_norm_practical.ipynb)
+
+![image](../images/qk_norm.png)
+
+- QK-norm addresses attention logits. But there's a second place large logits show up: the final output head, right before the softmax that turns logits
+into next-token probabilities
+
+- this is addressed by `z-loss`
+
+- Here's the subtle problem: softmax (and therefore cross-entropy) is
+shift-invariant, exactly as we proved in section 2. That means cross-entropy loss has **no preference at all** over the overall scale of the logits - it
+only cares about the *differences* between them. If the training data is close to linearly separable, gradient descent will happily keep pushing every logit larger and larger forever (larger logits -> more confident softmax -> lower loss), even though the *predictions* stop meaningfully
+improving. Nothing in the loss function says "stop growing."
+
+- z-loss adds a small penalty term that directly targets this: it penalizes
+$\log Z$ (the log of the softmax normalizer, also called the log-partition
+function) for straying away from zero:
+
+$$\mathcal{L}_{z} = \lambda \cdot (\log Z)^2, \qquad \mathcal{L}_{\text{total}} = \mathcal{L}_{CE} + \mathcal{L}_z$$
+
+- Since $\log Z$ moves in lock-step with the overall logit scale but does **not** depend on which class is correct, this penalty restrains logit growth without fighting cross-entropy's job of telling right answers from
+wrong ones.
 
 
+## 😂 Lesson?
 
+- 🎉 🥳Here is a funny comic that summarizes the situation
 
+- Imagine you’re trying to bake a soufflé, but every time you put it in the oven, it violently explodes.
 
+- To fix it, you attach a metal clamp to the dish. Then you add a rubber band around the middle. Then you wrap the top in foil. 
+
+- After months of research, you step back and realize: you didn't invent three revolutionary baking techniques. You just put duct tape on the same problem in three slightly different spots.
+
+- That’s modern Large Language Model (LLM) training in a nutshell. When AI models learn, their internal numbers often swing wildly out of control ("loss spikes"). 
+
+- To stop the AI from losing its mind, researchers invent complex-sounding hacks like LayerNorm, QK Norm, and Z-loss. 
+
+- The dirty secret? They’re all essentially the exact same mathematical trick—normalizing numbers so they don't blow up—just slapped onto different parts of the network.
+
+- _Concept_ 🧩 🚀 AI engineering in a nutshell:
+    - 50% deep mathematical rigor.
+    - 50% wrapping duct tape around existing duct tape until the loss curve stops looking like a crime scene.
+
+![image](../images/comic_lossfunction.png)
 
 
 
