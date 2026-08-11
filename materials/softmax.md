@@ -34,7 +34,23 @@ $$softmax(x) = \frac{e^{x_i}}{\sum_j e^{x_j}}$$
 ![image](../images/formula_softmax.png)
 - [🎥 Video by Vizuara](https://www.youtube.com/shorts/uyYltOvcn1E)
 
-## Practical
+
+-  **Raw Logits ($z_i$):** These are the unnormalized output scores from a model. Higher scores indicate higher confidence in a particular class.
+-  **Softmax Function:** Converts logits into probabilities that sum to 1. The formula with temperature is:
+    $$P_i = \frac{e^{z_i / T}}{\sum_{j} e^{z_j / T}}$$
+-  **Temperature ($T$):** 
+    - **Low Temperature ($T < 1$):** Makes the distribution "sharper" or more peaky. The model becomes more confident in its top choice, effectively becoming "greedy."
+    - **High Temperature ($T > 1$):** Makes the distribution "flatter" or more uniform. The model becomes less confident and explores other options, increasing diversity.
+
+
+
+- Why is it called _temperature_?
+- This is a term from physics
+
+![image](../images/why_temperature.png)
+
+
+## 🎮 Practical
 
 - paste the following code into Google Colab and play around with the sliders
 
