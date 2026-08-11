@@ -68,7 +68,7 @@ Each week has:
 
 - [Architectures](materials/architectures.md)
 
-- [Softmax](materials/softmax.md)
+- [Softmax and temperature](materials/softmax.md)
 
 - More advanced topics
 
