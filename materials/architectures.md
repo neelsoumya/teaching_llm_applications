@@ -265,7 +265,12 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 - if you have instabilities, throw a layer norm in there
 - query and key values are layer (RMS) normed
 - then inputs to softmax are better behaved
-- TODO [practical on this](../practicals/qknorm_practical.ipynb)
+
+### 🎮 Practical
+
+- 🎮 [practical on this](../practicals/qknorm_practical.ipynb)
+
+## QK-norm
 
 ![image](../images/qknorm.png)
 
