@@ -267,7 +267,7 @@ Image from [🎥 Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=iBPlo_FL
 - then inputs to softmax are better behaved
 - TODO [practical on this](../practicals/qk_norm_practical.ipynb)
 
-![image](../images/qk_norm.png)
+![image](../images/qknorm.png)
 
 - QK-norm addresses attention logits. But there's a second place large logits show up: the final output head, right before the softmax that turns logits
 into next-token probabilities
