@@ -317,7 +317,34 @@ wrong ones.
 ![image](../images/comic_lossfunction.png)
 
 
+## Logit soft-capping
 
+- `logits = softcap  * tanh(logits / softcap)`
+
+- `Gemma` uses this
+
+## Attention heads
+
+- GQA/MQA: reduce number of heads
+- see [lecture on different kinds of attention](different_kinds_attention.md)
+- sparse or sliding window attention: GPT-4, Mistral
+
+## Multi-Query-Attention (MQA)
+
+- [🎥 video on MQA](https://youtu.be/lVynu4bo1rY?si=O8-FEmpsikcQ0HGl&t=4781)
+
+- fewer items to move in and out of memory
+
+- KV Cache reused across heads
+
+## GQA 
+
+## Multi-Head Attention (MHA)
+
+## TODO Practical based on how this affects performance
+
+- Does MQA hurt?
+- 
 
  
 

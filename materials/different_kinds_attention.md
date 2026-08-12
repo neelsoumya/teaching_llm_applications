@@ -7,6 +7,12 @@
 - Grouped-Query Attention (GQA)
 - Multi-Query Attention (MQA)
 
+## Multi-Query-Attention (MQA)
+
+
+- [🎥 video on MQA Stanford CS365](https://youtu.be/lVynu4bo1rY?si=O8-FEmpsikcQ0HGl&t=4781)
+
+
 ## Intuition
 
 Think of attention as a team of researchers trying to answer questions using a library: **Queries** are the questions asked, **Keys** are book index topics, and **Values** are the actual textbook contents.
