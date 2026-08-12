@@ -329,6 +329,16 @@ wrong ones.
 - see [lecture on different kinds of attention](different_kinds_attention.md)
 - sparse or sliding window attention: GPT-4, Mistral
 
+![image](../images/gqa.png)
+
+![image](../images/mqa.png)
+
+## Reading VERY GOOD
+
+- [link](https://fireworks.ai/blog/multi-query-attention-is-all-you-need)
+
+- [link for KV caching explained](https://medium.com/@joaolages/kv-caching-explained-276520203249)
+
 ## Multi-Query-Attention (MQA)
 
 - [🎥 video on MQA](https://youtu.be/lVynu4bo1rY?si=O8-FEmpsikcQ0HGl&t=4781)

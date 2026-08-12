@@ -13,6 +13,18 @@
 - [🎥 video on MQA Stanford CS365](https://youtu.be/lVynu4bo1rY?si=O8-FEmpsikcQ0HGl&t=4781)
 
 
+
+![image](../images/gqa.png)
+
+![image](../images/mqa.png)
+
+## Reading VERY GOOD
+
+- [link](https://fireworks.ai/blog/multi-query-attention-is-all-you-need)
+
+- [link for KV caching explained](https://medium.com/@joaolages/kv-caching-explained-276520203249)
+
+
 ## Intuition
 
 Think of attention as a team of researchers trying to answer questions using a library: **Queries** are the questions asked, **Keys** are book index topics, and **Values** are the actual textbook contents.
