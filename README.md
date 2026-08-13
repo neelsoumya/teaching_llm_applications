@@ -74,6 +74,8 @@ Each week has:
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
+- [Audio and vision models](audio_vision_models.md)
+
 - [Different kinds of attention](materials/different_kinds_attention.md)
 
 - [📝 Sarvam](materials/sarvam.md)

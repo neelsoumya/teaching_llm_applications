@@ -354,10 +354,20 @@ wrong ones.
 ## TODO Practical based on how this affects performance
 
 - Does MQA hurt?
-- 
 
+## Sliding window attention
+
+- interleave full and sliding window attention
+
+- `Cohere command A`: every 4th layer is full attention
+
+- _Concept_ 🧩 🚀 tradeoff between long context attention and performance
  
+ ![image](../images/sliding_window_attention.png)
+
+
+ ![image](../images/sliding_window_attention2.png)
 
 
 
-
+- hybrid: between full attention and cheap attention
