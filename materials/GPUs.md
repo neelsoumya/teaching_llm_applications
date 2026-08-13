@@ -1,0 +1,48 @@
+# GPUs and Flash Attention
+
+- [🎥 Video from Stanford CS365](https://youtu.be/izZba4UA7iY?si=a_bvCFDrPPfPbN3e)
+
+- what will you learn by the end of this?
+
+![image](../images/gpu_motivation.png)
+
+## Resources
+
+- [Horace He blog](https://horace.io/brrr_intro.html)
+
+- [How to scale your model TPU book](https://jax-ml.github.io/scaling-book/)
+
+
+## 🤔 Question for class
+
+- 🤔 why would increasing the size of a matrix make _matmul_ faster? 
+
+- [📝 Read this in class or question in class](https://www.thonking.ai/p/what-shapes-do-matrix-multiplications)
+
+
+## Animation of how GPU/TPU works
+
+- from the amazing [book on how to scale your model TPU book](https://jax-ml.github.io/scaling-book/)
+
+![image](https://jax-ml.github.io/scaling-book/assets/img/pointwise-product.gif)
+
+- What is a TPU? See [link](https://jax-ml.github.io/scaling-book/tpus/)
+
+![image](https://jax-ml.github.io/scaling-book/assets/img/tpu-chip.png)
+
+- 💡 TPUs are very, very fast at matrix multiplication.
+
+![image](https://jax-ml.github.io/scaling-book/assets/img/tpu-rack.png)
+
+
+## Introduction
+
+- Denard scaling, clock scaling
+- cannot make clocks go faster
+- have more things execute in parallel
+- CPUs optimize for a few fast threads while GPUs optimize for many many many threads
+- [🎥 demystify GPU video](https://youtu.be/izZba4UA7iY?si=KsuXUlluPifrZo-f&t=557)
+
+## TODO Practical
+
+- TODO Practical see Stanford CS365 practical on GPUs.
