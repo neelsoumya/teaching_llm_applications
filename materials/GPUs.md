@@ -6,6 +6,10 @@
 
 ![image](../images/gpu_motivation.png)
 
+## What does a GPU look like?
+
+![image](../images/gpu_image.png)
+
 ## Resources
 
 - [Horace He blog](https://horace.io/brrr_intro.html)
@@ -40,8 +44,34 @@
 - Denard scaling, clock scaling
 - cannot make clocks go faster
 - have more things execute in parallel
-- CPUs optimize for a few fast threads while GPUs optimize for many many many threads
+- _Concept_ 🧩 🚀 CPUs optimize for a few fast threads while GPUs optimize for many many many threads
+
+![image](../images/gpu_vs_gpu.png)
+
 - [🎥 demystify GPU video](https://youtu.be/izZba4UA7iY?si=KsuXUlluPifrZo-f&t=557)
+
+- Each SM has many SP (streaming processors)
+- Each SM has can execute in parallel
+
+- GA100 has 128 SMs
+
+- _Concept_ 🧩 🚀 The closer the memory to SM, the faster it is: `L1` and shared memory is inside the SM. `L2` cache is on die, global memory are on memory chips next to GPU
+
+- L1 and L2 cache is shared memory (SRAM): more expensive and more power hungry
+
+- SRAM is 8x faster than HBM
+
+![image](../images/gpu_memory_hierarchy.png)    
+
+
+
+## Software model
+
+- SIMT (Single Instruction, Multiple Threads): threads work in parallel but same instruction, but different inputs
+- Blocks of 32 threads are called warps
+- Threads execute in groups
+- decreases overhead on scheduling
+
 
 ## TODO Practical
 
