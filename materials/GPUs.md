@@ -20,6 +20,7 @@
 
 - Do you think deep learning/LLMs can beat humans at everything?
 - [📝 Rich Sutton's Bitter Lesson](https://gwern.net/scaling-hypothesis#if_slide_2)
+- [Can just stacking more layers help?](https://gwern.net/scaling-hypothesis#if_slide_7)
 
 ## 🤔 Question for class
 
@@ -112,3 +113,7 @@
 ## TODO Practical
 
 - TODO Practical see Stanford CS365 practical on GPUs.
+
+- [Practical on counting FLOPS using `PyTorch`](https://dev-discuss.pytorch.org/t/the-ideal-pytorch-flop-counter-with-torch-dispatch/505) and [here using `TorchDispatchMode` ](https://pastebin.com/V3wATa7w)
+
+
