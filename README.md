@@ -80,6 +80,8 @@ Each week has:
 
 - [📝 Sarvam](materials/sarvam.md)
 
+- [Advanced topics](materials/advanced_topics.md)
+
 ## Installation
 
 ```bash
