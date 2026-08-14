@@ -16,6 +16,10 @@
 
 - [How to scale your model TPU book](https://jax-ml.github.io/scaling-book/)
 
+## 🤔 Question for class
+
+- Do you think deep learning/LLMs can beat humans at everything?
+- [📝 Rich Sutton's Bitter Lesson](https://gwern.net/scaling-hypothesis#if_slide_2)
 
 ## 🤔 Question for class
 
