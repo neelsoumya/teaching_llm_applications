@@ -6,7 +6,6 @@
 ---
 
 ## Course Overview
-
 This course takes students from first principles through to deploying LLM-powered applications. The first half focuses on *internals* (tokenisation, embeddings, attention, transformers, pre-training, fine-tuning). The second half focuses on *applications* (RAG, agents, tool use, evaluation, safety, healthcare AI, multimodal models). Week 13 provides a dedicated deep dive into Reinforcement Learning from Human Feedback (RLHF), covering the full mathematical derivation, PPO, DPO, reward hacking, Constitutional AI, and process reward models. Week 14 covers mechanistic interpretability (superposition, sparse autoencoders, circuits, the logit lens, grokking, knowledge editing). Week 15 is a dedicated deep dive into evaluation (evals): the full evaluation stack from automatic metrics through human evaluation, LLM-as-judge, benchmark design, red-teaming, safety evals, and evaluation for deployed LLM applications. Week 16 provides a deep dive into Direct Preference Optimisation (DPO): the full mathematical derivation from the RLHF objective, the gradient interpretation, practical implementation, failure modes (likelihood displacement, over-optimisation, distribution shift), and a survey of variants including IPO, KTO, SimPO, and ORPO. Week 17 covers efficiency in attention and alternative architectures: the quadratic cost of full attention, sparse attention patterns (sliding window, BigBird), FlashAttention (tiling and online softmax), linear attention approximations (Performer, RWKV), state space models (S4, Mamba), grouped-query attention, and hybrid Mamba/transformer architectures. Week 18 is a short, practical primer on reinforcement learning — just enough RL intuition (policies, rewards, REINFORCE, baselines) to understand why PPO, DPO, and GRPO are shaped the way they are.
 
 Each week has:
@@ -70,11 +69,13 @@ Each week has:
 
 - [Softmax and temperature](materials/softmax.md)
 
+- [GPU and Flash Attention](materials/GPUs.md)
+
 - More advanced topics
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
-- [Audio and vision models](audio_vision_models.md)
+- [Audio and vision models](materials/audio_vision_models.md)
 
 - [Different kinds of attention](materials/different_kinds_attention.md)
 
