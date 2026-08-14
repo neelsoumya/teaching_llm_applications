@@ -73,6 +73,38 @@
 - decreases overhead on scheduling
 
 
+## TPU
+
+- TPU (Tensor Processing Unit) by Google
+- optimized for matrix multiplication
+
+## Back to GPUs
+
+- `Matmul` is faster than floating point operations (additions, multiplications)
+
+- compute is scaling faster than memory
+
+- memory bandwidth is the bottleneck
+
+### Summary
+
+- [video of summary 🎥](https://youtu.be/izZba4UA7iY?si=u7XoJwguzp5HTgDD&t=1625)
+
+## Recent trends
+
+- Prefill phase is memory bound
+ and is one chip
+
+- Decoding is compute bound
+ and is another chip
+- attention can go to one chip; MLP will go to another chip
+
+
+## TODO 📚: Questions Assignment
+
+- TODO 📚: question written assignment on this (theory) 
+
+
 ## TODO Practical
 
 - TODO Practical see Stanford CS365 practical on GPUs.
