@@ -60,6 +60,11 @@ Think of attention as a team of researchers trying to answer questions using a l
 | **Model Quality** | Maximum | Near-Maximum | Reduced |
 
 
+## Resource on GPUs
+
+- See chapter on [GPUs](GPUs.md)
+
+
 ## Deep dive
 
 - frame the progression as an evolution driven by real-world hardware limits rather than abstract math.

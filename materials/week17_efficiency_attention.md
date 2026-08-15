@@ -86,6 +86,8 @@ Cost: O(n^{3/2}) for square inputs.
 
 Mistral 7B uses sliding window attention with w = 4096 inside each layer. Combined with 32 transformer layers, the effective receptive field is 32 × 4096 = 131,072 tokens despite each individual attention operation being O(n·w).
 
+- Also see chapter on [GPUs](GPUs.md)
+
 ```python
 # Conceptual: restrict attention mask to window
 mask = torch.zeros(n, n)

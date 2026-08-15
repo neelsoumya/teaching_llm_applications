@@ -145,6 +145,8 @@ def einops_einsum():
 
 - ![image](../images/gpu_memory.png)
 
+- also see chapter on [GPUs](GPUs.md)
+
 - $\text{flops/byte} = \frac{\text{peak FLOPS}}{\text{memory bandwidth in bytes/sec}}$
 
 - If you have something in memory it needs to be moved also

@@ -20,6 +20,8 @@
 
 - on a busy GPU, KV cache gets bigger
 
+- Also see chapter on [GPUs](GPUs.md)
+
 - you can reserve a certain amount of KV cache for each user (for the longest possible answer), but you potentially waste space
 
 - 💡 OS trick - operating systems faced and solved a similar problem (`virtual memory`)

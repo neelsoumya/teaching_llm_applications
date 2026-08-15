@@ -13,6 +13,8 @@
 
 ![image](https://github.com/stanford-cs336/lectures/blob/main/images/cpu-gpu.png)
 
+- Also see chapter on [GPUs](GPUs.md)
+
 - Kernel is a function that runs on GPU. When using PyTorch, each primitive operation launches a kernel
 
 - ⚠️ moving data from memory is expensive
