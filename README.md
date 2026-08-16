@@ -89,6 +89,10 @@ Each week has:
 pip install -r requirements.txt
 ```
 
+## Assessment rubric
+
+- [Assessment rubric](materials/assessment_rubric.md)
+
 ## Declaration
 
 >Parts of this course material are generated using generative AI. I take full responsibility for all content and have verified it. Lots of the text and material are also heavily inspired by other sources which are all detailed in this document. I take and make no claims to originality. These are just to be used as teaching notes.
