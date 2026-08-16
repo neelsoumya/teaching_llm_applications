@@ -11,9 +11,11 @@
 - How does KV cache interact with software choices? 
 - Distributed file systems
 
+- also quantization
+
 - How does this interact with the following points covered in the chapter on [GPU and Flash Attention](GPUs.md)?
 
-- - Prefill phase is memory bound
+- Prefill phase is memory bound
  and is one chip
 
 - Decoding is compute bound
