@@ -142,6 +142,30 @@
 
 - _Concept_ 🧩 🚀 empirical work on which of these operations can be low precision
 
+- with mixed precision, _transpose_ becomes an expensive operation
+
+- 🤔 ❓how to solve it?
+
+- make two copies of the matrix
+: one _original_ and another for the _transpose_
+
+- transposes are also quantized
+
+![image](../images/transpose_quantize.png)
+
+- what happens during training? what happens in inference?
+
+- `matmul` getting quantized
+
+- if matmul is quantized, what does it mean?
+- does it mean we dont use mixed precision during training?
+- does it mean we dont use low precision during training
+
+- in _inference_ we use lower precision ?
+- in _training_ we use higher precision ?
+
+- [ ] TODO 📝 Write out
+
 ## TODO 📚: Questions Assignment
 
 - TODO 📚: question written assignment on this (theory) 
