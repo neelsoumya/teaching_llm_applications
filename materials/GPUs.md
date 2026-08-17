@@ -136,6 +136,12 @@
 ![image](../images/low_precision_RELU.png)
 
 
+- weights and activations may be low precision for matrix multiplications
+
+- exponential and softmax need higher precision
+
+- _Concept_ 🧩 🚀 empirical work on which of these operations can be low precision
+
 ## TODO 📚: Questions Assignment
 
 - TODO 📚: question written assignment on this (theory) 
