@@ -105,6 +105,37 @@
 - attention can go to one chip; MLP will go to another chip
 
 
+## Recap
+
+![recap](../images/gpu_recap.png)
+
+- we do not get to control the _L1_ cache
+
+- physical distance makes it slower
+
+- We can do more operations per second than we can move data. 
+
+- inference is more _memory bound_ than training
+
+## Control divergence
+
+- SMIT thread
+
+- On CPU `if-else` is easy
+- On GPU threads execute in groups of 32 (warps) and all threads in a warp must execute the same instruction.
+- If some threads in a warp take the `if path` and others take the `else path`, 
+
+## Low precision computation
+
+- number repreentation
+- fp16, 
+
+- half memory to move
+- low precision improves arithmetic intensity
+
+![image](../images/low_precision_RELU.png)
+
+
 ## TODO 📚: Questions Assignment
 
 - TODO 📚: question written assignment on this (theory) 
