@@ -71,6 +71,11 @@ Each week has:
 
 - [GPU and Flash Attention](materials/GPUs.md)
 
+- [LLMs and robotics (short lecture)](materials/LLM_robots.md)
+
+- [Competence vs. Performance (short lecture)](materials/competence_vs_performace_robotics.md)
+
+
 - More advanced topics
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
