@@ -2,6 +2,8 @@
 
 - [🎥 Video lecture from Stanford CS336 course](https://youtu.be/lVynu4bo1rY?si=nXDSMP5oy4CJt4Mh)
 
+- [Slides](https://github.com/stanford-cs336/lectures/blob/main/lecture_03.pdf)
+
 ## Intro
 
 - Positional embedding (sines and cosines)

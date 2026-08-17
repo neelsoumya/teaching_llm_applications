@@ -109,6 +109,8 @@
 
 - TODO 📚: question written assignment on this (theory) 
 
+- see [assessments](assessments.md)
+
 
 ## TODO Practical
 
