@@ -278,7 +278,9 @@
 
 - In GPU, think about `matmul` and data movement
 
-- Thinking carefully about memory: tiling, recomputation, fusion
+- Thinking carefully about memory: tiling, recomputation, operator fusion
+
+- _Concept_ 🧩 🚀 architecture, systems and software interact
 
 
 ## TODO 📚: Questions Assignment

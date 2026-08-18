@@ -4,6 +4,31 @@
 
 - Also see [GPUs and Flash Attention](GPUs.md)
 
+## Summary
+
+- Tiling and recomputation
+
+- _Recall_: Attention is 3 matrix multiplies and a _softmax_
+
+- Tiling for KQV matrix multiply
+
+![image](../images/tiled_matmul.png)
+
+- softmax?
+
+- online softmax
+
+- calculate softmax tile-by-tile
+
+- incrementally update the max and setup a telescoping sum
+
+- forward pass in flash attention in HBM and SRAM
+
+![image](../images/flash_forward_pass.png)
+
+- recomputation: do not store activations in memory, just recompute on backward pass
+
+
 ## 1. Introduction: The Bottleneck in Modern LLMs
 
 When discussing transformer architectures, the immediate focus is often on the $O(N^2)$ computational complexity of the self-attention mechanism. However, for practical implementation, the true bottleneck is often the **Memory Wall**—the widening gap between computational speed (FLOPs) and memory bandwidth.
