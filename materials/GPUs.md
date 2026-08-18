@@ -252,6 +252,33 @@
 
 - Also see [Flash attention notes](flash_attention.md)
 
+- Tiling and recomputation
+
+- _Recall_: Attention is 3 matrix multiplies and a _softmax_
+
+- Tiling for KQV matrix multiply
+
+![image](../images/tiled_matmul.png)
+
+- softmax?
+
+- online softmax
+
+- calculate softmax tile-by-tile
+
+- incrementally update the max and setup a telescoping sum
+
+- forward pass in flash attention in HBM and SRAM
+
+![image](../images/flash_forward_pass.png)
+
+- recomputation: do not store activations in memory, just recompute on backward pass
+
+## Key takeaways
+
+- In GPU, think about `matmul` and data movement
+
+- Thinking carefully about memory: tiling, recomputation, fusion
 
 
 ## TODO 📚: Questions Assignment
@@ -262,6 +289,11 @@
 
 
 ## TODO Practical
+
+- TODO: In GPU, think about `matmul` and data movement
+
+- TODO: Flash Attention in pytorch
+
 
 - TODO Practical see Stanford CS365 practical on GPUs.
 
