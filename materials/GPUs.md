@@ -2,6 +2,18 @@
 
 - [🎥 Video from Stanford CS365](https://youtu.be/izZba4UA7iY?si=a_bvCFDrPPfPbN3e)
 
+
+## 🤔 ❓Question
+
+- Matrix mystery 🧩 🚀: Why is it faster to have a bigger matrix?
+
+- Tweet by Andrei Karpathy
+
+![image](../images/karpathy_tweet.png)
+
+
+## Motivation
+
 - what will you learn by the end of this?
 
 ![image](../images/gpu_motivation.png)
@@ -226,7 +238,7 @@
 
 ### Circling back to motivation
 
-- Matrix mystery: Why is it faster to have a bigger matrix?
+- Matrix mystery 🧩 🚀: Why is it faster to have a bigger matrix?
 
 - Tweet by Andrei Karpathy
 
