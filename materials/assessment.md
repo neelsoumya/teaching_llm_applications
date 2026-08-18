@@ -29,6 +29,34 @@
 ![image](../images/low_precision_RELU.png)
 
 
+- can quantize activations after `ReLU`
+
+- however more bang by quantizing `matmul`
+
+- train a bigger model and then quantize it?
+
+
+- 📝 how many cycles for computing sin^ x + cos^x ?
+
+![image](../images/sines_cosines_cycles.png)
+
+
+- backprop memory used
+
+![image](../images/backprop_memory.png)
+
+- _Concept_ 🧩 🚀 backpropagation intuition
+![image](../images/backprop_intuition.png)
+
+- 💡 in a world where memory is slower and compute is cheap/faster, you just recompute the activations!
+
+![image](../images/backprop_memory_expensive.png)
+
+
+- explain how you get this unexplained drop in throughput when you go from 98 tiles to 120 tiles on an A100 GPU
+
+![image](../images/unexplained_drop.png)
+
 
 ## Practical
 - Implement an LLM-based application for low resource scenarios

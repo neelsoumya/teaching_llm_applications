@@ -164,7 +164,95 @@
 - in _inference_ we use lower precision ?
 - in _training_ we use higher precision ?
 
-- [ ] TODO 📝 Write out
+- [ ] 📝 Write out other questions in [assessments](assessments.md) related to GPUs
+
+- can quantize activations after `ReLU`
+
+- however more bang by quantizing `matmul`
+
+- train a bigger model and then quantize it?
+
+## Operator fusion
+
+![image](../images/operator_fusion.png)
+
+- how many cycles for computing sin^ x + cos^x ?
+
+![image](../images/sines_cosines_cycles.png)
+
+- `cuda.compile` will collapse the computation graph
+
+- or read once in GPU memory, do the computation in _SM_ and then write the result back to _global memory_
+
+- backprop memory used
+
+![image](../images/backprop_memory.png)
+
+- _Concept_ 🧩 🚀 backpropagation intuition
+![image](../images/backprop_intuition.png)
+
+- 💡 in a world where memory is slower and compute is cheap/faster, you just recompute the activations!
+
+![image](../images/backprop_memory_expensive.png)
+
+
+### Burst mode of DRAM/global memory
+
+- a single read will return 128 byte blocks
+
+- memory access is _coalesced_
+
+- _NOTE_: a `warp` is a set of 32 threads that execute together and memory access happens together
+
+- row addressing
+
+- coalescing for matrix multiplication (row major)
+
+## Tiling
+
+- respect memory hierarchy
+
+- cut your matrix into tiles
+
+- and compute your `matmul`
+
+- by loading them from global memory to shared memory
+
+- once in shared memory I can read and write very fast
+
+- 🤔 ❓ Is this problem `NP-hard`?
+
+- TODO: Practical idea: PyTorch `maxautotune` benchmarking tile size and which is faster
+
+### Circling back to motivation
+
+- Matrix mystery: Why is it faster to have a bigger matrix?
+
+- Tweet by Andrei Karpathy
+
+![image](../images/karpathy_tweet.png)
+
+- pad to get a speedup
+
+- shift your rows to get a speedup (tiling)
+
+- 🤔 ❓ Now explain how you get this unexplained drop in throughput when you go from 98 tiles to 120 tiles on an A100
+
+![image](../images/unexplained_drop.png)
+
+- wave quantization
+
+## Recap
+
+![image](../images/recap_GPU_part2.png)
+
+- SRAM energy hungry
+
+## Flash Attention
+
+- Also see [Flash attention notes](flash_attention.md)
+
+
 
 ## TODO 📚: Questions Assignment
 
