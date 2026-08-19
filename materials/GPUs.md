@@ -302,14 +302,14 @@
 - see [assessments](assessments.md)
 
 
-## TODO Practical
+## 🎮 TODO Practical
 
 - TODO: In GPU, think about `matmul` and data movement
 
 - TODO: Flash Attention in pytorch
 
 
-- TODO Practical see Stanford CS365 practical on GPUs.
+- TODO 🎮 Practical see Stanford CS365 practical on GPUs [here](https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf)
 
 - [Practical on counting FLOPS using `PyTorch`](https://dev-discuss.pytorch.org/t/the-ideal-pytorch-flop-counter-with-torch-dispatch/505) and [here using `TorchDispatchMode` ](https://pastebin.com/V3wATa7w)
 

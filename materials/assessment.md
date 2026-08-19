@@ -61,3 +61,6 @@
 ## Practical
 - Implement an LLM-based application for low resource scenarios
     
+- Stanford CS365 practical on GPUs, architecture choices and benchmarking metrics and reports [here](https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf)
+
+- only use open-source models that will run on Google Colab such as `Qwen`
