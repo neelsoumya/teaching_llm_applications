@@ -295,6 +295,14 @@
 - _Concept_ 🧩 🚀 architecture, systems and software interact
 
 
+## Benchmarking and profiling
+
+- [🎥 Video by Perci Liang CS365 Stanford](https://youtu.be/xnDHaNUvHBg?si=9Es8zZqMiIiDWt-F&t=1368)
+
+- do warmups since some things are _lazy_ compiled
+
+
+
 ## TODO 📚: Questions Assignment
 
 - TODO 📚: question written assignment on this (theory) 
