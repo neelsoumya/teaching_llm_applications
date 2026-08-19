@@ -301,6 +301,22 @@
 
 - do warmups since some things are _lazy_ compiled
 
+- time it multiple times
+
+- `torch.cuda.Event(enable_timing=True)`: start and stop timers
+
+- `torch.cuda.synchronize()`: wait for all GPU operations to complete
+
+- everything on GPU is _asynchronous_
+
+- profiler
+
+- `torch.profiler.profile`
+
+```python
+add_profile = profile(run_operation2(dim=2048, operation = lambda a, b: a + b))
+```
+
 
 
 ## TODO 📚: Questions Assignment
