@@ -1,5 +1,29 @@
 # Transformers
 
+## Practical
+- Practical instructions:
+
+- Run [notebook](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/transformer.ipynb) in Google Colab
+
+- or locally using the following instructions
+
+```bash
+
+    git clone https://github.com/neelsoumya/teaching_llm_applications
+    
+    cd teaching_llm_applications
+
+    python3 -m venv venv_llm
+
+    source venv_llm/bin/activate
+
+    pip install -r requirements.txt
+
+    jupyter notebook
+```
+
+
+## Theory
 
 - Why transformers are better than RNNs? Parallelizeable. Memory.
 

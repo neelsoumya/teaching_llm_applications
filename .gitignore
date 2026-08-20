@@ -28,3 +28,6 @@
 /app/Config/database.php
 /vendors/*
 venv_llm/*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
