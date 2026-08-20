@@ -6,6 +6,7 @@ circuitsvis
 transformer_lens
 ipykernel
 matplotlib
+jupyter
 datasets
 tiktoken
 wandb

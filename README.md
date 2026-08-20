@@ -95,7 +95,19 @@ Each week has:
 ## Installation
 
 ```bash
+
+git clone https://github.com/neelsoumya/teaching_llm_applications
+    
+cd teaching_llm_applications
+
+python3 -m venv venv_llm
+
+source venv_llm/bin/activate
+
 pip install -r requirements.txt
+
+jupyter notebook
+
 ```
 
 ## Assessment rubric
