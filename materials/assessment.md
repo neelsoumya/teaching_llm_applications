@@ -57,8 +57,33 @@
 
 ![image](../images/unexplained_drop.png)
 
+- [🎥 How does ChatGPT deal with 900 million users?](https://www.youtube.com/watch?v=fVLmyuCEEy8)
 
-## Practical
+- Assessment Task: Scaling LLMs to 900 Million Users
+
+> To serve 900 million active users simultaneously on platforms like ChatGPT, Claude, or Sarvam, engineers must design an architecture capable of handling extreme, stateful concurrency. Global edge servers manage initial traffic via dynamic geo-load balancing, resolving edge routing and validating session tokens before handing off traffic to local regional clusters. Once inside the cluster, intelligent API gateways route incoming prompts to distributed databases to fetch conversational history, user profiles, and system prompts. To prevent persistent database bottlenecks during traffic spikes, localized read-only replica caches (e.g., Redis or distributed in-memory stores) serve high-frequency user metadata and system state with sub-millisecond latency.
+
+> After state and history retrieval, the request reaches the core inference engines, where the most complex engineering challenges reside. Compute clusters rely on continuous batching and dynamic continuous sequence scheduling to maximize GPU utilization across tens of thousands of accelerator chips. Crucially, memory management uses techniques like PagedAttention to dynamically allocate and offload Key-Value (KV) cache chunks, preventing VRAM fragmentation during long context generation. By decoupling the lightweight API orchestration layer from the compute-heavy, memory-bound GPU clusters, the system maintains ultra-low latency while serving billions of daily tokens across a massive worldwide user base.
+
+- Grading Rubric 
+
+| Category | Excellent (Full Marks) | Proficient (Partial Marks) | Needs Improvement (Low Marks) |
+| --- | --- | --- | --- |
+| **Traffic & Routing (25 pts)** | Clearly explains geo-load balancing, edge routing, and session handoffs. | Mentions load balancing and routing, but lacks technical depth or edge specifics. | Omits edge networking or mischaracterizes traffic management. |
+| **Data & Caching (25 pts)** | Correctly outlines database state retrieval alongside local read-only caches/replicas. | Explains DB access or caching, but misses the interaction between them. | Fails to account for persistent context retrieval or caching layers. |
+| **Inference & GPU (25 pts)** | Identifies VRAM/compute optimization techniques like continuous batching and parallel execution. | Mentions GPU scheduling generally without specific optimization mechanisms. | Treats GPUs as standard compute nodes without AI-specific scheduling. |
+| **Memory & KV Cache (25 pts)** | Explains KV cache allocation, VRAM management, or memory-bound bottlenecks (e.g., PagedAttention). | Mentions memory constraints or context windows without referencing KV caching mechanisms. | Completely ignores context memory management and VRAM fragmentation. |
+
+---
+
+
+- Edge Routing & Load Balancing: Systems use global DNS/Anycast routing to direct traffic to edge servers, where dynamic load balancing, rate limiting, and SSL termination occur before handing off to regional clusters.
+- Database & Read-Cache Layer: System prompts and chat histories are fetched via low-latency API gateways. High-frequency state data is served via distributed, read-only local caches (e.g., Redis) to decouple primary database read pressure from high-concurrency prompts.
+- GPU Compute Optimization: Inference servers use continuous (iteration-level) batching to dynamically insert new requests into running GPU batches, maximizing FLOPS utilization across cluster nodes.
+- KV Cache Management: To prevent VRAM out-of-memory errors and fragmenting, systems utilize virtual memory management (e.g., PagedAttention) to store key-value matrices in non-contiguous memory chunks, rapidly swapping or sharing context blocks across attention layers.
+
+## Practical / coding component of assessment
+
 - Implement an LLM-based application for low resource scenarios
     
 - Stanford CS365 practical on GPUs, architecture choices and benchmarking metrics and reports [here](https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf)
