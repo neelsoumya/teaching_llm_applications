@@ -1,7 +1,7 @@
 # MSc Course: Large Language Models — Internals and Applications
 
 
-> An 18-week masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
 
 ---
 
@@ -87,6 +87,10 @@ Each week has:
 - [📝 Sarvam](materials/sarvam.md)
 
 - [Advanced topics](materials/advanced_topics.md)
+
+- Practicals
+
+- [Transformers](practicals/transformer.ipynb)
 
 ## Installation
 
