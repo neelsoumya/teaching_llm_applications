@@ -76,6 +76,11 @@ Each week has:
 - [Competence vs. Performance (short lecture)](materials/competence_vs_performace_robotics.md)
 
 
+- Wrapup and summary on engineering challenges
+
+- [🤔❓ How does ChatGPT serve 900 million users?](materials/900m_users_chatGPT.md) 
+
+
 - More advanced topics
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
