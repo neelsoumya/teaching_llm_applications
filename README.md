@@ -93,7 +93,7 @@ Each week has:
 
 - [Advanced topics](materials/advanced_topics.md)
 
-- Practicals
+- 🎮 Practicals
 
 - [Transformers](practicals/transformer.ipynb)
 
