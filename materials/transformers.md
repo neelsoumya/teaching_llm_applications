@@ -25,6 +25,14 @@
 
 ## Theory
 
+- _Concept_ 🧩 🚀 A Transformer is a sequence-to-sequence encoder-decoder model similar to the model in the [NMT with attention tutorial](https://www.tensorflow.org/text/tutorials/nmt_with_attention). 
+
+- A single-layer Transformer takes a little more code to write, but is almost identical to that encoder-decoder RNN model. 
+
+- The only difference is that the RNN layers are replaced with self-attention layers. 
+
+- This [tutorial](https://www.tensorflow.org/text/tutorials/transformer) builds a 4-layer Transformer which is larger and more powerful, but not fundamentally more complex.
+
 - Why transformers are better than RNNs? Parallelizeable. Memory.
 
 - [Code, material and slides](https://www.tensorflow.org/text/tutorials/transformer)
