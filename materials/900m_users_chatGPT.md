@@ -1,4 +1,4 @@
-# How does ChatGPT/OpenAI serve 900 million users? 
+# 🤔 ❓ How does ChatGPT/OpenAI serve 900 million users? 
 
 
 - Database cache/read only cache
