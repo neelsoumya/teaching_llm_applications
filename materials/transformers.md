@@ -25,7 +25,7 @@
 
 ## Theory
 
-- _Concept_ 🧩 🚀 A Transformer is a sequence-to-sequence encoder-decoder model similar to the model in the [NMT with attention tutorial](https://www.tensorflow.org/text/tutorials/nmt_with_attention). 
+- _Concept_ 🧩 🚀 A Transformer is a sequence-to-sequence encoder-decoder model similar to the model in the [neural machine translation with attention tutorial](https://www.tensorflow.org/text/tutorials/nmt_with_attention). 
 
 - A single-layer Transformer takes a little more code to write, but is almost identical to that encoder-decoder RNN model. 
 
