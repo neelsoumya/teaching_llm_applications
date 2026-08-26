@@ -16,6 +16,8 @@
 
 - 🎮 Practicals on estimating energy usage (and links to scaling) in LLMs
 
+
+- [Percy Liang environmental impacts of LLMs](https://stanford-cs324.github.io/winter2022/lectures/environment/)
 - Queue management/SLO aware scheduling
 
 - [KV cache management](kvcache.md)
