@@ -65,17 +65,6 @@
 
 > After state and history retrieval, the request reaches the core inference engines, where the most complex engineering challenges reside. Compute clusters rely on continuous batching and dynamic continuous sequence scheduling to maximize GPU utilization across tens of thousands of accelerator chips. Crucially, memory management uses techniques like PagedAttention to dynamically allocate and offload Key-Value (KV) cache chunks, preventing VRAM fragmentation during long context generation. By decoupling the lightweight API orchestration layer from the compute-heavy, memory-bound GPU clusters, the system maintains ultra-low latency while serving billions of daily tokens across a massive worldwide user base.
 
-- Grading Rubric 
-
-| Category | Excellent (Full Marks) | Proficient (Partial Marks) | Needs Improvement (Low Marks) |
-| --- | --- | --- | --- |
-| **Traffic & Routing (25 pts)** | Clearly explains geo-load balancing, edge routing, and session handoffs. | Mentions load balancing and routing, but lacks technical depth or edge specifics. | Omits edge networking or mischaracterizes traffic management. |
-| **Data & Caching (25 pts)** | Correctly outlines database state retrieval alongside local read-only caches/replicas. | Explains DB access or caching, but misses the interaction between them. | Fails to account for persistent context retrieval or caching layers. |
-| **Inference & GPU (25 pts)** | Identifies VRAM/compute optimization techniques like continuous batching and parallel execution. | Mentions GPU scheduling generally without specific optimization mechanisms. | Treats GPUs as standard compute nodes without AI-specific scheduling. |
-| **Memory & KV Cache (25 pts)** | Explains KV cache allocation, VRAM management, or memory-bound bottlenecks (e.g., PagedAttention). | Mentions memory constraints or context windows without referencing KV caching mechanisms. | Completely ignores context memory management and VRAM fragmentation. |
-
----
-
 
 - Edge Routing & Load Balancing: Systems use global DNS/Anycast routing to direct traffic to edge servers, where dynamic load balancing, rate limiting, and SSL termination occur before handing off to regional clusters.
 - Database & Read-Cache Layer: System prompts and chat histories are fetched via low-latency API gateways. High-frequency state data is served via distributed, read-only local caches (e.g., Redis) to decouple primary database read pressure from high-concurrency prompts.
@@ -89,3 +78,5 @@
 - Stanford CS365 practical on GPUs, architecture choices and benchmarking metrics and reports [here](https://github.com/stanford-cs336/assignment2-systems/blob/main/cs336_assignment2_systems.pdf)
 
 - only use open-source models that will run on Google Colab such as `Qwen`
+
+- [Stanford CS324 assignment](https://stanford-cs324.github.io/winter2022/projects/CS324_P1.pdf)

@@ -1,5 +1,9 @@
 # Scaling
 
+- 🧠 what does intelligence look like in the era of LLMs?
+
+- [Percy Liang lecture Stanford CS324 on scaling laws](https://stanford-cs324.github.io/winter2022/assets/pdfs/Scaling%20laws%20pdf.pdf)
+
 - maybe this means that intelligence is task-specific and different species have different performance constraints. We can compare intelligence across species but our confidence in the quest for a single benchmark for intelligence for multiple species is misplaced.
 
 - same conclusions for ConceptARC paper. There are different performance constraints on machines and humans (machines are faster, etc.). Machines may `reason` in ways different to humans. They may also use different `concepts`. Ultimately our hope that machines may reason in the same way that we do is also misplaced (cite Rich Sutton essay `Bitter Lessons ...`). We made the same mistake with chess: we thought that we will imbue machines with the same strategies that we use while playing chess. _The winning techniques were approaches that used brute-force search with engineering-ey approaches_.
