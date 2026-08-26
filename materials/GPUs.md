@@ -317,6 +317,47 @@
 add_profile = profile(run_operation2(dim=2048, operation = lambda a, b: a + b))
 ```
 
+- [🎮🎥 also see video on benchmarking and profiling by Dr. Percy Liang Stanford CS336](https://youtu.be/xnDHaNUvHBg?si=64rcwR0sYLKlS89B&t=1854)
+
+- PyTorch has built in GeLU approximation
+
+```python
+import torch
+
+def builtin_gelu(x: torch.Tensor):
+    return torch.nn.functional.gelu(x, approximate="tanh")
+ ```
+
+- 🎮 more practical code [here](https://cs336.stanford.edu/lectures/?trace=lecture_06)
+
+```python
+def naive_vs_builtin_vs_compiled_gelu():
+    # Let's benchmark and profile the GeLU activation function.
+    x = torch.tensor([1.])  
+    # 1. Implementation naively from scratch in PyTorch (non-fused)
+    y1 = naive_gelu(x)  
+    # 2. Built-in PyTorch implementation (fused)
+    y2 = builtin_gelu(x) 
+
+    check_equal_1d(naive_gelu, builtin_gelu)  # Check it works
+    # 3. Use PyTorch compiler on the naive implementation
+    compiled_gelu = torch.compile(naive_gelu)  
+
+    y3 = compiled_gelu(x)  
+
+    check_equal_1d(naive_gelu, compiled_gelu)  # Check it works (compilation shouldn't change semantics) 
+    # Benchmarking
+    naive_time = benchmark(run_operation1(dim=16384, operation=naive_gelu)) 
+
+    builtin_time = benchmark(run_operation1(dim=16384, operation=builtin_gelu)) 
+
+    compiled_time = benchmark(run_operation1(dim=16384, operation=compiled_gelu)) 
+    # The builtin and compiled versions are significantly faster!
+    # To understand why, let's look at the profiler to see where time is being spent.
+    # naive_gelu
+    naive_gelu_profile = profile(run_operation1(dim=16384, operation=naive_gelu))  
+
+```
 
 
 ## TODO 📚: Questions Assignment
