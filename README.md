@@ -69,7 +69,7 @@ Each week has:
 
 - [Softmax and temperature](materials/softmax.md)
 
-- [GPU and Flash Attention](materials/GPUs.md)
+- [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
 
 - [LLMs and robotics (short lecture)](materials/LLM_robots.md)
 
@@ -96,6 +96,8 @@ Each week has:
 - 🎮 Practicals
 
 - [Transformers](practicals/transformer.ipynb)
+
+- [GPU and benchmarking and profiling](materials/GPUs.md)
 
 ## Installation
 
