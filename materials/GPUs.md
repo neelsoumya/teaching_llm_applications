@@ -330,7 +330,110 @@ def builtin_gelu(x: torch.Tensor):
 
 - 🎮 more practical code [here](https://cs336.stanford.edu/lectures/?trace=lecture_06)
 
+- In the context of GPUs and Large Language Models (LLMs), Triton (originally developed by OpenAI) is an open-source, Python-embedded domain-specific language (DSL) and compiler designed for writing highly efficient, custom GPU kernels
+
+- It acts as a middle ground between high-level frameworks like PyTorch and low-level GPU programming languages like CUDA (NVIDIA) or ROCm (AMD). Instead of writing complex C++ code, developers can write Pythonic code that Triton compiles directly into optimized machine instructions.
+
+
+- PyTorch 2.0+: Triton is the primary engine behind PyTorch Inductor (the default compiler backend for torch.compile). It automatically generates optimized Triton kernels for your model code.
+
+- vLLM: Popular inference engines like vLLM rely on Triton attention backends to compute heavy workloads like Paged Attention. This approach allows inference frameworks to stay lightweight and avoid heavy, vendor-specific binary dependencies.
+
 ```python
+
+import os
+import time
+from typing import Callable
+import torch
+from torch.profiler import ProfilerActivity
+import triton
+import triton.language as tl
+from edtrace import text, link, image
+from lecture_util import get_local_url
+from gpu_util import cuda_if_available
+
+def main():
+    # Last lecture: high-level overview of GPUs and performance
+    # This lecture: benchmarking/profiling + writing kernels
+    # review_of_gpus()
+    benchmarking_and_profiling()           # Where are the bottlenecks?
+    naive_vs_builtin_vs_compiled_gelu()    # Apply it to the GeLU example
+    # Write Triton kernels
+
+def benchmarking_and_profiling():
+    # Recipe for success:
+
+    # Benchmark and profile your code
+    
+    # Make changes
+    
+    # Benchmark and profile your code again
+    
+    benchmarking()   # How long does it take?
+    
+    profiling()      # Where time is being spent?
+    
+    # Benchmark and profile your code!
+
+def benchmarking():
+    # Benchmarking measures the wall-clock time of performing some operation.
+    # It only gives you end-to-end time, not where time is spent (profiling).
+    # It is still useful for:
+    
+    # comparing different implementations (which is faster?), and
+    
+    # understanding how performance scales (e.g., with dimension).
+    
+    # You can use torch.utils.benchmark.
+    # We will roll our own to make benchmarking more transparent.
+    
+    # Benchmark matrix multiplication
+    
+    matmul = run_operation2(dim=1024, operation=lambda a, b: a @ b)
+    result = benchmark(matmul)  
+    
+    # See how timing scales with dimension
+    results = {}
+    for dim in [256, 512, 1024, 2048, 4096, 8192]:
+         results[dim] = benchmark(run_operation2(dim=dim, operation=lambda a, b: a @ b))  
+    # Note: time is roughly constant when dimension is small, then cubic scaling.
+
+def benchmark(run: Callable, num_warmups: int = 1, num_trials: int = 3) -> float:
+    """Benchmark `func` by running it `num_trials`.  Return the average time."""
+    # Warmup: first times might be slower due to compilation, etc.
+    # Since we will run the kernel multiple times, the timing that matters is steady state.
+    for _ in range(num_warmups):
+        run()
+    torch.cuda.synchronize()  # Wait for CUDA threads to finish (important!)
+    # Time it for real now!
+    times: list[float] = [] 
+    for trial in range(num_trials):  # Do it multiple times to capture variance
+        # Use CUDA events for accurate GPU timing (avoid capturing CPU overhead)
+        start_event = torch.cuda.Event(enable_timing=True)
+        end_event = torch.cuda.Event(enable_timing=True)
+        start_event.record()  # Start timing
+        run()  # Actually perform computation
+        end_event.record()  # End timing
+        torch.cuda.synchronize()  # Wait for CUDA threads to finish
+        times.append((start_event.elapsed_time(end_event))) 
+
+    mean_time = mean(times)   
+    return mean_time
+
+
+def profiling():
+    # While benchmarking looks at end-to-end time, profiling looks at where time is spent.
+    # Independent of time, profiling also helps you understand what's going under the hood.
+    # PyTorch has a built-in profiler.
+    # In your assignment, you will use nsight to get more details.
+    add(dim=2048)
+    add_profile = profile(run_operation2(dim=2048, operation=lambda a, b: a + b))
+
+    matmul_profile = profile(run_operation2(dim=2048, operation=lambda a, b: a @ b)) 
+
+    matmul_profile = profile(run_operation2(dim=128, operation=lambda a, b: a @ b)) 
+
+
 def naive_vs_builtin_vs_compiled_gelu():
     # Let's benchmark and profile the GeLU activation function.
     x = torch.tensor([1.])  
