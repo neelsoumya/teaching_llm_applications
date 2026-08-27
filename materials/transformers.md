@@ -73,6 +73,10 @@
 
 - _Concept_ 🧩 🚀 Query Key Value: what tokens are similar to _teddy bear_
 
+- _Concept_ 🧩 🚀 _key_ which one is most similar and _value_ is the value
+
+- [Video on Transformer architecture Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=QCLOOxgVPoxZCFxx&t=4449)
+
 
 ## Deep dive
 
