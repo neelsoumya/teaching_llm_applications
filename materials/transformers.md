@@ -67,10 +67,11 @@
 
 - [🎥 attention in transformers (video by _3blue1brown_)](https://www.youtube.com/watch?v=eMlx5fFNoYc&pp=ugUHEgVlbi1VUw%3D%3D)
 
-- [🎥 Key _Concept_ learn embeddings from the data Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=uKt6OLPhgM4d_oE-&t=2261)
+- [🎥 Key _Concept_ 🧩 🚀 learn embeddings from the data Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=uKt6OLPhgM4d_oE-&t=2261)
 
 - [🎥 Key _Concept_ attention in transformers Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=3wcDTsgvQO17E6PU&t=4042)
 
+- _Concept_ 🧩 🚀 Query Key Value: what tokens are similar to _teddy bear_
 
 
 ## Deep dive
