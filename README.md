@@ -56,11 +56,6 @@ Each week has:
 
 - [Flash attention](materials/flash_attention.md)
 
-
-- [Practicals using `nanoGPT`](materials/practicals.md)
-
-- [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
-
 - [Quantization](materials/quantization.md)
 
 - [Resource accounting](materials/resource_accounting.md)
@@ -98,6 +93,11 @@ Each week has:
 - [Transformers](practicals/transformer.ipynb)
 
 - [GPU and benchmarking and profiling](materials/GPUs.md)
+
+- [Practicals using `nanoGPT`](materials/practicals.md)
+
+- [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
+
 
 ## Installation
 
