@@ -90,17 +90,25 @@
 
 - cross attention: what has been seen in the inputs
 
-- _Attention layer_ helps in computing embeddings of tokens based on the context
+- _Concept_ 🧩 🚀 _Attention layer_ helps in computing embeddings of tokens based on the context
 
-- _multi-head attention_ layer helps in capturing different types of relationships between tokens
+- _Concept_ 🧩 🚀 _multi-head attention_ layer helps in capturing different types of relationships between tokens
 
 - _Feed forward layer_ helps in processing the attention outputs
 
+- 🤔 ❓ Why do you need a feed forward layer after attention? 
+
 - While the self-attention mechanism computes contextual relationships across tokens, the position-wise feed-forward network (FFN) operates on each token independently to perform non-linear feature transformation and store parametric knowledge. Functioning typically as a two-layer perceptron that expands the hidden dimension (e.g., from $d_{\text{model}}$ to $4d_{\text{model}}$) before projecting it back, the FFN applies non-linear activation functions (such as GELU or SwiGLU) to act as an associative key-value memory, retrieving factual information and higher-level concepts. In essence, while self-attention determines how information is gathered across sequence positions, the FFN processes and synthesizes that gathered context within each token representation.
 
-- all concepts explained in one diagram:
+- _Concept_ 🧩 🚀 all concepts explained in one diagram:
 
 ![Transformer Architecture](../images/vaswani.png)
+
+- what is a head in multi-head attention?
+
+![image](../images/head.png)
+
+- [Reading material and technical explanation of attention and multi-head attention](https://theaisummer.com/self-attention/#:~:text=First%2C%20let's%20clarify%20that%20the,attention%20%22weights%22%20will%20be.)
 
 ## Deep dive
 
