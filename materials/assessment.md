@@ -71,6 +71,12 @@
 - GPU Compute Optimization: Inference servers use continuous (iteration-level) batching to dynamically insert new requests into running GPU batches, maximizing FLOPS utilization across cluster nodes.
 - KV Cache Management: To prevent VRAM out-of-memory errors and fragmenting, systems utilize virtual memory management (e.g., PagedAttention) to store key-value matrices in non-contiguous memory chunks, rapidly swapping or sharing context blocks across attention layers.
 
+- Question on self attention
+
+- Is self attention layer linear with respect to context length? Why or why not?
+
+- Is self attention symmetric? See [here](https://theaisummer.com/self-attention/#self-attention-is-not-symmetric)
+
 ## Practical / coding component of assessment
 
 - Implement an LLM-based application for low resource scenarios
