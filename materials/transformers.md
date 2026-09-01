@@ -110,9 +110,21 @@
 
 - [📝 Reading material and technical explanation of attention and multi-head attention](https://theaisummer.com/self-attention/#:~:text=First%2C%20let's%20clarify%20that%20the,attention%20%22weights%22%20will%20be.)
 
-## Very good practical
+- _Concept_ 🧩 🚀 this is just like using multiple filters in convolutional neural networks
+
+## 🎮 Very good practical
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
+### 🛠️ Practical 
+
+- [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
+- [practicals](../practicals/TheAnnotatedTransformer.pdf)
+
+
+- Please note that the material above is a Harvard SEAS resource on transformes and a great resource
+
 
 ## Deep dive
 
