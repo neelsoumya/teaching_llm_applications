@@ -110,6 +110,10 @@
 
 - [📝 Reading material and technical explanation of attention and multi-head attention](https://theaisummer.com/self-attention/#:~:text=First%2C%20let's%20clarify%20that%20the,attention%20%22weights%22%20will%20be.)
 
+## Very good practical
+
+- [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
 ## Deep dive
 
 - [text from Google AI blog](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
