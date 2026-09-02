@@ -123,7 +123,7 @@
 - [practicals](../practicals/TheAnnotatedTransformer.pdf)
 
 
-- Please note that the material above is a Harvard SEAS resource on transformes and a great resource
+- Please note that the material above is a Harvard SEAS resource on transformers and a great resource
 
 
 ## Deep dive
