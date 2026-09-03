@@ -138,6 +138,9 @@
 ![image](images/K.png)
 ![image](images/QK.png)
 
+- putting it all together
+
+![image](../images/QKV.png)
 
 ## 🎮 Very good practical
 
