@@ -112,6 +112,31 @@
 
 - _Concept_ 🧩 🚀 this is just like using multiple filters in convolutional neural networks
 
+- [🎥 stitching it all together Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=rWHxg5CNapojSqsZ&t=5393)
+
+- _BOS_ and _EOS_ tokens
+
+- embedding learnt
+
+- where is the position of token? (_positional encoding_): sine and cosine waves. (_Concept_ 🧩 🚀 think Fourier Series/transforms). For position 0, we add 0; for position 1, we add a sine wave of frequency 1, for position 2, we add a sine wave of frequency 2, etc. For position 1000, we add a sine wave of frequency 1000. See [architectures](architectures.md)
+
+- now we get position aware embedding for each token
+
+- _Concept_ 🧩 🚀 now we have context aware embedding for each token
+
+- project to learn _W_Q, _W_K and _W_V
+
+- matrix product of _Q_, _K_ and _V_
+
+- weighted sum of values for each query
+
+- scale down by $\sqrt{d_k}$
+
+- softmax of that
+
+
+
+
 ## 🎮 Very good practical
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
