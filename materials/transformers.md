@@ -142,6 +142,16 @@
 
 ![image](../images/QKV.png)
 
+- this is attention mechanism (finding out what is relevant to a query)
+
+- this is just matrix multiplication (with appropriate normalisation and non-linearities)
+
+- _Concept_ 🧩 🚀 the `magic` of gradient descent
+
+- find a representation that will help in predicting the next token
+
+![image](../images/full.png)
+
 ## 🎮 Very good practical
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
