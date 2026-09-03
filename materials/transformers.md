@@ -150,7 +150,18 @@
 
 - find a representation that will help in predicting the next token
 
+- now over to the decoder (cross-attention and causal masking)
+
 ![image](../images/full.png)
+
+- 🤔 ❓ when do you stop?
+
+- the `stop` token
+
+
+- _Concept_ 🧩 🚀 why can't you just use the encoder stack in a decoder only transformer? (_Self attention here is different!_)
+
+
 
 ## 🎮 Very good practical
 
