@@ -163,7 +163,7 @@
 
 - Thank you for your _attention_ to this matter!
 
-
+- More intution is [here](https://jalammar.github.io/illustrated-transformer/) from Jay Alammar's The Illustrated Transformer
 
 ## 🎮 Very good practical
 
