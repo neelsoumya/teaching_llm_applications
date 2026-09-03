@@ -161,6 +161,8 @@
 
 - _Concept_ 🧩 🚀 why can't you just use the encoder stack in a decoder only transformer? (_Self attention here is different!_)
 
+- Thank you for your _attention_ to this matter!
+
 
 
 ## 🎮 Very good practical
