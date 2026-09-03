@@ -134,7 +134,9 @@
 
 - softmax of that
 
-
+![image](images/Q.png)
+![image](images/K.png)
+![image](images/QK.png)
 
 
 ## 🎮 Very good practical
