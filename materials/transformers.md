@@ -134,9 +134,9 @@
 
 - softmax of that
 
-![image](images/Q.png)
-![image](images/K.png)
-![image](images/QK.png)
+![image](../images/Q.png)
+![image](../images/K.png)
+![image](../images/QK.png)
 
 
 - putting it all together
