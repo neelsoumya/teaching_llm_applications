@@ -166,6 +166,13 @@
 
 - More intution is [here](https://jalammar.github.io/illustrated-transformer/) from Jay Alammar's The Illustrated Transformer
 
+- Attention formula
+
+![image](../images/attention_formula.png)
+
+- _Concept_ 🧩 🚀 this is just matrix multiplication (with appropriate normalisation and softmax)
+
+
 ## 🎮 Very good practical
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
