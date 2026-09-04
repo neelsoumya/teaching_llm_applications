@@ -166,11 +166,30 @@
 
 - More intution is [here](https://jalammar.github.io/illustrated-transformer/) from Jay Alammar's The Illustrated Transformer
 
+## Recap
+
 - Attention formula
 
 ![image](../images/attention_formula.png)
 
 - _Concept_ 🧩 🚀 this is just matrix multiplication (with appropriate normalisation and softmax)
+
+- Hardware optimized for doing these operations (see [GPUs](GPUs.md))
+
+- Multiple heads allow the model to focus on different parts of the input sequence simultaneously, capturing different types of relationships between tokens.
+
+- we learn a separate (Q, K, V) for each head
+
+![image](../images/multiple_heads_recap.png)
+
+- _Concept_ 🧩 🚀 different heads attend to different parts of the input sequence
+
+
+- self-attention vs cross-attention
+
+- _Concept_ 🧩 🚀 "Attention map" is used to understand what the model is paying attention to.
+
+- dot product of Q and K is the attention map. what has high values is what the model is paying attention to.
 
 
 ## 🎮 Very good practical
