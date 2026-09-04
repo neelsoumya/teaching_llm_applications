@@ -34,6 +34,10 @@ Guest lectures bring practitioner and research perspectives that complement the 
 - challenges in building LLMs/SLMs in low resource contexts
 - [SLMs](BERT_SLMs.md)
 
+### Rashmita Soni
+
+- LLMs in industry
+
 ### Cole Robertson — Speech, Language, and LLMs in Industry
 
 **Background.** Cole Robertson is the co-founder and CTO of a speech-AI startup building real-time spoken language understanding systems on top of large language models. His work sits at the intersection of automatic speech recognition (ASR), natural language understanding (NLU), and production LLM deployment.
