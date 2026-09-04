@@ -168,6 +168,8 @@
 
 ## Recap
 
+- [🎥 Recap Lecture 2 CME295 Stanford](https://youtu.be/yT84Y5zCnaA?si=7npznH4wVuXgUM_b&t=91)
+
 - Attention formula
 
 ![image](../images/attention_formula.png)
@@ -190,6 +192,12 @@
 - _Concept_ 🧩 🚀 "Attention map" is used to understand what the model is paying attention to.
 
 - dot product of Q and K is the attention map. what has high values is what the model is paying attention to.
+
+- see diagram above (left panel)
+
+- each head is in parallel
+
+- this is why transformers are very efficient. we can train them on GPUs
 
 
 ## 🎮 Very good practical

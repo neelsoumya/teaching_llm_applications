@@ -22,9 +22,20 @@ Each week has:
 
 - [Week 5 Transformers Architecture](materials/week05_transformer_architecture.md)
 
+- [Stanford CS336 my own notes](materials/CS336_Stanford.md)
+
+
+- [Architectures](materials/architectures.md)
+
+- [Softmax and temperature](materials/softmax.md)
+
+- [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
+
+- [Resource accounting](materials/resource_accounting.md)
+
+
 - [Masked language models (BERT vs. GPT)](materials/masked_language_modelling_vs_generative.md)
 
-- [Stanford CS336 my own notes](materials/CS336_Stanford.md)
 
 - [Practicals](materials/practicals.md)
 
@@ -58,13 +69,6 @@ Each week has:
 
 - [Quantization](materials/quantization.md)
 
-- [Resource accounting](materials/resource_accounting.md)
-
-- [Architectures](materials/architectures.md)
-
-- [Softmax and temperature](materials/softmax.md)
-
-- [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
 
 - [LLMs and robotics (short lecture)](materials/LLM_robots.md)
 
