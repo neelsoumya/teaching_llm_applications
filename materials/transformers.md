@@ -204,6 +204,10 @@
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
 
+- [latest version](https://nlp.seas.harvard.edu/annotated-transformer/)
+
+- [code](https://github.com/harvardnlp/annotated-transformer)
+
 ### 🛠️ Practical 
 
 - [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
