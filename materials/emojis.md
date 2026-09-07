@@ -8,7 +8,7 @@
 
 # Emojis to be used in teaching materials
 - _Concept_ 🧩 🚀
-- Activities: 🎮 💡, 🛠️
+- Activities: 🎮 💡 🛠️
 - Things to ponder: 🤔 ❓
 - Warnings/Notes: ⚠️ _NOTE_
 - Hints/Clues: 💡
