@@ -77,7 +77,7 @@ Each week has:
 
 - Wrapup and summary on engineering challenges
 
-- [🤔❓ How does ChatGPT serve 900 million users?](materials/900m_users_chatGPT.md) 
+- [🤔❓ How does ChatGPT serve 900 million users? Engineering challenges and speedup tricks](materials/900m_users_chatGPT.md) 
 
 
 - More advanced topics
