@@ -8,3 +8,5 @@
 - World model: can have consequence of action
 
 - [Mixture of experts model](https://www.youtube.com/watch?v=9pbyKc8SI6w&pp=ugUHEgVlbi1VUw%3D%3D)
+
+- [Reasoning models video by Vizuara](https://www.youtube.com/shorts/PgoiYeeNv7g)
