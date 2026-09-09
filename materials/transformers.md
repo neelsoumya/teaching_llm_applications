@@ -217,6 +217,7 @@
 
 - Please note that the material above is a Harvard SEAS resource on transformers and a great resource
 
+- 🛠️ My own annotated practical is available [here](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
 ## Deep dive
 

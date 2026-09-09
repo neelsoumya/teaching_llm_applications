@@ -7,6 +7,7 @@ https://colab.research.google.com/drive/1uaPUeYVwvgc3oCZzOK4Zgb1qEkcrVsH7?usp=sh
 
 IPython notebook also available here:
 
+https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb
 
 '''
 
