@@ -98,6 +98,8 @@ Each week has:
 
 - [The Annotated Transformer](practicals/TheAnnotatedTransformer.pdf)
 
+- [My Annotated Transformer](practicals/annotated_transformer.ipynb)
+
 - [GPU and benchmarking and profiling](materials/GPUs.md)
 
 - [Practicals using `nanoGPT`](materials/practicals.md)
