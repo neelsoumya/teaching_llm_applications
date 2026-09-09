@@ -98,7 +98,7 @@ Each week has:
 
 - [The Annotated Transformer](practicals/TheAnnotatedTransformer.pdf)
 
-- [My Annotated Transformer](practicals/annotated_transformer.ipynb)
+- [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
 - [GPU and benchmarking and profiling](materials/GPUs.md)
 
