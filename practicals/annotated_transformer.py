@@ -5,6 +5,9 @@ from https://nlp.seas.harvard.edu/annotated-transformer/
 Code also available in this google colab notebook:
 https://colab.research.google.com/drive/1uaPUeYVwvgc3oCZzOK4Zgb1qEkcrVsH7?usp=sharing
 
+IPython notebook also available here:
+
+
 '''
 
 # !pip install http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp36-cp36m-linux_x86_64.whl numpy matplotlib spacy torchtext seaborn
