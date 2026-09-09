@@ -234,3 +234,23 @@ def attention(query, key, value, mask=None, dropout=None):
         p_attn = dropout(p_attn)
     return torch.matmul(p_attn, value), p_attn
 
+# When we say "in practice, we compute the attention function on a set of queries simultaneously," it means that instead of processing one query at a time, we group multiple queries together into a single matrix. This is a common optimization in deep learning to leverage matrix multiplication capabilities of hardware like GPUs.
+
+# Here's a breakdown of the components and the formula:
+
+#*   **Queries, Keys, and Values as Matrices ($Q, K, V$)**:
+#    *   Instead of individual vectors for a single query, key, or value, we now have matrices where each row represents a distinct query, key, or value vector from a sequence. For example, if you have a sequence of length `L` and each vector has dimension `d_k`, then $Q$ would be an `L x d_k` matrix. Similarly, $K$ would be `L x d_k` and $V$ would be `L x d_v`.
+
+#*   **The Formula: $\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$**
+
+#    1.  **$QK^T$ (Query-Key Dot Product Scores)**:
+#        *   This is the core of the compatibility function. The matrix multiplication of $Q$ (queries) and $K^T$ (transpose of keys) results in a score matrix. If $Q$ is `(batch_size, num_queries, d_k)` and $K$ is `(batch_size, num_keys, d_k)`, then $K^T$ is `(batch_size, d_k, num_keys)`. The product $QK^T$ will have dimensions `(batch_size, num_queries, num_keys)`. Each element $(i, j)$ in this resulting matrix represents the dot product similarity between the $i$-th query and the $j$-th key.
+
+# 2.  **Scaling by $\frac{1}{\sqrt{d_k}}$**:
+#        *   The dot products can grow large in magnitude as the dimension $d_k$ increases, pushing the softmax function into regions where it has extremely small gradients, which can hinder training. Dividing by the square root of $d_k$ (the dimension of the keys) helps to counteract this effect, keeping the variance of the dot products more consistent.
+
+#    3.  **$\text{softmax}(\dots)$ (Obtaining Attention Weights)**:
+#        *   The softmax function is applied row-wise to the scaled score matrix. This normalizes the scores for each query such that they sum to 1. The result is a matrix of attention weights, where each row indicates how much attention a particular query should pay to each of the keys.
+
+#    4.  **Multiplying by $V$ (Weighted Sum of Values)**:
+#        *   Finally, this matrix of attention weights is multiplied by the value matrix $V$. If the attention weights matrix is `(batch_size, num_queries, num_keys)` and $V$ is `(batch_size, num_keys, d_v)`, the result is an output matrix of dimensions `(batch_size, num_queries, d_v)`. Each row in this output matrix is a weighted sum of the value vectors, where the weights are determined by the attention mechanism. This effectively means that for each query, we get an output vector that is a combination of the input values, weighted by their relevance to that specific query.
