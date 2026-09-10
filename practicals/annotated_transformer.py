@@ -255,3 +255,124 @@ def attention(query, key, value, mask=None, dropout=None):
 #    4.  **Multiplying by $V$ (Weighted Sum of Values)**:
 #        *   Finally, this matrix of attention weights is multiplied by the value matrix $V$. If the attention weights matrix is `(batch_size, num_queries, num_keys)` and $V$ is `(batch_size, num_keys, d_v)`, the result is an output matrix of dimensions `(batch_size, num_queries, d_v)`. Each row in this output matrix is a weighted sum of the value vectors, where the weights are determined by the attention mechanism. This effectively means that for each query, we get an output vector that is a combination of the input values, weighted by their relevance to that specific query.
 
+
+
+# The two most commonly used attention functions are additive attention (cite), and dot-product (multiplicative) attention. Dot-product attention is identical to our algorithm, except for the scaling factor of $\frac{1}{\sqrt{d_k}}$. Additive attention computes the compatibility function using a feed-forward network with a single hidden layer. While the two are similar in theoretical complexity, dot-product attention is much faster and more space-efficient in practice, since it can be implemented using highly optimized matrix multiplication code.
+
+# While for small values of $d_k$ the two mechanisms perform similarly, additive attention outperforms dot product attention without scaling for larger values of $d_k$ (cite). We suspect that for large values of $d_k$, the dot products grow large in magnitude, pushing the softmax function into regions where it has extremely small gradients (To illustrate why the dot products get large, assume that the components of $q$ and $k$ are independent random variables with mean $0$ and variance $1$. Then their dot product, $q \cdot k = \sum_{i=1}^{d_k} q_i k_i$, has mean $0$ and variance $d_k$). To counteract this effect, we scale the dot products by $\frac{1}{\sqrt{d_k}}$.
+
+# ### Explanation of the Demonstration:
+
+# This Python code simulates the dot product behavior for varying dimensions ($d_k$):
+
+#1.  **Vector Generation**: For each `d_k` value, it creates `num_samples` pairs of vectors, `q` and `k`. Each component of these vectors is sampled from a standard normal distribution (mean 0, variance 1), mimicking the assumption made in the text.
+
+#2.  **Unscaled Dot Product**: It calculates the dot product for each pair of `q` and `k` vectors. As predicted, the mean of the dot products stays close to 0, but their standard deviation (and thus the magnitude) increases with $d_k$. This is because the sum of $d_k$ independent random variables (each $q_i k_i$ has variance 1 if $q_i, k_i$ have variance 1) has a variance of $d_k$. The standard deviation is $\sqrt{d_k}$.
+
+#3.  **Scaled Dot Product**: It then divides each dot product by $\sqrt{d_k}$. You will observe that both the mean and standard deviation of these *scaled* dot products remain relatively constant (around 0 and 1, respectively), regardless of $d_k$. This demonstrates how scaling effectively stabilizes the variance of the dot products.
+
+# **Visual Interpretation**: The plots clearly show the divergence of unscaled dot product magnitudes as $d_k$ increases, while the scaled dot products remain within a much narrower and stable range. This stability is crucial for the softmax function, as extremely large or small inputs can lead to vanishing gradients during training.
+
+import torch
+import matplotlib.pyplot as plt
+import seaborn as sns
+import math # Added this line
+
+sns.set_style("whitegrid")
+
+def demonstrate_dot_product_scaling(max_dk=1000, num_samples=1000):
+    dk_values = list(range(1, max_dk + 1, 50))
+    unscaled_dot_products_mean = []
+    unscaled_dot_products_std = []
+    scaled_dot_products_mean = []
+    scaled_dot_products_std = []
+
+    for dk in dk_values:
+        # Generate q and k components with mean 0 and variance 1
+        # For simplicity, using torch.randn which produces samples from N(0, 1)
+        q = torch.randn(num_samples, dk)
+        k = torch.randn(num_samples, dk)
+
+        # Calculate dot product: q * k sum over dk dimension
+        # torch.sum(q * k, dim=1) gives a vector of dot products for each sample
+        dot_products = torch.sum(q * k, dim=1)
+        unscaled_dot_products_mean.append(torch.mean(dot_products).item())
+        unscaled_dot_products_std.append(torch.std(dot_products).item())
+
+        # Apply scaling
+        scaled_dot_products = dot_products / math.sqrt(dk)
+        scaled_dot_products_mean.append(torch.mean(scaled_dot_products).item())
+        scaled_dot_products_std.append(torch.std(scaled_dot_products).item())
+
+    fig, axes = plt.subplots(2, 1, figsize=(10, 10), sharex=True)
+
+    # Plot for unscaled dot products
+    axes[0].errorbar(dk_values, unscaled_dot_products_mean, yerr=unscaled_dot_products_std, fmt='-o', capsize=5)
+    axes[0].set_title('Mean and Std Dev of Unscaled Dot Products vs. $d_k$')
+    axes[0].set_ylabel('Dot Product Value')
+    axes[0].set_yscale('log') # Use log scale to better show the increase
+    axes[0].grid(True)
+
+    # Plot for scaled dot products
+    axes[1].errorbar(dk_values, scaled_dot_products_mean, yerr=scaled_dot_products_std, fmt='-o', capsize=5, color='orange')
+    axes[1].set_title('Mean and Std Dev of Scaled Dot Products vs. $d_k$')
+    axes[1].set_xlabel('$d_k$ (Dimension of Query/Key)')
+    axes[1].set_ylabel('Scaled Dot Product Value')
+    axes[1].grid(True)
+    axes[1].set_ylim([-5, 5]) # Keep y-axis consistent for scaled values
+
+    plt.tight_layout()
+    plt.show()
+
+# Run the demonstration
+demonstrate_dot_product_scaling()
+
+
+def plot_softmax_distribution(d_k_list=[1, 64, 512]):
+    fig, axes = plt.subplots(len(d_k_list), 2, figsize=(15, 5 * len(d_k_list)))
+    fig.suptitle('Softmax Output Distribution for Unscaled vs. Scaled Dot Products', fontsize=16, y=1.02)
+
+    for i, dk in enumerate(d_k_list):
+        # Generate a single query and a set of keys
+        q = torch.randn(1, dk) # Single query vector
+        k = torch.randn(100, dk) # 100 key vectors
+
+        # Unscaled dot products
+        unscaled_scores = torch.matmul(q, k.transpose(-2, -1)).squeeze(0) # Shape (100,)
+        unscaled_softmax = F.softmax(unscaled_scores, dim=-1)
+
+        # Scaled dot products
+        scaled_scores = unscaled_scores / math.sqrt(dk)
+        scaled_softmax = F.softmax(scaled_scores, dim=-1)
+
+        # Plot unscaled softmax distribution
+        sns.histplot(unscaled_softmax.numpy(), ax=axes[i, 0], kde=True, bins=20, color='red')
+        axes[i, 0].set_title(f'Unscaled Softmax (d_k={dk})')
+        axes[i, 0].set_xlabel('Softmax Probability')
+        axes[i, 0].set_ylabel('Density')
+        axes[i, 0].set_xlim([0, 1])
+
+        # Plot scaled softmax distribution
+        sns.histplot(scaled_softmax.numpy(), ax=axes[i, 1], kde=True, bins=20, color='blue')
+        axes[i, 1].set_title(f'Scaled Softmax (d_k={dk})')
+        axes[i, 1].set_xlabel('Softmax Probability')
+        axes[i, 1].set_ylabel('Density')
+        axes[i, 1].set_xlim([0, 1])
+
+    plt.tight_layout()
+    plt.show()
+
+plot_softmax_distribution()
+
+
+# ### Impact on Softmax Output Distribution:
+
+#The plots above demonstrate the effect of scaling on the softmax output probabilities for different values of $d_k$ (the dimension of query/key vectors).
+
+#*   **Unscaled Softmax (Red Plots)**:
+#    *   For small $d_k$ (e.g., $d_k=1$), the distribution of softmax probabilities might be relatively spread out.
+#    *   However, as $d_k$ increases (e.g., $d_k=64, 512$), the unscaled dot products become larger in magnitude. This pushes the softmax function to produce highly peaked distributions, where one probability is very close to 1 and all others are very close to 0. This is often referred to as a "hard" softmax. In a training scenario, such hard distributions result in extremely small gradients for most of the output, making learning very slow or difficult (vanishing gradients).
+
+#*   **Scaled Softmax (Blue Plots)**:
+#    *   When the dot products are scaled by $\frac{1}{\sqrt{d_k}}$, the magnitudes are kept in a more controlled range.
+#   *   Consequently, the softmax function produces a "softer" and more distributed set of probabilities, even for larger $d_k$. This means that the model can attend to a wider range of keys, and the gradients for the softmax output will be more stable and less prone to vanishing, facilitating effective learning.
