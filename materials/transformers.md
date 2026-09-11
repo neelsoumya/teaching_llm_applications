@@ -219,6 +219,13 @@
 
 - 🛠️ My own annotated practical is available [here](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
+## Technical diagram to explain multi-head attention
+
+![image](../images/multi_head_attention_math.jpeg)
+
+- also see math explanation in [practical notebook My Annotated Transformer Notebook](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
+
+
 ## Deep dive
 
 - [text from Google AI blog](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)

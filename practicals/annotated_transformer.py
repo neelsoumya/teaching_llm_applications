@@ -376,3 +376,4 @@ plot_softmax_distribution()
 #*   **Scaled Softmax (Blue Plots)**:
 #    *   When the dot products are scaled by $\frac{1}{\sqrt{d_k}}$, the magnitudes are kept in a more controlled range.
 #   *   Consequently, the softmax function produces a "softer" and more distributed set of probabilities, even for larger $d_k$. This means that the model can attend to a wider range of keys, and the gradients for the softmax output will be more stable and less prone to vanishing, facilitating effective learning.
+
