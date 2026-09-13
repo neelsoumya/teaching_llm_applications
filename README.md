@@ -92,6 +92,7 @@ Each week has:
 
 - [Advanced topics](materials/advanced_topics.md)
 
+
 - 🎮 Practicals
 
 - [Transformers](practicals/transformer.ipynb)
@@ -105,6 +106,11 @@ Each week has:
 - [Practicals using `nanoGPT`](materials/practicals.md)
 
 - [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
+
+
+- 📝 Readings
+
+- [Gwern scaling laws](https://gwern.net/scaling-hypothesis#if_slide_1)
 
 
 ## Installation
