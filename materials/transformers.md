@@ -225,7 +225,17 @@
 
 - _Concept_ 🧩 🚀 also see math explanation in [practical notebook My Annotated Transformer Notebook](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
-- ![summary figure](../images/summary_annotated_transformer.jpeg)
+- summary figure
+
+![summary figure](../images/summary_annotated_transformer.jpeg)
+
+
+- _Concept_ 🧩 🚀 how is the 3 kinds of attention in transformers different?
+
+![image](../images/3_attention.jpeg)
+
+
+
 
 ## Deep dive
 
