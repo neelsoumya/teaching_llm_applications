@@ -234,6 +234,8 @@
 
 ![image](../images/3_attention.jpeg)
 
+- [🎥 Video](https://youtu.be/rBCqOTEfxvg?si=H5ek5Rl_c0Hk9xX0&t=840)
+
 
 Multi-head attention is a versatile mechanism used in the Transformer model in three main ways, allowing the model to focus on different parts of the input and output sequences:
 
