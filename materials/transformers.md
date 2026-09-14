@@ -225,6 +225,7 @@
 
 - _Concept_ 🧩 🚀 also see math explanation in [practical notebook My Annotated Transformer Notebook](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
+- ![summary figure](../images/summary_annotated_transformer.jpeg)
 
 ## Deep dive
 
