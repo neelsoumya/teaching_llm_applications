@@ -112,6 +112,7 @@ Each week has:
 
 - [Gwern scaling laws](https://gwern.net/scaling-hypothesis#if_slide_1)
 
+- 📚 📝 [Illustrated Transformer by Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 
 ## Installation
 
