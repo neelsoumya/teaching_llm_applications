@@ -235,6 +235,19 @@
 ![image](../images/3_attention.jpeg)
 
 
+Multi-head attention is a versatile mechanism used in the Transformer model in three main ways, allowing the model to focus on different parts of the input and output sequences:
+
+-  **Encoder-Decoder Attention (Looking from Output to Input)**:
+    *   **Purpose**: Allows the decoder to look at *all* parts of the encoder's output. This is how the model translates or generates text based on the entire input sequence.
+    *   **How**: The 'query' comes from the current step in the decoder, and the 'keys' and 'values' come from the encoder's final output.
+
+-    **Encoder Self-Attention (Understanding the Input)**:
+    *   **Purpose**: Helps the encoder understand the relationships between different words or tokens within the *input* sentence itself.
+    *   **How**: All 'queries', 'keys', and 'values' come from the *same* previous layer of the encoder. Each word can look at every other word in the input.
+
+-  **Decoder Self-Attention (Generating Output Step-by-Step)**:
+    *   **Purpose**: Allows the decoder to look at previously generated words in the *output* sentence to decide the next word, while preventing it from 'cheating' by looking at future words.
+    *   **How**: All 'queries', 'keys', and 'values' come from the *same* previous layer of the decoder. A special 'mask' is applied to block information from future positions, ensuring the generation remains sequential.
 
 
 ## Deep dive
