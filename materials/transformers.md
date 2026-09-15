@@ -263,6 +263,8 @@ The FFN is applied to each position (token) in the input sequence **separately a
 
 ![image](../images/ffn_transformer.jpeg)
 
+![image](../images/ffn_explanation.png)
+
 
 ## Deep dive
 
