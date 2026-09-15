@@ -251,6 +251,18 @@ Multi-head attention is a versatile mechanism used in the Transformer model in t
     *   **Purpose**: Allows the decoder to look at previously generated words in the *output* sentence to decide the next word, while preventing it from 'cheating' by looking at future words.
     *   **How**: All 'queries', 'keys', and 'values' come from the *same* previous layer of the decoder. A special 'mask' is applied to block information from future positions, ensuring the generation remains sequential.
 
+### Feedforward network in transformers
+
+In addition to multi-head self-attention sub-layers, each layer of the Transformer encoder and decoder architecture contains a fully connected **position-wise feed-forward network (FFN)**. 
+
+The FFN is applied to each position (token) in the input sequence **separately and identically**. While the linear transformations remain identical across different token positions within a single layer, they utilize different weight parameters from layer to layer.
+
+- Architectural Breakdown
+
+- The infographic organizes the position-wise Feed-Forward Network into four primary visual perspectives:
+
+![image](../images/ffn_transformer.jpeg)
+
 
 ## Deep dive
 
