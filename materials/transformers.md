@@ -1,9 +1,16 @@
 # Transformers
 
-## Practical
+## 🎮 Practical
 - Practical instructions:
 
 - Run [notebook](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/transformer.ipynb) in Google Colab
+
+- [Harvard SEAS resource on transformer practical](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
+- Please note that the material above is a Harvard SEAS resource on transformers and a great resource
+
+- 🛠️ My own annotated practical is available [here](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
+
 
 - or locally using the following instructions
 
