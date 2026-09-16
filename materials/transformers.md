@@ -226,6 +226,12 @@
 
 - 🛠️ My own annotated practical is available [here](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
+## PyTorch basics
+
+- [PyTorch basics for forward adn backward pass](pytorch_forward_backward_explained.md)
+
+
+
 ## 🧩 🚀 Technical diagram to explain multi-head attention
 
 ![image](../images/multi_head_attention_math.jpeg)
