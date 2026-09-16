@@ -8,6 +8,11 @@ A comprehensive guide for students and instructors explaining the internal worki
 
 ![image](../images/backward_pytorch.jpeg)
 
+# PyTorch resources
+
+- [Basics of PyTorch](https://github.com/neelsoumya/teaching_intro_pytorch)
+- [Basic for ANN in PyTorch](https://github.com/neelsoumya/teaching_intro_pytorch/blob/main/03_nn.py)
+
 ## 1. Executive Summary & Core Philosophy
 
 In PyTorch, model training relies on two foundational, complementary operations:
