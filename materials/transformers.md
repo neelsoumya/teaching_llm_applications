@@ -278,6 +278,7 @@ The FFN is applied to each position (token) in the input sequence **separately a
 
 ![image](../images/ffn_explanation.png)
 
+- [🎥 video explaining how masked self-attention works](https://youtube.com/shorts/GBbbiPTV_Qc)
 
 ### _Concept_ 🧩 🚀 Role of `d_model` and `d_ff` in the Position-wise Feed-Forward Network:
 
