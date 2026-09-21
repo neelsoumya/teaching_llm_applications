@@ -279,6 +279,45 @@ The FFN is applied to each position (token) in the input sequence **separately a
 ![image](../images/ffn_explanation.png)
 
 
+### Role of `d_model` and `d_ff` in the Position-wise Feed-Forward Network:
+
+![image](../images/dmodel_dff.jpeg)
+
+- Significance of `d_model` and `d_ff`:
+
+- `d_model` (Model Dimension/Embedding Dimension):
+    *   `d_model` represents the dimensionality of the input and output tensors for *each sub-layer* in the Transformer, including the input embeddings, positional encodings, and the output of the encoder and decoder. It is the core dimension of the model's representations. Think of it as the 'width' of the information pathway throughout the network. In the original Transformer paper, `d_model` is typically 512.
+    *   Its significance lies in maintaining a consistent representational capacity across different layers and sub-layers, allowing for residual connections (where outputs and inputs can be easily added) and ensuring that information can be processed uniformly.
+
+-   **`d_ff` (Feed-Forward Hidden Dimension):**
+    *   `d_ff` is the dimensionality of the *hidden layer* within the Position-wise Feed-Forward Network. This layer is an intermediate, expanded representation space. In the original Transformer paper, `d_ff` is typically 2048, which is 4 times `d_model`.
+    *   Its significance is to provide a higher-dimensional space where the model can perform more complex transformations and learn richer features from the input representation at each position. This expansion allows the network to process and transform the information at each position more effectively.
+
+- Purpose of the FFN's Internal Structure (Expansion and Contraction):**
+
+The FFN first projects the input from `d_model` to a larger `d_ff` dimension, applies an activation function (ReLU), and then projects it back down to `d_model`. This expansion and contraction serve several key purposes:
+
+- Increased Representational Capacity: The higher-dimensional `d_ff` space allows the network to capture more intricate and non-linear relationships within the features of each token. It provides a 'bottleneck' followed by an expansion, similar to what's seen in autoencoders or certain convolutional network blocks, enabling richer feature extraction.
+- Non-linearity: The ReLU activation function applied in the expanded space introduces critical non-linearity. Without this, the entire Transformer (composed only of linear projections and sums) would essentially be a linear model, severely limiting its ability to learn complex patterns in language.
+- Information Transformation: It allows the model to transform the representation of each token independently. While attention mechanisms allow tokens to interact, the FFN allows for individual token processing and feature refinement based on their current context-aware representation.
+
+- Implications if `d_ff` were equal to `d_model`:**
+
+If `d_ff` were chosen to be equal to `d_model` (e.g., `d_ff = 512` instead of `2048`), the implications would be significant for both computational efficiency and representational power:
+
+-    Representational Implications (What might be lost/gained):
+    - Loss of Expressive Power: The primary loss would be in the model's capacity to learn complex, non-linear transformations. The FFN would essentially become two sequential linear layers with an activation in between, operating within the same dimensionality. This reduced dimensionality for internal processing would likely make it harder for the network to extract rich, higher-level features for each token. The model might struggle to learn intricate patterns necessary for tasks like language understanding or translation.
+    - Less Feature Engineering: The expansion to a larger `d_ff` allows for a richer internal feature space. Without this, the model has fewer 'intermediate features' to play with, potentially limiting its ability to make fine-grained adjustments to the token representations.
+
+- Computational Implications (What might be lost/gained):
+    - Reduced Parameters (Gained): There would be fewer parameters in the `PositionwiseFeedForward` layer. For example, if `d_model=512` and `d_ff=2048`, the first linear layer has `512 * 2048` parameters and the second has `2048 * 512`. If `d_ff=d_model=512`, both layers would have `512 * 512` parameters. This would lead to a smaller model size.
+    *   **Faster Computation (Gained):** With fewer parameters and smaller matrix multiplications, the FFN layers would execute faster, potentially leading to quicker training and inference times.
+    *   **Potential Underfitting (Lost):** While faster, the reduced representational power could lead to underfitting, where the model is too simple to capture the underlying patterns in the data, resulting in lower performance on complex tasks.
+
+In summary, while setting `d_ff = d_model` would make the model smaller and faster, it would likely come at the cost of significantly reduced learning capacity and model performance for tasks that require deep, complex feature transformations like those handled by Transformers.
+
+
+
 ## Deep dive
 
 - [text from Google AI blog](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
