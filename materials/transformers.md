@@ -279,7 +279,9 @@ The FFN is applied to each position (token) in the input sequence **separately a
 ![image](../images/ffn_explanation.png)
 
 
-### Role of `d_model` and `d_ff` in the Position-wise Feed-Forward Network:
+### _Concept_ 🧩 🚀 Role of `d_model` and `d_ff` in the Position-wise Feed-Forward Network:
+
+- _Concept_ 🧩 🚀
 
 ![image](../images/dmodel_dff.jpeg)
 
