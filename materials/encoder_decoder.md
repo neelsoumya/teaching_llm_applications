@@ -71,6 +71,9 @@ When teaching this to a class focusing on LLM applications, students need to kno
 * **Interactive Exercise (The "Bank" Exercise):** Write the sentence: *"I walked to the bank to deposit my check, then sat by the river bank."* Ask students how they know the difference between the two "banks". Explain that Encoders look at the whole sentence mathematically just like our brains do.
 * **Application focus:** Discuss why you would use an Encoder (like a lightweight BERT model) for a simple routing app (e.g., categorizing customer support tickets) instead of a massive GPT model. (Focus: Cost, speed, accuracy).
 
+
+- [🎥 video explaining how masked self-attention works](https://youtube.com/shorts/GBbbiPTV_Qc)
+
 **3. Deep Dive: Decoders (20 mins)**
 * Explain causal masking / autoregressive generation.
 * **Interactive Exercise (The Next Word Game):** Have the class collectively write a sentence, one word per student. They can only base their word on the previous words spoken. This perfectly simulates Decoder behavior.

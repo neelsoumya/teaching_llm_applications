@@ -296,7 +296,7 @@ The FFN is applied to each position (token) in the input sequence **separately a
     *   `d_ff` is the dimensionality of the *hidden layer* within the Position-wise Feed-Forward Network. This layer is an intermediate, expanded representation space. In the original Transformer paper, `d_ff` is typically 2048, which is 4 times `d_model`.
     *   Its significance is to provide a higher-dimensional space where the model can perform more complex transformations and learn richer features from the input representation at each position. This expansion allows the network to process and transform the information at each position more effectively.
 
-- Purpose of the FFN's Internal Structure (Expansion and Contraction):**
+- Purpose of the FFN's Internal Structure (Expansion and Contraction)
 
 The FFN first projects the input from `d_model` to a larger `d_ff` dimension, applies an activation function (ReLU), and then projects it back down to `d_model`. This expansion and contraction serve several key purposes:
 
