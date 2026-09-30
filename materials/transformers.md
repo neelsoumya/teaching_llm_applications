@@ -132,6 +132,8 @@
 
 - [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
 
+- [🎥 Video explaining in simple language for the general public what is a transformer](https://youtube.com/shorts/87dOgIKf0Dg)
+
 
 - now we get position aware embedding for each token
 
