@@ -6,6 +6,9 @@ Objectives:
   - Visualise embedding space using PCA, t-SNE, and UMAP
   - Compute cosine similarity and build a simple semantic search engine
   - Implement sinusoidal positional encodings from scratch and visualise them
+
+  - [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
+
 """
 
 import math

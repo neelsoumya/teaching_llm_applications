@@ -2,6 +2,9 @@
 PRACTICAL: Rotary Position Embedding (RoPE)
 ============================================
 
+- [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
+
+
 Goal of this practical
 -----------------------
 In the lecture slide "Implementation and code for RoPE" we saw four steps

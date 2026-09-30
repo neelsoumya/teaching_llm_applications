@@ -22,6 +22,9 @@ This week we go deep into *embeddings* — how discrete token IDs become dense, 
 - [code from book by Sebastian Rashcka](https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb)
 
 
+- [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
+
+
 ## Other thoughts
 
 -  Lecture Prep: Fundamentals of Embeddings and Large Language Models
@@ -228,6 +231,9 @@ plt.show()
 The transformer has no built-in notion of order — the same set of tokens in different orders would produce the same result without position information. We add **positional encodings** to the embeddings.
 
 ### Sinusoidal Positional Encoding (original Transformer)
+
+- [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
+
 
 ```
 PE(pos, 2i)   = sin(pos / 10000^(2i/d_model))

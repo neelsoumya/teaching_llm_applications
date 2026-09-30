@@ -173,6 +173,8 @@ This is the **autoregressive** view: each token is predicted given all previous 
   - Replaces recurrence entirely with multi-head self-attention.
   - Enables massively parallel training.
 
+
+
 ### 2.4 The Pre-training Era (2018–present)
 
 | Year | Model | Organisation | Parameters |
