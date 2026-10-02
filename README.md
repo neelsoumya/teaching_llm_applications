@@ -122,6 +122,12 @@ Each week has:
 
 - 📚 📝 [PyTorch forward and backward pass explained and basics](materials/pytorch_forward_backward_explained.md)
 
+# 🎥 Short videos explaining various concepts
+
+- [🎥 video explaining how masked self-attention works](https://youtube.com/shorts/GBbbiPTV_Qc)
+- [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
+- [🎥 Video explaining in simple language for the general public what is a transformer](https://youtube.com/shorts/87dOgIKf0Dg)
+
 
 ## Installation
 
