@@ -31,6 +31,7 @@ Each week has:
 
 - [Architectures](materials/architectures.md)
 
+
 - [Softmax and temperature](materials/softmax.md)
 
 - [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
@@ -41,7 +42,6 @@ Each week has:
 - [Masked language models (BERT vs. GPT)](materials/masked_language_modelling_vs_generative.md)
 
 
-- [Practicals](materials/practicals.md)
 
 - [LLMs from scratch](materials/LLMs_from_scratch.md)
 
@@ -99,13 +99,15 @@ Each week has:
 
 - 🎮 Practicals
 
+- [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
+
 - [Transformers](practicals/transformer.ipynb)
 
 - [The Annotated Transformer](practicals/TheAnnotatedTransformer.pdf)
 
-- [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
-
 - [GPU and benchmarking and profiling](materials/GPUs.md)
+
+- [Practicals](materials/practicals.md)
 
 - [Practicals using `nanoGPT`](materials/practicals.md)
 
@@ -121,6 +123,7 @@ Each week has:
 - Basics and preliminaries
 
 - 📚 📝 [PyTorch forward and backward pass explained and basics](materials/pytorch_forward_backward_explained.md)
+
 
 # 🎥 Short videos explaining various concepts
 
