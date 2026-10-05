@@ -128,7 +128,7 @@
 
 - embedding learnt
 
-- where is the position of token? (_positional encoding_): sine and cosine waves. (_Concept_ 🧩 🚀 think Fourier Series/transforms). For position 0, we add 0; for position 1, we add a sine wave of frequency 1, for position 2, we add a sine wave of frequency 2, etc. For position 1000, we add a sine wave of frequency 1000. See [architectures](architectures.md)
+- where is the position of token? (_positional encoding_): sine and cosine waves. (_Concept_ 🧩 🚀 think Fourier Series/transforms). For position 0, we add 0; for position 1, we add a sine wave of frequency 1, for position 2, we add a sine wave of frequency 2, etc. For position 1000, we add a sine wave of frequency 1000. See [material on architectures](architectures.md)
 
 - [🎥 Video simple explanation of positional encoding](https://youtube.com/shorts/rrrL8ebPgYU)
 
