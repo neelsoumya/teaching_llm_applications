@@ -113,6 +113,7 @@ Each week has:
 
 - [Practicals using Baby steps paper by Frank](materials/practicals_babysteps.md)
 
+- [Practical with LLMs with robotics](https://neelsoumya.github.io/teaching_robots_navigation/LLM_robots.html#-%EF%B8%8Fpracticals)
 
 - 📝 Readings
 
