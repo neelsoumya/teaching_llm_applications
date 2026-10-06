@@ -11,6 +11,10 @@
 - 2 (?)
 - enrollment numbers (?)
 
+- What lab sessions have been timetabled ? (how many per week, how many weeks), 
+- Will there be more than one academic in each lab session or just one ?
+- Will you need help for assessment marking from the GTA's ?
+
 ## Lab computers
 
 - which labs
