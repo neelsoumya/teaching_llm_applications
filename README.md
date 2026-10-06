@@ -151,6 +151,10 @@ jupyter notebook
 
 ```
 
+## Administrative
+
+- [Administrivia](materials/administrivia.md)
+
 ## Assessment rubric
 
 - [Assessment rubric](materials/assessment_rubric.md)
