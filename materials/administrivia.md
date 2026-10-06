@@ -9,8 +9,13 @@
 ## GTA
 
 - 2 (?)
+- enrollment numbers (?)
 
 ## Lab computers
+
+- which labs
+- what computers (gpu memory/specs)
+
 
 ## Computational requirements
 
