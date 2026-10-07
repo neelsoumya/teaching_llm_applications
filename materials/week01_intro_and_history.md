@@ -55,6 +55,8 @@ Just a quick, gentle correction on the vector math before you present it: the fa
 - Reading: Attention is all you need
 
 
+- [Resource for intro to LLMs by Accelerate](https://docs.science.ai.cam.ac.uk/large-language-models/)
+
 
 ### Part 3: Embeddings & Shared Vector Spaces (30 Mins)
 
