@@ -99,6 +99,8 @@ Each week has:
 
 - 🎮 Practicals
 
+- [Absolute basic transformers](https://github.com/neelsoumya/winter_school_AI/blob/main/practicals/absolute_basic_transformers.ipynb)
+
 - [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
 - [Transformers](practicals/transformer.ipynb)
