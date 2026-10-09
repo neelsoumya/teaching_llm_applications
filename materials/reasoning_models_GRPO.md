@@ -296,6 +296,24 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - complete chain of thought not shown (too long, can train another model that can mimic this model)
 
+## Reasoning based benchmarks
+
+- HumanEval, SWE-bench
+
+![image](../images/reasoning_benchmarks.jpeg)
+
+- Math: problem (prompt) -> solution (words + LaTeX)
+
+- [AIME dataset](https://huggingface.co/datasets/MathArena/aime_2026): math Olympiad problems
+
+- GSM8K: grade school math problems
+
+- _what is the metric?_ pass@k Probability that at least one of _k_ generated attempts succeeds
+
+- can afford to generate more than one answer
+
+- _best of n_
+
 ## References
 
 1. [IBM — Reasoning Models](https://www.ibm.com/think/topics/reasoning-model)
