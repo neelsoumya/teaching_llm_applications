@@ -316,7 +316,11 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - take _n_ attempts and _c_ successes
 
+- pass@k vs. _T_ (temperature)
 
+- formula for pass@k in terms of _c_ and _n_
+
+- cons@k (majority voting)
 
 ## References
 
