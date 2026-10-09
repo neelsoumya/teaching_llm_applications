@@ -288,9 +288,13 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 ![image](../images/reasoning_concept.jpeg)
 
+- output = reasoning + answer
+
 - more tokens, so LLMs use more tokens and more compute
 
 - _compute budget_
+
+- complete chain of thought not shown (too long, can train another model that can mimic this model)
 
 ## References
 
