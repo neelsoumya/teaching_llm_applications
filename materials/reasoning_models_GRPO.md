@@ -278,6 +278,20 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 ---
 
+## Notes
+
+- [🎥 Video from Stanford CME295](https://www.youtube.com/watch?v=k5Fh-UgTuCo)
+
+- in-context learning examples
+
+- _Concept_ 🧩 🚀
+
+![image](../images/reasoning_concept.jpeg)
+
+- more tokens, so LLMs use more tokens and more compute
+
+- _compute budget_
+
 ## References
 
 1. [IBM — Reasoning Models](https://www.ibm.com/think/topics/reasoning-model)
