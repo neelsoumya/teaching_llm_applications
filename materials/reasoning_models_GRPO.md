@@ -314,6 +314,10 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - _best of n_
 
+- take _n_ attempts and _c_ successes
+
+
+
 ## References
 
 1. [IBM — Reasoning Models](https://www.ibm.com/think/topics/reasoning-model)
