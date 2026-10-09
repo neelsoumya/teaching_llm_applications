@@ -322,6 +322,37 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - cons@k (majority voting)
 
+## GRPO
+
+- [🎥 video from Stanford CME295 course](https://youtu.be/k5Fh-UgTuCo?si=2J2Litju8JxVIl9k&t=2948)
+
+- reasoning chain is hard to write from scratch
+
+- _human written reasoning maybe different to how model reasons_
+
+- try Reinforcement Learning
+
+- _Concept_ 🧩 🚀 incentivize model to reason before answering
+
+- GRPO: [G]uided [R]easoning [P]olicy [O]ptimization
+
+- 🎁 Rewards = <think> tokens present + answer correct  
+
+- control thinking: as thinking tokens increase, performance increases
+
+- dynamic budget, context length, budget forcing (introduce tokens midway to force reasoning)
+
+>wait, wait, wait, I see ....
+
+![image](../images/cot_sample.png)
+
+- 🤔 ❓ is this really thought/thinking/reasoning?
+
+- how can we be sure that model is thinking?
+
+
+
+
 ## References
 
 1. [IBM — Reasoning Models](https://www.ibm.com/think/topics/reasoning-model)
