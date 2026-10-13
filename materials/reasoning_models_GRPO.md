@@ -344,6 +344,17 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - sample multiple times and see how good this is
 
+- _GRPO_ explained
+
+- policy model is the LLM
+
+- KL divergence so model does not deviate too much from base model
+
+>How GRPO Works: A prompt is given. The student LLM generates multiple answers. A fixed teacher and evaluator score these answers, and a KL penalty is applied to keep the student close to the teacher. The use scores are then normalized into relative ‘advantage scores’ that identify which answers were relatively good and bad. This advantage signal is used to update the student model, completing the training loop.
+
+![image](../images/grpo_explained_simply.jpeg)
+
+
 ## Chain of Thought (CoT)
 
 - 🎁 Rewards = <think> tokens present + answer correct  
