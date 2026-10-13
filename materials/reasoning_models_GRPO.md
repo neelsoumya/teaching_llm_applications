@@ -354,8 +354,11 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - how can we be sure that model is thinking?
 
+- _Concept_ 🧩 🚀
 
+ >models might _think_ in some other space, which may not be human-like reasoning or may not be _language-space_ !
 
+- continuous thoughts: tokens might be hidden representations
 
 ## References
 
