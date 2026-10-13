@@ -165,6 +165,7 @@ jupyter notebook
 
 - [Assessment](materials/assessment.md)
 
+and see `assessment_do_not_upload` folder
 
 ## Declaration
 
