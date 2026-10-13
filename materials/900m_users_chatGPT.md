@@ -138,3 +138,6 @@ ight) + T_{	ext{UIRender}}$$
 1. Why does an agentic tool call overhead compound exponentially in multi-turn execution tasks compared to single-turn chats?
 2. How do multi-byte Unicode characters and ANSI escape sequences complicate text wrapping in terminal user interfaces?
 3. What are the trade-offs between spawning a new subshell for every tool invocation versus maintaining a persistent background worker process?
+
+
+- [vizuara post vLLMs](https://www.youtube.com/post/UgkxsRW8iGtigSm1AuC70sqAdyROW7a9qc0K)
