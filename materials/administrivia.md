@@ -32,6 +32,7 @@
 
 ## Assignments
 
+- *decide what is assessment going to be*
 - deadline
 - written?
 - practical?
