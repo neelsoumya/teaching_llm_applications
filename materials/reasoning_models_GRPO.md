@@ -336,15 +336,19 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - GRPO: [G]uided [R]easoning [P]olicy [O]ptimization
 
+## Chain of Thought (CoT)
+
 - 🎁 Rewards = <think> tokens present + answer correct  
 
 - control thinking: as thinking tokens increase, performance increases
 
-- dynamic budget, context length, budget forcing (introduce tokens midway to force reasoning)
+- dynamic budget, context length, budget forcing (introduce tokens midway to force reasoning and force it to _think_ more before generating answer)
 
 >wait, wait, wait, I see ....
 
 ![image](../images/cot_sample.png)
+
+
 
 - 🤔 ❓ is this really thought/thinking/reasoning?
 
