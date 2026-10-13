@@ -334,7 +334,15 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - _Concept_ 🧩 🚀 incentivize model to reason before answering
 
-- GRPO: [G]uided [R]easoning [P]olicy [O]ptimization
+- GRPO: [G]roup [R]elative [P]olicy [O]ptimization
+
+![image](../images/grpo_basic.png)
+
+- _advantage_ = compare to completions (average)
+
+- Reinforcement learning developed before LLMs
+
+- sample multiple times and see how good this is
 
 ## Chain of Thought (CoT)
 
