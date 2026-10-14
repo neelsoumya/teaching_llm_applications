@@ -402,7 +402,9 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 
 
+## How do you open the black box and explain reasoning
 
+- [🎥video: How do you open the black box and explain reasoning](https://www.youtube.com/watch?v=Bj9BD2D3DzA)
 
 
 
