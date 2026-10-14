@@ -350,7 +350,7 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - KL divergence so model does not deviate too much from base model
 
->How GRPO Works: A prompt is given. The student LLM generates multiple answers. A fixed teacher and evaluator score these answers, and a KL penalty is applied to keep the student close to the teacher. The use scores are then normalized into relative ‘advantage scores’ that identify which answers were relatively good and bad. This advantage signal is used to update the student model, completing the training loop.
+>How GRPO Works: A prompt is given. The student LLM generates multiple answers. A fixed teacher and evaluator score these answers, and a KL penalty is applied to keep the student close to the teacher. The use scores are then normalized into relative _advantage scores_ that identify which answers were relatively good and bad. This advantage signal is used to update the student model, completing the training loop.
 
 ![image](../images/grpo_explained_simply.jpeg)
 
@@ -378,6 +378,37 @@ This does not mean that the underlying architecture necessarily changes dramatic
  >models might _think_ in some other space, which may not be human-like reasoning or may not be _language-space_ !
 
 - continuous thoughts: tokens might be hidden representations
+
+
+
+## PPO
+
+![image](../images/grpo_vs_ppo.png)
+
+![image](../images/grpo_vs_ppo_v2.png)
+
+
+- in the reasoming case, there is no _reward model_ since there is a verifiable output
+
+- in GRPO we only train the _policy model_
+
+- in PPO we train the _policy model_ + _value model_
+
+- GRPO vs PPO math
+
+![image](../images/grpo_ppo_math.png)
+
+- ratio of probability of current policy to the _old_ policy 
+
+
+
+
+
+
+
+
+
+
 
 ## References
 
