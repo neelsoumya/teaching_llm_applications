@@ -400,6 +400,10 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - ratio of probability of current policy to the _old_ policy 
 
+- _clip_ to ensure updates are not too big
+
+- KL divergence term is used to penalize the model if it strays too far from the original model
+
 
 
 ## How do you open the black box and explain reasoning
