@@ -404,6 +404,24 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 - KL divergence term is used to penalize the model if it strays too far from the original model
 
+- _summation_ over all groups and you are sampling multiple completions
+
+
+- first summation is over group, second summation is over indices of tokens
+
+- _1/length(Output)_ means the contribution of a token depends on the length of the output
+
+![image](../images/contribution_grpo.png)
+
+_Note_ that this may be leading to output length becoming bigger and bigger (see Increasing output length section below)
+
+- Fix using Dr. GRPO and DAPO
+
+_Concept_ 🧩 🚀 PPO is used to tune a model and align it to human preferences
+
+_Concept_ 🧩 🚀 GRPO is used to train a model to reason
+
+_Concept_ 🧩 🚀 GRPO does not have a value function
 
 
 ## How do you open the black box and explain reasoning
@@ -412,7 +430,12 @@ This does not mean that the underlying architecture necessarily changes dramatic
 
 
 
+## Increasing output length
 
+- as RL progresses, reasoning tokens increase
+- correlated with accuracy
+
+![image](../images/increasing_output_length.png)
 
 
 
