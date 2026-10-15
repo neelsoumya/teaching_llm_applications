@@ -428,6 +428,7 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 
 - [🎥video: How do you open the black box and explain reasoning](https://www.youtube.com/watch?v=Bj9BD2D3DzA)
 
+![image of Anthropic LLM Microscope](../images/anthropic_microscope.jpeg)
 
 
 ## Increasing output length
@@ -436,6 +437,21 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - correlated with accuracy
 
 ![image](../images/increasing_output_length.png)
+
+
+
+
+
+## Other adjustments 
+
+- adjustment for level of difficulty of math problems: most complettions will be failures. so adjust standard deviation
+
+- encourage diversity by tuning _epsilon_ in _clip_ function (so that polcuy changes even if a unlikely token appears)
+
+
+
+
+
 
 
 
