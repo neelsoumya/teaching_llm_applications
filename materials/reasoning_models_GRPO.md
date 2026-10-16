@@ -449,6 +449,8 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - encourage diversity by tuning _epsilon_ in _clip_ function (so that polcuy changes even if a unlikely token appears)
 
 
+## DeepSeek-R1 model
+
 
 
 

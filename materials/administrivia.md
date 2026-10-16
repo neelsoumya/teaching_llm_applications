@@ -44,7 +44,8 @@
 - say something in intro lecture about broad strokes of assignment
 
 - general checker
-- rubric (email to Steven Wright)
+- *rubric (email to Steven Wright)*
+- *I'm sharing the assessment brief with you for checking. The H-level paper is here, and the M-level paper is here. They are very similar but differ slightly in the marking criteria, given the slightly different LOs (COM00052H vs COM00186M).fill in the unified expert checker form available in the respective Google Drive exam folders here*
 
 
 ## Timetabling
