@@ -476,6 +476,9 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 
 ![image](../images/deepseek_recipe.png)
 
+-  🤔 ❓ why does reasoning lead to better results?
+
+
 
 ## Talk on reasoning models
 
@@ -492,6 +495,10 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - exploration vs exploitation
 - provisional answers
 
+
+## Distillation
+
+- 
 
 ## References
 
