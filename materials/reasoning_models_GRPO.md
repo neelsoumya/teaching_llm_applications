@@ -449,12 +449,48 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - encourage diversity by tuning _epsilon_ in _clip_ function (so that polcuy changes even if a unlikely token appears)
 
 
+## Recap
+
+- start with base model
+- use SFT (supervised finetuning) and RL (reinforcement learning) to finetune and align models
+- use RL (such as _GRPO_) to create another reasoning model
+
+![image](../images/recap_reasoning.png)
+
+
 ## DeepSeek-R1 model
 
+- start with pretrained model
+
+- multi-head latent attention
+
+![image](../images/deepseek_mla.png)
+
+- small scale SFT with reasoning data (data source is chain of thought from R1 model rewritten by humans)
+
+- GRPO with _reward = formatting + accuracy + language consistency_ 
+
+- final SFT on reasoning and non-reasoning data (helpful + harmless)
+
+- deepseek recipe is:
+
+![image](../images/deepseek_recipe.png)
 
 
+## Talk on reasoning models
+
+- 🎥 [Talk on reasoning models Simons Institute](https://www.youtube.com/watch?v=gAwCSHujtGo)
+
+>reasoning behaviour emerges naturally such as self-verification, backtracking.
 
 
+- how is the reasoning structured ?
+- planning
+- implement
+- monitor
+- verify
+- exploration vs exploitation
+- provisional answers
 
 
 ## References
