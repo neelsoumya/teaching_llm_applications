@@ -494,7 +494,9 @@ Here is the equation for the Scaled Dot-Product Attention mechanism as described
 ![image](../images/scaled.png)
 
 
-> The other has to do with the expressivity of the attention mechanism. The softmax sum we are doing is powerful — it allows a direct connection across distant parts of a sequence. But the summation is also blunt: if the model tries to attend to too many tokens at once, the interesting features of individual source tokens will get “washed out” in the combined representation. A simple trick that works well is to do this attention operation several times for the same sequence, with several different attention heads running the same computation with different parameters:
+> The other has to do with the expressivity of the attention mechanism. The softmax sum we are doing is powerful — it allows a direct connection across distant parts of a sequence. But the summation is also blunt: if the model tries to attend to too many tokens at once, the interesting features of individual source tokens will get “washed out” in the combined representation. 
+
+>A simple trick that works well is to do this attention operation several times for the same sequence, with several different attention heads running the same computation with different parameters:
 
 ```python
 query_dense = [layers.Dense(head_dim) for i in range(num_heads)]
@@ -553,3 +555,8 @@ multi_head_attention(key=source, value=source, query=source)
 - 🎮 [code](https://www.tensorflow.org/text/tutorials/transformer)
 
 - 🎮 [keras transformers](https://keras.io/examples/nlp/text_classification_with_transformer/)
+
+
+## Andrej Parpathy video explanation of _attention_
+
+- [🎥 Video from Andrej Karpathy on _attention_](https://youtu.be/XfpMkf4rD6E?si=W_zDLXFg5_vfT-zw&t=1484)
