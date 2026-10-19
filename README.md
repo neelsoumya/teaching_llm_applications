@@ -88,6 +88,8 @@ Each week has:
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
+- [LLM tuning/finetuning](materials/tuning_finetuning.md)
+
 - [Audio and vision models](materials/audio_vision_models.md)
 
 - [Different kinds of attention](materials/different_kinds_attention.md)
@@ -167,9 +169,11 @@ jupyter notebook
 
 and see `assessment_do_not_upload` folder
 
+
 ## Declaration
 
 >Parts of this course material are generated using generative AI. I take full responsibility for all content and have verified it. Lots of the text and material are also heavily inspired by other sources which are all detailed in this document. I take and make no claims to originality. These are just to be used as teaching notes.
+
 
 ## Acknowledgements and courses for inspiration
 
