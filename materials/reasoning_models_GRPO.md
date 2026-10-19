@@ -496,6 +496,15 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - provisional answers
 
 
+- when to stop?
+- which path to take ?
+- capability _is not equal_ to reasoning capability
+
+- [Schoenfeld 4-stage theory of problem solving](https://journals.sagepub.com/doi/pdf/10.1007/BF02329617)
+
+- analyze, implement, explore, verify
+
+
 ## Distillation
 
 - say you have a smaller model but you want to have the capabilities of a larger model
