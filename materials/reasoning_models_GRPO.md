@@ -478,6 +478,7 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 
 -  🤔 ❓ why does reasoning lead to better results?
 
+- DeepSeek also uses a mixture of experts (MoE) model: see [advanced topics](advanced_topics.md)
 
 
 ## Talk on reasoning models
@@ -500,7 +501,7 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 - which path to take ?
 - capability _is not equal_ to reasoning capability
 
-- [Schoenfeld 4-stage theory of problem solving](https://journals.sagepub.com/doi/pdf/10.1007/BF02329617)
+- [Schoenfeld 4-stage theory](s)
 
 - analyze, implement, explore, verify
 
