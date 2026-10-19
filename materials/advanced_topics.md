@@ -10,3 +10,11 @@
 - [Mixture of experts model](https://www.youtube.com/watch?v=9pbyKc8SI6w&pp=ugUHEgVlbi1VUw%3D%3D)
 
 - [Reasoning models video by Vizuara](https://www.youtube.com/shorts/PgoiYeeNv7g)
+
+## Mixture of experts (MoE)
+
+![image](../images/mixture_of_experts.jpeg)
+
+- Instead of one massive network, the model is divided into a Gating Network (the router) and a set of eight smaller, specialized "Experts" (for Word Choice, Code Gen, Emotional Tone, etc.).
+
+![image](https://en.wikipedia.org/wiki/Mixture_of_experts#/media/File:DeepSeek_MoE_and_MLA_(DeepSeek-V2).svg)
