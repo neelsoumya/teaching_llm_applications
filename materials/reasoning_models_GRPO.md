@@ -498,7 +498,18 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 
 ## Distillation
 
-- 
+- say you have a smaller model but you want to have the capabilities of a larger model
+
+- _student_ _teacher_ model
+
+- not only match next token distribution
+
+- fit the entire sequence that the _teacher_ has outputted
+
+- not just fit the distribution of tokens
+
+![image](../images/distill_reasoning.png)
+
 
 ## References
 
