@@ -22,3 +22,7 @@
 - easier to compare than generate from scratch
 
 ![image](../images/preference_tuning_overview.png)
+
+- SFT data quality is very important
+
+- If SFT data is _misbehaving_ and preference tuning may not be the answer: _check your SFT data_
