@@ -10,3 +10,15 @@
 
 ![image](../images/tuning_overview.png)
 
+
+## Preference tuning
+
+- collect preference pairs and train model on it
+
+- We _prefer_ this 
+
+- rather than say I want this
+
+- easier to compare than generate from scratch
+
+![image](../images/preference_tuning_overview.png)
