@@ -478,7 +478,7 @@ _Concept_ 🧩 🚀 GRPO does not have a value function
 
 -  🤔 ❓ why does reasoning lead to better results?
 
-- DeepSeek also uses a mixture of experts (MoE) model: see [advanced topics](advanced_topics.md)
+- DeepSeek also uses a mixture of experts (MoE) model: see [advanced topics: mixture of experts](advanced_topics.md)
 
 
 ## Talk on reasoning models
