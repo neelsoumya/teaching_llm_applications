@@ -86,9 +86,11 @@ Each week has:
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
-- [LLM tuning/finetuning](materials/tuning_finetuning.md)
+- [LLM tuning/finetuning and RLHF](materials/tuning_finetuning.md)
 
+<!--
 - [RLHF](materials/week07_finetuning_and_rlhf.md)
+-->
 
 - [Mechanistic Interpretability](materials/week14_mechanistic_interpretability.md)
 

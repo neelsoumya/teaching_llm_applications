@@ -29,3 +29,20 @@
 
 - also see [RLHF material](week07_finetuning_and_rlhf.md)
 
+- data collection
+
+- pointwise vs. pairwise preference data
+
+![image](../images/pointwise_vs_pairwise.png)
+
+- collect _pairwise_ preference data for prompts
+
+- LLM as a judge
+
+
+## RLHF
+
+- What is reinforcement learning?
+
+![image](../images/reinformcement_learning_formulation.png)
+
