@@ -47,8 +47,6 @@ Each week has:
 
 - [BERT SLMs](materials/BERT_SLMs.md)
 
-- [Finetuning](materials/week07_finetuning_and_rlhf.md)
-
 - [Costs](materials/costs.md)
 
 - [Scaling](materials/scaling.md)
@@ -89,6 +87,10 @@ Each week has:
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
 - [LLM tuning/finetuning](materials/tuning_finetuning.md)
+
+- [RLHF](materials/week07_finetuning_and_rlhf.md)
+
+- [Mechanistic Interpretability](materials/week14_mechanistic_interpretability.md)
 
 - [Audio and vision models](materials/audio_vision_models.md)
 

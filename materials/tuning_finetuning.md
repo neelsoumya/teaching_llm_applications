@@ -25,4 +25,7 @@
 
 - SFT data quality is very important
 
-- If SFT data is _misbehaving_ and preference tuning may not be the answer: _check your SFT data_
+- 💡 If SFT data is _misbehaving_ then preference tuning may not be the answer: _check your SFT data_
+
+- also see [RLHF material](week07_finetuning_and_rlhf.md)
+
