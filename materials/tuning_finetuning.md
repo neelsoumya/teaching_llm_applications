@@ -1,4 +1,4 @@
-# Tuning/finetuning
+# Tuning/finetuning and RLHF
 
 - [🎥 Video CS395 Stanford Finetuning](https://youtu.be/PmW_TMQ3l0I?si=82nhWrdTQSbk0u7b)
 
