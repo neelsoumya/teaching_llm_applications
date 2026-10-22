@@ -12,3 +12,11 @@
 
 - [Huggingface 🤗 datasets](https://huggingface.co/datasets)
 
+- [Huggingface 🤗 spaces for deploying](https://huggingface.co/spaces)
+
+- See [material on huggingface 🤗 spaces](https://neelsoumya.github.io/visualization_lecture/exercises/exercise_week7.html#huggingface)
+
+- [other deployment options _streamlit_ and _gradio_](https://neelsoumya.github.io/visualization_lecture/exercises/exercise_week7.html)
+
+
+- Extra marks for deployment
