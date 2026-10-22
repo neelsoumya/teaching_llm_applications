@@ -46,3 +46,26 @@
 
 ![image](../images/reinformcement_learning_formulation.png)
 
+- _s_t_ is state you are in, _a_t_ is action you take, _r_t_ is reward you get
+
+- sometimes a good or bad reward
+
+- leverage this for _preference tuning_
+
+- agent is the LLM
+
+- state is prompt
+
+- next token is next state
+
+![image](../images/preference_reinforcement.png)
+
+- tune the LLM
+
+- sparse signals could be a problem in RL 
+
+- Bradley-Terry model for preference learning
+
+![image](../images/bradley_terry.png)
+
+- binary cross entropy loss function since pairwise
