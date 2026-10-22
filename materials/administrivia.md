@@ -17,6 +17,7 @@
 - What lab sessions have been timetabled ? (how many per week, how many weeks), 
 - Will there be more than one academic in each lab session or just one ?
 - Will you need help for assessment marking from the GTA's ?
+- enrollment numbers
 
 ## Lab computers
 
@@ -42,6 +43,9 @@
 - *say 10th May deadline cs-exams*
 - announce on 10th March 
 - say something in intro lecture about broad strokes of assignment
+
+- _assessment_ use open source open weight models on Google Colab and write a report. For _M_ level extra question: reflect on your results, have these been reported before, if not try to reconcile, reflect and do literature review also. Additionally do deployment on Huggingface spaces and submit the link - see [practical on huggingface🤗](../practicals/practical_huggingface_dataset.md)
+
 
 - general checker
 - *rubric (email to Steven Wright)*

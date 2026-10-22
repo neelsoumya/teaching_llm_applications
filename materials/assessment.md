@@ -3,6 +3,9 @@
 - Written component
 - Software component/practical
 
+
+- _assessment_ use open source open weight models on Google Colab and write a report. Use the techniques taught in this class and apply it to an open source dataset (such as NASA datasets, space medicine, etc.)For _M_ level extra question: reflect on your results, have these been reported before, if not try to reconcile, reflect and do literature review also. Additionally do deployment on Huggingface spaces and submit the link - see [practical on huggingface🤗](../practicals/practical_huggingface_dataset.md)
+
 ## Written component
 
 - Tradeoff between KV cache, memory management, saving sessions on Claude and restoring them from hard disk, L1 cache management, L2 cache, DRAM
