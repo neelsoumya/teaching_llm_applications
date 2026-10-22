@@ -176,6 +176,10 @@ jupyter notebook
 
 and see `assessment_do_not_upload` folder
 
+## Marking
+
+- Marking see `marking_do_not_upload` folder
+
 
 ## Declaration
 
