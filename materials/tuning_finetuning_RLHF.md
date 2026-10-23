@@ -69,3 +69,21 @@
 ![image](../images/bradley_terry.png)
 
 - 💡 binary cross entropy loss function since pairwise
+
+- 💡 take _log_ of multiplication of probabilities: these numbers can get very small
+
+![image](../images/reward_model_preference.png)
+
+- 1000s of data points from humans
+
+- _Model_ pretrained LLM with classification head instead of next token prediction (decoder only)
+
+- is this regression or reinforcement learning?
+
+- change weights of LLM using reinforcement learning
+
+- reward model has been trained and frozen
+
+![image](../images/idea_rlhf.png)
+
+- do not deviate too much from base model: _catastrophic forgetting_
