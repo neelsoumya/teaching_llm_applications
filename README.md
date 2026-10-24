@@ -183,6 +183,10 @@ and see `assessment_do_not_upload` folder
 
 - Marking see `marking_do_not_upload` folder (including templates)
 
+## Checkin codes
+
+- [Checkin codes](https://engagement.york.ac.uk/mytimetable)
+
 
 ## Declaration
 
