@@ -1,5 +1,7 @@
 # Assessment
 
+- [department guidelines](https://sites.google.com/york.ac.uk/cs-staff-intranet/teaching-on-campus/setting-assessments?authuser=1&pli=1)
+
 - Written component
 - Software component/practical
 

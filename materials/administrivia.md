@@ -56,3 +56,7 @@
 
 - 2 hour lectures all on one day
 - 2 hour practicals all on one day
+
+## Department guidelines 
+
+- [department guidelines](https://sites.google.com/york.ac.uk/cs-staff-intranet/teaching-on-campus/setting-assessments?authuser=1&pli=1)

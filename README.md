@@ -173,11 +173,15 @@ jupyter notebook
 
 - [Assessment rubric](materials/assessment_rubric.md)
 
+- [department guidelines](https://sites.google.com/york.ac.uk/cs-staff-intranet/teaching-on-campus/setting-assessments?authuser=1&pli=1)
+
 ## Assessment 
 
 - [Assessment](materials/assessment.md)
 
 and see `assessment_do_not_upload` folder
+
+- [department guidelines](https://sites.google.com/york.ac.uk/cs-staff-intranet/teaching-on-campus/setting-assessments?authuser=1&pli=1)
 
 ## Marking
 
