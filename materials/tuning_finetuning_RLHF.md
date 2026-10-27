@@ -106,3 +106,23 @@
 - _KL divergence_ measures how different two probability distributions are 
 
 - it is not distance, it is not symmetric
+
+- 🤔❓ is it positive or negative ?
+
+- use Jensen's inequality to argue it is positive (and 0 if two distributions are identical)
+
+![image](../images/ppo_advantage.png)
+
+- _advantage_ how much better is output compared to baseline
+
+- _value function_ 
+
+- value head train jointly
+
+- generalized advantage estimation (GAE)
+
+
+### Variants of PPO loss
+
+- PPO-Clip: clip ratio of new and old policy to prevent large updates
+
