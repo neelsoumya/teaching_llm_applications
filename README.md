@@ -211,6 +211,8 @@ and see `assessment_do_not_upload` folder
 
 - [Stanford CME295](https://cme295.stanford.edu/) and [on youtube](https://www.youtube.com/watch?v=k5Fh-UgTuCo)
 
+- [The Annotated Transformer](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
+
 - Ilya Sutskever and Andrej Karpathy video on how to code transformers from scratch
 
 - `NanoGPT`
