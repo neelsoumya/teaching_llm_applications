@@ -1,7 +1,7 @@
 # MSc Course: Large Language Models — Internals and Applications
 
 
-> A masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a group project.
+> A masters-level course on the internals of large language models and their real-world applications. The course combines rigorous theory with hands-on Python practicals, culminating in a project.
 
 ---
 
