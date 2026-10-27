@@ -87,3 +87,22 @@
 ![image](../images/idea_rlhf.png)
 
 - do not deviate too much from base model: _catastrophic forgetting_
+
+- [see video 🎥 Stanford CME295](https://youtu.be/PmW_TMQ3l0I?si=0JjeBjA0q-9Tem4j&t=3175)
+
+- reward hacking or training instabilities (so not depend too much on reward signal)
+
+
+## Proximal Policy Optimization (PPO) 
+
+- do not deviate too much from base model
+
+- This is called PPO
+
+![image](../images/sft_do_not_deviate_2much.png)
+
+![image](../images/ppo.png)
+
+- _KL divergence_ measures how different two probability distributions are 
+
+- it is not distance, it is not symmetric
