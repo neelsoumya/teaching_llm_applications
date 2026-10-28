@@ -128,5 +128,29 @@
 
 - _old_ is not SFT model but model at previous iteration of RL stage
 
+- 💡 updates not too big (for stability)
+
 ![image](../images/ppo_clip.png)
 
+- _L_ is not loss and _r_ is ratio (not reward)
+
+
+### PPO-KL penalty
+
+- ratio * advantage - KL * (value - old value) 
+
+- can PPO-clip with PPO-KL penalty
+
+- _Limitations_ need a lot of models (policy, value, reward model, base model from SFT)
+
+- can look at [GRPO](reasoning_models_GRPO.md)
+
+- _Limitations_: train reward model 2 stage process
+
+- 💡on-policy (PPO)
+
+- 💡off-policy (SFT)
+
+- SFT on preference data (why not done?)
+
+- SFT cannot be told not generate this
