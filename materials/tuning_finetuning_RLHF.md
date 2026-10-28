@@ -126,3 +126,7 @@
 
 - PPO-Clip: clip ratio of new and old policy to prevent large updates
 
+- _old_ is not SFT model but model at previous iteration of RL stage
+
+![image](../images/ppo_clip.png)
+
