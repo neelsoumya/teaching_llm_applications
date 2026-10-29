@@ -154,3 +154,22 @@
 - SFT on preference data (why not done?)
 
 - SFT cannot be told not generate this
+
+
+## No RL- Best of N 
+
+- BoN 
+
+![image](../images/bon.png)
+
+- pushing cost to inference
+
+- if model being served then may not work
+
+- inference traffic dependent
+
+## DPO
+
+- Direct Preference Optimization
+
+![image](../images/dpo.png)
