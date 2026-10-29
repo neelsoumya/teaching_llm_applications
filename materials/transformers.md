@@ -560,3 +560,11 @@ multi_head_attention(key=source, value=source, query=source)
 ## Andrej Parpathy video explanation of _attention_
 
 - [🎥 Video from Andrej Karpathy on _attention_](https://youtu.be/XfpMkf4rD6E?si=W_zDLXFg5_vfT-zw&t=1484)
+
+## Practicals
+
+- [My Annotated Transformer](../practicals/annotated_transformer.ipynb)
+
+- Simple transfomer model at very end
+
+![image](../images/Transformer_Language_Model_Training_Loop.png)
