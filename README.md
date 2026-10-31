@@ -112,6 +112,8 @@ Each week has:
 
 - [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
+- [My Annotated Transformer (small)](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer_SMALL.ipynb)
+
 - [Practical on huggingface 🤗 introduction and problem solving using open-source datasets](practicals/practical_huggingface_dataset.md)
 
 
