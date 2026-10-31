@@ -110,9 +110,13 @@ Each week has:
 
 - [Absolute basic transformers](https://github.com/neelsoumya/winter_school_AI/blob/main/practicals/absolute_basic_transformers.ipynb)
 
+- [Simple transformer (tiny) with backprop](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/simple_transformer_backprop.ipynb)
+
 - [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 
+<!--
 - [My Annotated Transformer (small)](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer_SMALL.ipynb)
+-->
 
 - [Practical on huggingface 🤗 introduction and problem solving using open-source datasets](practicals/practical_huggingface_dataset.md)
 
