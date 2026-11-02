@@ -571,3 +571,5 @@ multi_head_attention(key=source, value=source, query=source)
 
 
 ![image](../images/Transformer_Language_Model_Training_Loop.png)
+
+- [Simple transformer with _6B_ parameter model](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/llm_practical_6b_model.ipynb)
