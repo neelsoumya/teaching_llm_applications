@@ -142,6 +142,9 @@ Each week has:
 
 - 📚 📝 [Illustrated Transformer by Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 
+- 📚 📝 [Readings](materials/readings.md)
+
+
 - Basics and preliminaries
 
 - 📚 📝 [PyTorch forward and backward pass explained and basics](materials/pytorch_forward_backward_explained.md)
