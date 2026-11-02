@@ -563,8 +563,11 @@ multi_head_attention(key=source, value=source, query=source)
 
 ## Practicals
 
-- [My Annotated Transformer](../practicals/annotated_transformer.ipynb)
+- [Absolute basic transformers](https://github.com/neelsoumya/winter_school_AI/blob/main/practicals/absolute_basic_transformers.ipynb)
 
-- Simple transfomer model at very end
+- [Simple transformer (tiny) with backprop](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/simple_transformer_backprop.ipynb)
+
+- [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
+
 
 ![image](../images/Transformer_Language_Model_Training_Loop.png)
