@@ -32,6 +32,7 @@ Each week has:
 
 - [Architectures](materials/architectures.md)
 
+- [In-context learning](materials/incontext_learning.md)
 
 
 

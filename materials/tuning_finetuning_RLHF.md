@@ -173,3 +173,5 @@
 - Direct Preference Optimization
 
 ![image](../images/dpo.png)
+
+- rewrite the loss function in a supervised way
