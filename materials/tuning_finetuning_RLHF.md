@@ -175,3 +175,18 @@
 ![image](../images/dpo.png)
 
 - rewrite the loss function in a supervised way
+
+![image](../images/dpo_formulation.png)
+
+
+## RLHF vs. DPO
+
+![image](../images/rlhf_vs_dpo.png)
+
+- two sets of weights: one is frozen (base model) and another is updated
+
+- 🤔❓ is there anything wrong with this answer?
+
+![image](../images/teddy_bear_preference_tuning.png)
+
+- _Answer_ it is a bit rough. This is what preference tuning can help with.
