@@ -190,3 +190,7 @@
 ![image](../images/teddy_bear_preference_tuning.png)
 
 - _Answer_ it is a bit rough. This is what preference tuning can help with.
+
+- A _softer_ answer
+
+> It is better not to! Your teddy bear could hurt!

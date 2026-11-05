@@ -38,6 +38,11 @@ Each week has:
 
 - [Softmax and temperature](materials/softmax.md)
 
+
+- [LLM tuning/finetuning and RLHF](materials/tuning_finetuning_RLHF.md)
+
+- [LLM training](materials/training.md) 
+
 - [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
 
 - [Resource accounting](materials/resource_accounting.md)
@@ -90,7 +95,6 @@ Each week has:
 
 - [Reasoning models and GRPO](materials/reasoning_models_GRPO.md)
 
-- [LLM tuning/finetuning and RLHF](materials/tuning_finetuning_RLHF.md)
 
 <!--
 - [RLHF](materials/week07_finetuning_and_rlhf.md)
@@ -202,6 +206,11 @@ and see `assessment_do_not_upload` folder
 ## Checkin codes
 
 - [Checkin codes](https://engagement.york.ac.uk/mytimetable)
+
+
+## Timetables and semesters
+
+- [Timetables and semesters](https://www.york.ac.uk/staff/teaching/semesters/)
 
 
 ## Declaration
