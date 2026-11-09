@@ -104,3 +104,28 @@
 ## Lifecycle of LLM
 
 ![image](../images/lifecycle.png)
+
+- also midtraining
+
+- not only model alignment
+
+- but also data 
+
+
+## PEFT 
+
+- Parameter Efficient Fine Tuning
+
+- LoRA Low Rank Adaptation
+
+![image](../images/lora1.png)
+
+![image](../images/lora_after.png)
+
+- where to apply LORA?
+
+- mostly in feed-forward network but also in multi-head attention
+
+![image](../images/lora_where.png)
+
+- what rank to use? learning rate? batch size?

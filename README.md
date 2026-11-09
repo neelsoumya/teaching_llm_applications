@@ -22,6 +22,8 @@ Each week has:
 
 - [Introduction](materials/week01_intro_and_history.md)
 
+- [LLM training](materials/training.md) 
+
 - [Transformers fundamentals](materials/transformers.md)
 
 
@@ -41,7 +43,6 @@ Each week has:
 
 - [LLM tuning/finetuning and RLHF](materials/tuning_finetuning_RLHF.md)
 
-- [LLM training](materials/training.md) 
 
 - [GPU and Flash Attention and benchmarking and profiling](materials/GPUs.md)
 
