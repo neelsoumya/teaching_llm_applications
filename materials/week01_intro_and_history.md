@@ -132,6 +132,50 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 ---
 
+## History
+
+![image](../images/history_llm.png)
+
+
+
+## Tokenization
+
+- [🎥 Stanford CME 295 course on tokenization and transformer intro](https://youtu.be/Ub3GoFaUcds?si=kCgeo1QsZSyun_BK&t=1688)
+
+- subword level tokenization
+
+![image](../images/subword.png)
+
+- if too many tokens then sequence length increases (computational cost increases)
+
+- if too little, then hard to interpret embeddings
+
+- OOV (out of word vocabulary) could be possible for words
+
+- a word may not occur in training but appears in test (this may have to be marked as a special symbol)
+
+![image](../images/tokenization_how.png)
+
+
+## Embeddings
+
+- 🤔 🎥 [Video by 3blue1brown on how word vectors encode meaning](https://www.youtube.com/shorts/FJtFZwbvkI4)
+
+- 🤔 🎥 [Video by 3blue1brown on vectors](https://youtu.be/KJtZARuO3JY?si=YcP3JkoPFf1eM4fv&t=843)
+
+
+![image](../images/embedding_3blue1brown.png)
+
+- how to represent tokens?
+
+- _one-hot_ ?
+
+
+## In-context learning
+
+- [in-context learning](incontext_learning.md)
+
+
 ## 1. What Is a Language Model?
 
 A **language model** assigns a probability to a sequence of tokens (words, subwords, characters):
@@ -219,7 +263,11 @@ Wei et al. (2022) document many such emergent abilities as a function of model s
 
 One of the most surprising properties: LLMs can perform new tasks **just from examples in the prompt**, without updating weights. This is called *in-context learning* (ICL).
 
+- [In-context learning](incontext_learning.md)
+
 ---
+
+
 
 
 ## Intro
