@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vectors and Embeddings: How Words Become Geometry</title>
+<style>
+:root{--bg:#fafaf8;--fg:#1c1c1a;--mut:#62625c;--card:#fff;--line:#d8d8d2;--a:#2563eb;--b:#ea7a0c;--g:#16a34a;--r:#dc2626;--gold:#eab308;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17171a;--fg:#ececea;--mut:#a2a29c;--card:#222226;--line:#3a3a40;--a:#6ea0ff;--b:#ffa04d;--g:#4ade80;--r:#f87171;--gold:#facc15;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17171a;--fg:#ececea;--mut:#a2a29c;--card:#222226;--line:#3a3a40;--a:#6ea0ff;--b:#ffa04d;--g:#4ade80;--r:#f87171;--gold:#facc15;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;padding:1rem;background:var(--bg);color:var(--fg);font:18px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:1150px;margin:0 auto}
+h1{font-size:1.7rem;margin:.2rem 0}.sub{color:var(--mut);margin:0 0 1rem}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+nav button,.btn{font:inherit;padding:.45rem .9rem;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;cursor:pointer}
+nav button.on{background:var(--a);color:#fff;border-color:var(--a)}
+[hidden]{display:none!important}
+.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1.2rem;align-items:start}
+@media(max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+canvas{display:block;width:100%;aspect-ratio:1/1;background:var(--card);border:1px solid var(--line);border-radius:12px;touch-action:none}
+.note{margin:0 0 .8rem}.note b{color:var(--a)}
+.ctl{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;margin:.6rem 0}
+.ctl label{display:flex;align-items:center;gap:.4rem}
+select,input[type=range]{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.25rem .4rem}
+input[type=range]{padding:0;width:11rem}
+.out{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem}
+.out p{margin:.2rem 0}.big{font-size:1.25rem;font-weight:600}
+.row{display:flex;align-items:center;gap:.5rem;margin:.15rem 0}
+.row span{width:6em;flex:none}.row b{width:3.6em;text-align:right;font-variant-numeric:tabular-nums;flex:none}
+.row em{flex:1;height:.8em;background:var(--line);border-radius:4px;overflow:hidden;position:relative}
+.row i{display:block;height:100%;background:var(--g)}
+.row.hl span,.row.hl b{color:var(--gold);font-weight:700}
+.row .mid{position:absolute;top:0;height:100%}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+td,th{padding:.2rem .4rem;border-bottom:1px solid var(--line);text-align:right}td:first-child,th:first-child{text-align:left}
+code{background:var(--line);border-radius:4px;padding:0 .3em}
+</style>
+</head>
+<body>
+<main>
+<h1>Vectors and Embeddings</h1>
+<p class="sub">How a word becomes a list of numbers, and how the geometry of those numbers carries meaning.</p>
+<nav id="tabs"></nav>
+
+<section id="t0" class="grid">
+ <canvas id="c0"></canvas>
+ <div>
+  <p class="note"><b>Drag</b> the tips of <b>a</b> and <b>b</b>. Green is a + b (b moved to the tip of a). Cosine similarity is 1 when they point the same way, 0 at right angles, −1 when opposite.</p>
+  <div class="out" id="o0"></div>
+  <p class="note" style="margin-top:.8rem">Try: stretch one arrow without turning it. The dot product changes, the cosine does not.</p>
+ </div>
+</section>
+
+<section id="t1" class="grid" hidden>
+ <canvas id="c1"></canvas>
+ <div>
+  <p class="note">A toy embedding with 5 hand-made dimensions. We cannot draw 5D, so choose two axes. <b>Click a word</b> to see its nearest neighbours by cosine similarity.</p>
+  <div class="ctl">
+   <label>x <select id="x1"></select></label><label>y <select id="y1"></select></label><label>word <select id="w1"></select></label>
+  </div>
+  <div class="out" id="o1"></div>
+ </div>
+</section>
+
+<section id="t2" class="grid" hidden>
+ <canvas id="c2"></canvas>
+ <div>
+  <p class="note">Arithmetic on meaning: <b>A − B + C</b>. Orange arrows show the step B→C, copied onto A. Raise <b>messiness</b> to mimic imperfect learned embeddings.</p>
+  <div class="ctl">
+   <label>A <select id="A"></select></label><label>B <select id="B"></select></label><label>C <select id="C"></select></label>
+  </div>
+  <div class="ctl"><label>messiness <input id="noise" type="range" min="0" max="1" step="0.05" value="0"> <span id="nv">0.00</span></label></div>
+  <div class="out" id="o2"></div>
+ </div>
+</section>
+
+<section id="t3" class="grid" hidden>
+ <div class="out" id="o3b"></div>
+ <div>
+  <p class="note">“Male to female” is a <b>direction</b> in the space, estimated by averaging king−queen, man−woman, prince−princess and boy−girl. Pick a word and push it along that direction.</p>
+  <div class="ctl">
+   <label>word <select id="w3"></select></label>
+   <label>push <input id="push" type="range" min="-3" max="3" step="0.25" value="0"> <span id="pv">0.00</span></label>
+  </div>
+  <div class="out" id="o3"></div>
+  <p class="note" style="margin-top:.8rem">Try king with a push near −2, then boy.</p>
+ </div>
+</section>
+
+<section id="t4" class="grid" hidden>
+ <div class="out" id="o4"></div>
+ <div>
+  <p class="note">A random rotation of the whole space scrambles the coordinates, so no axis means anything, yet every cosine and the analogy are unchanged. <b>Meaning lives in relationships, not in individual axes.</b></p>
+  <button class="btn" id="rot">New random rotation</button>
+  <div class="out" id="o4b" style="margin-top:.8rem"></div>
+ </div>
+</section>
+</main>
+
+<script>
+// ---------- data: [royalty, gender, age, animal, food] ----------
+const dims=["royalty","gender","age","animal","food"];
+const E={king:[1,1,.8,0,0],queen:[1,-1,.8,0,0],prince:[.8,1,.2,0,0],princess:[.8,-1,.2,0,0],
+ man:[0,1,.8,0,0],woman:[0,-1,.8,0,0],boy:[0,1,.2,0,0],girl:[0,-1,.2,0,0],
+ dog:[0,.1,.8,1,0],cat:[0,-.1,.8,1,0],puppy:[0,.1,.2,1,0],kitten:[0,-.1,.2,1,0],
+ apple:[0,0,.1,0,1],banana:[0,0,.1,0,.9],bread:[0,0,.5,0,.8]};
+const words=Object.keys(E);
+
+// ---------- vector maths (simple on purpose) ----------
+const dot=(u,v)=>u.reduce((s,x,i)=>s+x*v[i],0);
+const len=u=>Math.sqrt(dot(u,u));
+const cos=(u,v)=>{const d=len(u)*len(v);return d?dot(u,v)/d:0};
+const add=(u,v)=>u.map((x,i)=>x+v[i]), sub=(u,v)=>u.map((x,i)=>x-v[i]);
+function nearest(q,V,n,ex){return Object.keys(V).filter(w=>!(ex||[]).includes(w)).map(w=>[cos(q,V[w]),w]).sort((a,b)=>b[0]-a[0]).slice(0,n)}
+
+// seeded random numbers so the demo is repeatable
+function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function gaussFrom(r){return()=>Math.sqrt(-2*Math.log(r()+1e-12))*Math.cos(2*Math.PI*r())}
+
+// ---------- helpers ----------
+const $=s=>document.querySelector(s);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function prep(c){const r=c.getBoundingClientRect(),d=window.devicePixelRatio||1;c.width=r.width*d;c.height=r.height*d;const x=c.getContext("2d");x.setTransform(d,0,0,d,0,0);x.W=r.width;x.H=r.height;return x}
+function fill(id,list,val){const s=$(id);s.innerHTML=list.map(w=>`<option>${w}</option>`).join("");s.value=val}
+function rows(arr,hl){return arr.map(([s,w])=>`<div class="row${w===hl?" hl":""}"><span>${w}</span><em><i style="width:${Math.max(0,s)*100}%"></i></em><b>${s.toFixed(2)}</b></div>`).join("")}
+function arrow(x,x1,y1,x2,y2,col,lab,dash){
+ x.strokeStyle=x.fillStyle=col;x.lineWidth=3;x.setLineDash(dash?[8,6]:[]);
+ x.beginPath();x.moveTo(x1,y1);x.lineTo(x2,y2);x.stroke();x.setLineDash([]);
+ const a=Math.atan2(y2-y1,x2-x1);x.beginPath();x.moveTo(x2,y2);
+ x.lineTo(x2-13*Math.cos(a-.4),y2-13*Math.sin(a-.4));x.lineTo(x2-13*Math.cos(a+.4),y2-13*Math.sin(a+.4));x.closePath();x.fill();
+ if(lab){x.font="bold 20px system-ui";x.fillText(lab,x2+8,y2-8)}}
+
+// ---------- tab 1: vectors you can drag ----------
+const V0={a:[3,1],b:[1,2]},L=6;let drag=null;const c0=$("#c0");
+function r0(){
+ const x=prep(c0),S=x.W/(2*L),P=u=>[x.W/2+u[0]*S,x.H/2-u[1]*S];
+ for(let k=-L;k<=L;k++){x.strokeStyle=css("--line");x.lineWidth=k?1:2.5;x.beginPath();
+  x.moveTo(x.W/2+k*S,0);x.lineTo(x.W/2+k*S,x.H);x.moveTo(0,x.H/2-k*S);x.lineTo(x.W,x.H/2-k*S);x.stroke()}
+ const a=V0.a,b=V0.b,s=add(a,b);
+ arrow(x,...P([0,0]),...P(a),css("--a"),"a");
+ arrow(x,...P(a),...P(s),css("--b"),"",1);
+ arrow(x,...P([0,0]),...P(b),css("--b"),"b");
+ arrow(x,...P([0,0]),...P(s),css("--g"),"a + b");
+ [a,b].forEach(v=>{x.fillStyle=css("--fg");x.beginPath();x.arc(...P(v),7,0,7);x.fill()});
+ const cs=cos(a,b),ang=Math.acos(Math.max(-1,Math.min(1,cs)))*180/Math.PI;
+ $("#o0").innerHTML=`<p>a = (${a[0].toFixed(1)}, ${a[1].toFixed(1)}) &nbsp; b = (${b[0].toFixed(1)}, ${b[1].toFixed(1)})</p>
+ <p>a + b = (${s[0].toFixed(1)}, ${s[1].toFixed(1)})</p><p>dot product = <b>${dot(a,b).toFixed(2)}</b></p>
+ <p class="big">cosine = ${cs.toFixed(2)} &nbsp; angle = ${ang.toFixed(0)}°</p>`}
+function toU(e){const r=c0.getBoundingClientRect(),S=r.width/(2*L);return[(e.clientX-r.left-r.width/2)/S,-(e.clientY-r.top-r.height/2)/S]}
+c0.addEventListener("pointerdown",e=>{const u=toU(e),d=k=>Math.hypot(V0[k][0]-u[0],V0[k][1]-u[1]);
+ drag=d("a")<d("b")?"a":"b";if(d(drag)>1.3)drag=null;else c0.setPointerCapture(e.pointerId)});
+c0.addEventListener("pointermove",e=>{if(!drag)return;const u=toU(e),f=t=>Math.max(-5.5,Math.min(5.5,Math.round(t*10)/10));V0[drag]=[f(u[0]),f(u[1])];r0()});
+c0.addEventListener("pointerup",()=>drag=null);
+
+// ---------- shared scatter plot for tabs 2 and 3 ----------
+function plot(c,Vo,xi,yi,marks,extra,arrows){
+ const x=prep(c),pad=48,pts=Object.values(Vo).map(v=>[v[xi],v[yi]]).concat((extra||[]).map(e=>[e.p[xi],e.p[yi]]));
+ let x0=Math.min(...pts.map(p=>p[0])),x1=Math.max(...pts.map(p=>p[0])),y0=Math.min(...pts.map(p=>p[1])),y1=Math.max(...pts.map(p=>p[1]));
+ const mx=(x1-x0||1)*.12,my=(y1-y0||1)*.12;x0-=mx;x1+=mx;y0-=my;y1+=my;
+ const X=v=>pad+(v-x0)/(x1-x0)*(x.W-2*pad),Y=v=>x.H-pad-(v-y0)/(y1-y0)*(x.H-2*pad);
+ x.strokeStyle=css("--line");x.lineWidth=1.5;x.beginPath();
+ if(x0<0&&x1>0){x.moveTo(X(0),0);x.lineTo(X(0),x.H)}if(y0<0&&y1>0){x.moveTo(0,Y(0));x.lineTo(x.W,Y(0))}x.stroke();
+ x.fillStyle=css("--mut");x.font="16px system-ui";x.fillText(dims[xi]+" →",x.W-pad-80,x.H-12);x.fillText("↑ "+dims[yi],10,22);
+ (arrows||[]).forEach(a=>arrow(x,X(a.f[xi]),Y(a.f[yi]),X(a.t[xi]),Y(a.t[yi]),css("--b"),"",1));
+ const hit=[];
+ for(const w in Vo){const px=X(Vo[w][xi]),py=Y(Vo[w][yi]);hit.push({w,px,py});
+  x.fillStyle=marks[w]||css("--mut");x.beginPath();x.arc(px,py,marks[w]?9:6,0,7);x.fill();
+  x.font=(marks[w]?"bold ":"")+"17px system-ui";x.fillStyle=marks[w]||css("--fg");x.fillText(w,px+10,py-8)}
+ (extra||[]).forEach(e=>{const px=X(e.p[xi]),py=Y(e.p[yi]);x.fillStyle=css("--gold");x.strokeStyle=css("--fg");x.lineWidth=2;
+  x.beginPath();for(let k=0;k<10;k++){const r=k%2?8:18,t=k*Math.PI/5-Math.PI/2;x.lineTo(px+r*Math.cos(t),py+r*Math.sin(t))}x.closePath();x.fill();x.stroke();
+  x.font="bold 17px system-ui";x.fillText(e.label,px+20,py+6)});
+ return hit}
+
+// ---------- tab 2: embedding space ----------
+let sel="king",hit1=[];
+function r1(){
+ const nb=nearest(E[sel],E,4,[sel]),marks={};marks[sel]=css("--gold");nb.slice(0,3).forEach(([s,w])=>marks[w]=css("--g"));
+ hit1=plot($("#c1"),E,dims.indexOf($("#x1").value),dims.indexOf($("#y1").value),marks);
+ $("#w1").value=sel;
+ $("#o1").innerHTML=`<p class="big">Closest to “${sel}”</p>`+rows(nb)+`<p style="color:var(--mut)">${sel} = [${E[sel].join(", ")}]</p>`}
+$("#c1").addEventListener("click",e=>{const r=e.target.getBoundingClientRect(),px=e.clientX-r.left,py=e.clientY-r.top;
+ let best=null,bd=30;hit1.forEach(h=>{const d=Math.hypot(h.px-px,h.py-py);if(d<bd){bd=d;best=h.w}});if(best){sel=best;r1()}});
+
+// ---------- tab 3: analogies ----------
+const R=gaussFrom(rng(0)),N={};words.forEach(w=>N[w]=dims.map(()=>R()));
+function r2(){
+ const m=+$("#noise").value;$("#nv").textContent=m.toFixed(2);
+ const A=$("#A").value,B=$("#B").value,C=$("#C").value,V={};
+ words.forEach(w=>V[w]=E[w].map((v,i)=>v+m*N[w][i]));
+ const res=add(sub(V[A],V[B]),V[C]),top=nearest(res,V,3,[A,B,C]),marks={};
+ marks[A]=css("--a");marks[B]=css("--r");marks[C]=css("--g");
+ plot($("#c2"),V,1,0,marks,[{p:res,label:"result"}],[{f:V[B],t:V[C]},{f:V[A],t:res}]);
+ $("#o2").innerHTML=`<p class="big">${A} − ${B} + ${C} ≈ ${top[0][1].toUpperCase()}</p>`+rows(top,top[0][1])+
+  `<p style="color:var(--mut)">Plot shows gender (x) against royalty (y); the other 3 dimensions are hidden.</p>`}
+
+// ---------- tab 4: directions ----------
+const pairs=[["king","queen"],["man","woman"],["prince","princess"],["boy","girl"]];
+let gdir=[0,0,0,0,0];pairs.forEach(([m,f])=>gdir=add(gdir,sub(E[m],E[f])));gdir=gdir.map(x=>x/len(gdir));
+function r3(){
+ const w=$("#w3").value,p=+$("#push").value;$("#pv").textContent=p.toFixed(2);
+ const moved=add(E[w],gdir.map(x=>x*p)),top=nearest(moved,E,3,[w]);
+ $("#o3").innerHTML=`<p class="big">${w} ${p<0?"−":"+"} ${Math.abs(p).toFixed(2)} × direction ≈ ${top[0][1].toUpperCase()}</p>`+rows(top,top[0][1]);
+ const items=words.map(v=>[dot(E[v],gdir),v]).concat([[dot(moved,gdir),"▶ moved"]]).sort((a,b)=>a[0]-b[0]);
+ $("#o3b").innerHTML=`<p class="big">Position along the gender direction</p><p style="color:var(--mut)">← female &nbsp; male →</p>`+
+  items.map(([s,v])=>{const hl=v==="▶ moved",wd=Math.min(50,Math.abs(s)/1.4*50);
+  return `<div class="row${hl?" hl":""}"><span>${v}</span><em><i class="mid" style="left:${s<0?50-wd:50}%;width:${wd}%;background:${hl?css("--gold"):s<0?css("--r"):css("--a")}"></i></em><b>${s.toFixed(1)}</b></div>`}).join("")}
+
+// ---------- tab 5: rotation ----------
+let seed=1,Q;
+function newRot(){const g=gaussFrom(rng(seed++));Q=[];for(let i=0;i<5;i++){let v=dims.map(()=>g());Q.forEach(u=>{const d=dot(v,u);v=v.map((x,k)=>x-d*u[k])});const l=len(v);Q.push(v.map(x=>x/l))}}
+const rot=v=>Q.map(row=>dot(row,v));
+function r4(){
+ const RV={};words.forEach(w=>RV[w]=rot(E[w]));
+ const f=v=>"["+v.map(x=>(+x).toFixed(2)).join(", ")+"]";
+ $("#o4").innerHTML=`<p class="big">Same word, new coordinates</p><p>king before: ${f(E.king)}</p><p>king after: ${f(RV.king)}</p>
+ <p style="color:var(--mut)">Position 2 used to mean “gender”. Now every position is a blend.</p>
+ <table><tr><th>pair</th><th>cosine before</th><th>cosine after</th></tr>`+
+ [["king","queen"],["king","man"],["dog","puppy"],["apple","banana"],["king","apple"]].map(([a,b])=>
+  `<tr><td>${a} / ${b}</td><td>${cos(E[a],E[b]).toFixed(3)}</td><td>${cos(RV[a],RV[b]).toFixed(3)}</td></tr>`).join("")+`</table>`;
+ const t=nearest(add(sub(RV.king,RV.man),RV.woman),RV,1,["king","man","woman"])[0];
+ $("#o4b").innerHTML=`<p class="big">In rotated space: king − man + woman ≈ ${t[1].toUpperCase()}</p><p style="color:var(--mut)">cosine ${t[0].toFixed(3)}</p>`}
+$("#rot").onclick=()=>{newRot();r4()};
+
+// ---------- wiring ----------
+const names=["1 Vectors","2 Embedding space","3 Analogies","4 Directions","5 Rotation"],fns=[r0,r1,r2,r3,r4];let cur=0;
+$("#tabs").innerHTML=names.map((n,i)=>`<button>${n}</button>`).join("");
+function show(i){cur=i;document.querySelectorAll("main>section").forEach((s,k)=>s.hidden=k!==i);
+ document.querySelectorAll("#tabs button").forEach((b,k)=>b.classList.toggle("on",k===i));fns[i]()}
+document.querySelectorAll("#tabs button").forEach((b,i)=>b.onclick=()=>show(i));
+fill("#x1",dims,"gender");fill("#y1",dims,"royalty");fill("#w1",words,"king");
+fill("#A",words,"king");fill("#B",words,"man");fill("#C",words,"woman");fill("#w3",words,"king");
+["#x1","#y1"].forEach(s=>$(s).oninput=r1);$("#w1").oninput=e=>{sel=e.target.value;r1()};
+["#A","#B","#C","#noise"].forEach(s=>$(s).oninput=r2);["#w3","#push"].forEach(s=>$(s).oninput=r3);
+window.addEventListener("resize",()=>fns[cur]());
+newRot();show(0);
+</script>
+</body>
+</html>
