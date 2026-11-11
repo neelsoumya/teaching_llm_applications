@@ -168,7 +168,28 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 - how to represent tokens?
 
-- _one-hot_ ?
+- 🤔 ❓ will _one-hot_ encoding work? 
+
+- 🤔 all words will be equidistant from each other! _Aardvark_ is equidistant from _starship_ and _anemone_ 
+
+- this will not capture concepts
+
+- 🔑🔐 we need a representation that will capture meaning and _context_
+
+- 🔑🔐context captures meaning
+
+![image](../images/embeddings_concept.png)
+
+- [Link and segue between unsupervised learning and PCAs (see diagram on last page)](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/pca_notes_advanced_2.pdf) and [polished diagram here](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/PCA_advanced_lecture_notes_polished.pdf) and [diagram here](https://neelsoumya.github.io/winter_school_AI/materials/unsupervised_learning_to_llm_embeddings.pdf)
+
+- [🎥 Unsupervised learning is the first step towards LLMs: video by _3blue1brown_](https://www.youtube.com/watch?v=LPZh9BOjkQs)
+
+
+- [winter school links](https://neelsoumya.github.io/winter_school_AI/)
+
+- [🛠️ Demo of vector representation and embeddings](../assets/Vectors_Embeddings_How_Words_Become_Geometry.html)
+
+- [Interactive _ipython_ notebook 📒  to understand embeddings](https://colab.research.google.com/drive/1iOK1cfF-7fwJ97Mv9cBDq0-OE20Mgc27?usp=sharing) and [here](../assets/vectors_and_embeddings.ipynb)
 
 
 ## In-context learning

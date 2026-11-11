@@ -22,17 +22,19 @@ Each week has:
 
 - [Introduction](materials/week01_intro_and_history.md)
 
-- [LLM training](materials/training.md) 
-
 - [Transformers fundamentals](materials/transformers.md)
 
+- [LLM training](materials/training.md) 
 
-- [Week 5 Transformers Architecture](materials/week05_transformer_architecture.md)
+- [Architectures](materials/architectures.md)
+
+
+
 
 - [Stanford CS336 my own notes](materials/CS336_Stanford.md)
 
+- [Week 5 Transformers Architecture](materials/week05_transformer_architecture.md)
 
-- [Architectures](materials/architectures.md)
 
 - [In-context learning](materials/incontext_learning.md)
 
