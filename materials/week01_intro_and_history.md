@@ -180,7 +180,7 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 ![image](../images/embeddings_concept.png)
 
-- tokens that have similar meanings should have similar values
+- 🔑🔐tokens that have similar meanings should have similar values
 
 ![image](../images/tokens_onehot_meaning.png)
 
@@ -196,9 +196,62 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 - [Interactive _ipython_ notebook 📒  to understand embeddings](https://colab.research.google.com/drive/1iOK1cfF-7fwJ97Mv9cBDq0-OE20Mgc27?usp=sharing) and [here](../assets/vectors_and_embeddings.ipynb)
 
 
+- use a neural network to predict next token
+
+- if prediction not good, then update weights
+
+-  🔑🔐 update _embeddings_ also!
+
+![image](../images/predict_next_word.png)
+
+- predict using [softmax function](softmax.md)
+
+- when do you stop?
+
+- hard to say: sometimes you have a _budget_ and sometimes you look at how good you are at a _downstream task_ (say chatbot or sentiment classification)
+
+
 ## In-context learning
 
 - [in-context learning](incontext_learning.md)
+
+
+# RNNs (recurrent neural networks)
+
+![image](../images/rnn_cme.png)
+
+- [video Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=n8xIEJ_fUenQRiwb&t=3524)
+
+- meaning of a sentence is encoded in _hidden state_
+
+- predict last word using every hidden state that came before
+
+- long range dependencies hard to model
+
+<!--
+- enter LSTMs 
+
+![image](../images/lstm.png)
+-->
+
+- enter _transformers_
+
+- _Concept_ 🔑🔐 very long range context could be modelled using _direct_ links
+
+- _Concept_ 🔑🔐 this is the basic idea behing _attention_
+
+![image](../images/attention_history.png)
+
+- in order to compute representation of _teddy bear_ we will look at all words (direct links) 
+
+- this is called _self attention_
+
+![image](../images/self_attention_teddy.png)
+
+
+## Concept of key 🔑, query, value
+
+- 
 
 
 ## 1. What Is a Language Model?
