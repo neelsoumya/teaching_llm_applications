@@ -182,6 +182,8 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 - 🔑🔐tokens that have similar meanings should have similar values
 
+- [🎥 Video (short) explaining how Aardvark and anemone get represented](https://youtube.com/shorts/yV2CqJ9hiww)
+
 ![image](../images/tokens_onehot_meaning.png)
 
 - [Link and segue between unsupervised learning and PCAs (see diagram on last page)](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/pca_notes_advanced_2.pdf) and [polished diagram here](https://github.com/neelsoumya/public_teaching_unsupervised_learning/blob/main/PCA_advanced_lecture_notes_polished.pdf) and [diagram here](https://neelsoumya.github.io/winter_school_AI/materials/unsupervised_learning_to_llm_embeddings.pdf)
@@ -249,9 +251,34 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 ![image](../images/self_attention_teddy.png)
 
 
-## Concept of key 🔑, query, value
+## Concept of  query, key 🔑, value
 
-- 
+- _Q_, _K_, _V_
+
+- What other tokens is the query (_teddy bear_) similar to?
+
+- how similar query is to a key (and then take the corresponding value)
+
+- Attention computation
+
+- Attention can be computed using a simple formula
+
+- softmax of query and 🔑 key
+
+- multiply with value (_V_)
+
+- _Concept_ 🧩 🚀💡🔑🔐  if less importance then small weight (_V_)
+
+- _Concept_ 🧩 🚀💡🔑🔐  if more important then bigger weight (_V_)
+
+![images](../images/attention_formula.png)
+
+- this is called _self dot product attention_
+
+![image](../images/scaled.png)
+
+![image](../images/scaled_dot_product_attention.png)
+
 
 
 ## 1. What Is a Language Model?
