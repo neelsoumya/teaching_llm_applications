@@ -29,7 +29,7 @@ Each week has:
 - [Architectures](materials/architectures.md)
 
 
-
+- _End of week 3_
 
 - [Stanford CS336 my own notes](materials/CS336_Stanford.md)
 
@@ -121,6 +121,11 @@ Each week has:
 - [Absolute basic transformers](https://github.com/neelsoumya/winter_school_AI/blob/main/practicals/absolute_basic_transformers.ipynb)
 
 - [Simple transformer (tiny) with backprop](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/simple_transformer_backprop.ipynb)
+
+- [Code and tutorial by Francois Chollet (VERY GOOD)](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
+- [🎮 Practical with _keras_](https://www.tensorflow.org/text/tutorials/transformer)
+
 
 - [My Annotated Transformer](https://github.com/neelsoumya/teaching_llm_applications/blob/main/practicals/annotated_transformer.ipynb)
 

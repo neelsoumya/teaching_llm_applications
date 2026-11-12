@@ -191,7 +191,7 @@
 
 - _Concept_ 🧩 🚀 this is just matrix multiplication (with appropriate normalisation and softmax)
 
-- Hardware optimized for doing these operations (see [GPUs](GPUs.md))
+- Hardware optimized for doing these operations: see [GPUs](GPUs.md)
 
 - Multiple heads allow the model to focus on different parts of the input sequence simultaneously, capturing different types of relationships between tokens.
 
@@ -351,7 +351,7 @@ In summary, while setting `d_ff = d_model` would make the model smaller and fast
 
 > RNNs, on the other hand, lack any mechanism to refer back to a previous section of a sequence directly. All information must, by design, be passed through an RNN cell’s internal state in a loop, through every position in a sequence. It’s a bit like finishing this book, closing it, and trying to implement that weather prediction model entirely from memory.
 
-## Basics of transformers (VERY GOOD)
+## 🎮 Practical: Basics of transformers (VERY GOOD)
 
 - [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 

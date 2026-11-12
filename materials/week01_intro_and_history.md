@@ -224,6 +224,8 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 - [video Stanford CME295](https://youtu.be/Ub3GoFaUcds?si=n8xIEJ_fUenQRiwb&t=3524)
 
+- [Stanford CME295 slides](https://cme295.stanford.edu/slides/fall26-cme295-lecture1.pdf)
+
 - meaning of a sentence is encoded in _hidden state_
 
 - predict last word using every hidden state that came before
@@ -279,6 +281,78 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 
 ![image](../images/scaled_dot_product_attention.png)
 
+- _Q_, _K_ and _V_ are `learnt`
+
+- also see [transfomers](transformers.md)
+
+- encoder (left) and decoder (right) architecture
+
+![image](../images/elft_right.png)
+
+- encoder will find meaningful embeddings (self-attention will apply)
+
+- _self attention_
+
+- then _cross attention_ to predict next token
+
+- arrows from encoder
+
+- 🤔❓ what does arrow from encoder to decoder represent? _Q_, _K_ or _V_ ?
+
+- it represents the `query`
+
+- _Concept_ 🧩 🚀 _given the query _what are the words from the input that matter?
+
+- _Concept_ 🧩 🚀 the 🎹 keys and values come from the encoder
+
+- _Concept_ 🧩 🚀 _masked atention_ is another kind of attention: what other tokens (that have already been looked at) can be useful in predicting the next token: do not look at tokens that have not been translated (_masked_)
+
+- _Concept_ 🧩 🚀 _self attention_ figure out what my embedding needs to be (by looking at everyone else)
+
+- no sense of order
+
+- so positional encodings
+
+- quick overview
+
+![image](../images/quick_overview_beforewk3.png)
+
+![image](../images/encoder_overview_beforewk3.png)
+
+- decoder overview
+
+![image](../images/decoder_ovreview.png)
+
+- finally goes to a [_softmax_](softmax.md) to predict next token
+
+![image](../images/overview_softmax_decoder.png)
+
+
+- ⚠️ _NOTE_ what does head mean?
+
+- when you compute attention, you make queries interact with keys and get corresponding values. But nothing prevents you doing that several times.
+
+- _Concept_ 🧩 🚀💡 each time you do that, is a _head_
+
+- when you have several heads, you are allowing your model to learn different associations/meanings/embeddings
+
+![image](../images/multi_head_overview.png)
+
+- label 🏷 smoothing: predict next word but there is a chance that it is not this word (_epsilon_ noise)
+
+![image](../images/label_smoothing.png)
+
+
+## Cheatsheet
+
+- [Stanford CME 295 Cheatsheet 📄 ](https://cme295.stanford.edu/cheatsheet/) and on [github](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models)
+
+
+## 🎮 Practical: Basics of transformers (VERY GOOD)
+
+- [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
+
+- [🎮 Practical with _keras_](https://www.tensorflow.org/text/tutorials/transformer)
 
 
 ## 1. What Is a Language Model?
