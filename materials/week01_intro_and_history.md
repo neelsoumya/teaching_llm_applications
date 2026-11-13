@@ -343,6 +343,25 @@ print(f"The model thinks the odd one out is: '{outlier}'")
 ![image](../images/label_smoothing.png)
 
 
+- all together
+
+![image](../images/stitch_encoder.png)
+
+- dot product basics
+
+_Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors agree with each other, or how well they align_
+
+- How relevant is this other word to the word I am currently processing?
+
+![image](../images/dotproduct_explained.png)
+
+- _Q_ _K_ T
+
+![image](../images/qkt_transpose.png)
+
+- weighted sum of values
+
+
 ## Cheatsheet
 
 - [Stanford CME 295 Cheatsheet 📄 ](https://cme295.stanford.edu/cheatsheet/) and on [github](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models)
