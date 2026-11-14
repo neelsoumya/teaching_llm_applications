@@ -124,6 +124,8 @@ Each week has:
 
 - [Code and tutorial by Francois Chollet (VERY GOOD)](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
+- [🎮 Practical with_keras_ modified](../practicals/keras_Transformer_translation_practical.ipynb)
+
 - [🎮 Practical with _keras_](https://www.tensorflow.org/text/tutorials/transformer)
 
 
