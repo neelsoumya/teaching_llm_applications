@@ -369,6 +369,8 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 
 ## 🎮 Practical: Basics of transformers (VERY GOOD)
 
+- [Practical](../practicals/keras_Transformer_translation_practical.ipynb)
+
 - [Code and tutorial by Francois](https://deeplearningwithpython.io/chapters/chapter15_language-models-and-the-transformer/)
 
 - [🎮 Practical with _keras_](https://www.tensorflow.org/text/tutorials/transformer)
