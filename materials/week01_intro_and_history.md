@@ -362,6 +362,53 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 - weighted sum of values
 
 
+- Attention map
+
+- [video Stanford CME295](https://youtu.be/yT84Y5zCnaA?si=f46ufrQGab0oKhTl&t=359)
+
+
+- _Position embedding_
+
+![image](../images/need_position_embedding.png)
+
+- since you have direct links (everything is connected), you lose position information
+
+- contrast to RNNs which had sequential connections
+
+- position specific embeddings
+
+- learnt?
+
+- can learn position embeddings till max (say 512). At inference time, if you get something beyond this, then you have a problem
+
+- versus hardcoded position embeddings (not learnt)
+
+![image](../images/hardcoded_position_embeddings.png)
+
+- let us simplify first
+
+![image](../images/position_embedding_simplified.png)
+
+- words that are close together should have similar embeddings
+
+- dot product of two vectors
+
+![image](../images/trigonometry.png)
+
+![image](../images/dot_product_position_embeddings.png)
+
+![image](../images/product.png)
+
+- why do I care about dot product? Because if I want to know how similar two embeddings are, I need dot product
+
+- if _m = n_ then this quantity is maximal (vctors/embeddings are most similar)
+
+- high frequency
+
+- can be extended to any sequence length
+
+
+
 ## Cheatsheet
 
 - [Stanford CME 295 Cheatsheet 📄 ](https://cme295.stanford.edu/cheatsheet/) and on [github](https://github.com/afshinea/stanford-cme-295-transformers-large-language-models)
