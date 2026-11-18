@@ -407,6 +407,30 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 
 - can be extended to any sequence length
 
+- added before attention (which is why we are doing all of this)
+
+- add bias in attention layer to reflect the fact that some tokens are more similar than others
+
+![image](../images/bias_attention_layer.png)
+
+- in _T5_ this is learnt
+
+- `ROPE` Embeddings (Rotary Position Embeddings)
+
+- rotate  _Q_ and _K_ by some angle that is a function of its position
+
+![image](../images/rope_rotation.png)
+
+- multiply by rotation matrix
+
+- relative distance is captured in the rotation matrix
+
+![image](../images/rope.png)
+
+![image](../images/rope2.png)
+
+- see [architectures](architectures.md)
+
 
 
 ## Cheatsheet
