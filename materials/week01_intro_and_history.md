@@ -432,6 +432,21 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 - see [architectures](architectures.md)
 
 
+- layer normalization
+
+- input and output add together and normalize
+
+- aid convergence and stability
+
+![image](../images/layer_nr.png)
+
+![image](../images/residual.png)
+
+![image](../images/rms_norm.png)
+
+![image](../images/rmsnorm.png)
+
+
 
 ## Cheatsheet
 
