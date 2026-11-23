@@ -367,7 +367,7 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 - [video Stanford CME295](https://youtu.be/yT84Y5zCnaA?si=f46ufrQGab0oKhTl&t=359)
 
 
-- _Position embedding_
+## _Position embedding_
 
 ![image](../images/need_position_embedding.png)
 
@@ -432,11 +432,15 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 - see [architectures](architectures.md)
 
 
-- layer normalization
+## Layer normalization
 
 - input and output add together and normalize
 
 - aid convergence and stability
+
+_Concept_ 🧩 🚀💡🔑🔐 some activations may have extreme values: model may struggle to learn weights. _Bring activations in same range_
+
+- different to batch normalization
 
 ![image](../images/layer_nr.png)
 
@@ -446,6 +450,30 @@ _Concept_ 🧩 🚀💡🔑🔐  _The dot product measures how much two vectors 
 
 ![image](../images/rmsnorm.png)
 
+## Sparse attention
+
+- instead of each token intrecating with everyone, each token interacts with its neighbours
+
+![image](../images/sparse_attention.png)
+
+- what about softmax? there are some tricks
+
+- sliding window attention
+
+![image](../images/sliding_window.png)
+
+![image](../images/sliding_window_attention.png)
+
+![image](../images/sliding_window_attention2.png)
+
+- similar to receptive field in CNNs
+
+![image](../images/receptive_field.png)
+
+
+## Sharing attention heads
+
+![image](../images/share_heads.png)
 
 
 ## Cheatsheet
