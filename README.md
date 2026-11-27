@@ -195,6 +195,8 @@ jupyter notebook
 
 - [Administrivia](materials/administrivia.md)
 
+- ⚠️ Other instructions for students: please make sure your _github_repositories are `not` set to public 🌎 
+
 ## Assessment rubric
 
 - [Assessment rubric](materials/assessment_rubric.md)
